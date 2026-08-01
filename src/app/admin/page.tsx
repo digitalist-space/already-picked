@@ -35,17 +35,6 @@ export default async function AdminPage() {
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Admin Dashboard
           </h1>
-          <p className="mt-1 text-gray-500 dark:text-gray-400">
-            Landing pages are managed in the{" "}
-            <a
-              href="https://docs.google.com/spreadsheets/d/1vicbagFM6DZO7Kyh9EvHPAj9j3H86Rh9L1th-TpuEQM/edit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-600 hover:underline dark:text-indigo-400"
-            >
-              Google Sheet
-            </a>
-          </p>
         </div>
         <Link
           href="/"

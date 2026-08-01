@@ -7,11 +7,20 @@ const ALLOWED_ACTIONS = new Set([
   "setGuideStatus",
 ]);
 
+const NOINDEX_HEADERS = { "X-Robots-Tag": "noindex" };
+
+function json(data: unknown, init?: ResponseInit) {
+  return Response.json(data, {
+    ...init,
+    headers: { ...NOINDEX_HEADERS, ...init?.headers },
+  });
+}
+
 export async function POST(request: Request) {
   const configuredAdminKey = process.env.THEMECART_ADMIN_KEY;
 
   if (!configuredAdminKey) {
-    return Response.json(
+    return json(
       { error: "The admin key is not configured yet." },
       { status: 503 }
     );
@@ -19,7 +28,7 @@ export async function POST(request: Request) {
 
   const adminKey = request.headers.get("x-admin-key");
   if (!adminKey || adminKey !== configuredAdminKey) {
-    return Response.json({ error: "Incorrect admin key." }, { status: 401 });
+    return json({ error: "Incorrect admin key." }, { status: 401 });
   }
 
   const body = (await request.json().catch(() => null)) as
@@ -27,17 +36,17 @@ export async function POST(request: Request) {
     | null;
 
   if (!body?.action || !ALLOWED_ACTIONS.has(body.action)) {
-    return Response.json({ error: "Unsupported admin action." }, { status: 400 });
+    return json({ error: "Unsupported admin action." }, { status: 400 });
   }
 
   if (body.action === "authenticate") {
-    return Response.json({ ok: true });
+    return json({ ok: true });
   }
 
   const endpoint = process.env.GOOGLE_SHEETS_WEB_APP_URL;
   const receiverToken = process.env.GOOGLE_SHEETS_ADMIN_TOKEN;
   if (!endpoint || !receiverToken) {
-    return Response.json(
+    return json(
       { error: "Admin changes are not connected yet." },
       { status: 503 }
     );
@@ -61,7 +70,7 @@ export async function POST(request: Request) {
     | null;
 
   if (!response.ok || !result?.ok) {
-    return Response.json(
+    return json(
       { error: result?.error || "Google Sheets did not accept the change." },
       { status: 502 }
     );
@@ -75,5 +84,5 @@ export async function POST(request: Request) {
     revalidatePath(`/themes/${body.slug}`);
   }
 
-  return Response.json(result);
+  return json(result);
 }
