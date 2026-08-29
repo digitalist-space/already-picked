@@ -367,3 +367,116 @@ function jsonResponse(value) {
     ContentService.MimeType.JSON
   );
 }
+
+// ---------------------------------------------------------------------------
+// Push cache invalidation to the website.
+//
+// The site caches the Sheet for an hour so guide pages can be prerendered.
+// Changes made through the admin screen invalidate that cache on their own,
+// but rows typed directly into this workbook are invisible to the site until
+// the hour is up. These helpers close that gap.
+//
+// One-time setup:
+//   1. Paste this file into the Apps Script editor (Extensions > Apps Script).
+//   2. Run setupRevalidateTrigger() once and approve the permission prompt.
+//   3. Reload the spreadsheet — an "AlreadyPicked" menu appears with a manual
+//      "Publish changes now" option for when you want to force a refresh.
+// ---------------------------------------------------------------------------
+
+const SITE_REVALIDATE_URL = "https://www.alreadypicked.com/api/revalidate";
+const WATCHED_SHEETS = ["Products", "Landing Pages", "Page Products"];
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("AlreadyPicked")
+    .addItem("Publish changes now", "revalidateNow")
+    .addToUi();
+}
+
+/** Installable edit trigger — created by setupRevalidateTrigger(). */
+function onSheetEdit(event) {
+  const sheet = event && event.range && event.range.getSheet();
+  if (!sheet || WATCHED_SHEETS.indexOf(sheet.getName()) === -1) return;
+
+  // Filling in a row fires this once per cell. Throttle to one call every few
+  // seconds so a burst of edits does not become a burst of HTTP requests.
+  const cache = CacheService.getScriptCache();
+  if (cache.get("revalidate_sent")) return;
+  cache.put("revalidate_sent", "1", 5);
+
+  notifySite_(slugForEdit_(sheet, event.range));
+}
+
+/** Menu action: always fires, no throttle. */
+function revalidateNow() {
+  const result = notifySite_("");
+  SpreadsheetApp.getActive().toast(
+    result ? "Website refreshed." : "Refresh failed — check the logs.",
+    "AlreadyPicked",
+    5
+  );
+}
+
+function slugForEdit_(sheet, range) {
+  if (sheet.getName() !== "Landing Pages") return "";
+  try {
+    if (range.getRow() < 2) return "";
+    // Read the header row directly rather than via headersFor(), which drops
+    // blank cells and would shift the column index.
+    const headers = sheet
+      .getRange(1, 1, 1, sheet.getLastColumn())
+      .getDisplayValues()[0]
+      .map((value) => String(value).trim().toLowerCase());
+    const column = headers.indexOf("theme_slug");
+    if (column === -1) return "";
+    return String(
+      sheet.getRange(range.getRow(), column + 1).getValue() || ""
+    ).trim();
+  } catch (error) {
+    return "";
+  }
+}
+
+function notifySite_(slug) {
+  const token =
+    PropertiesService.getScriptProperties().getProperty("EXPORT_TOKEN");
+  if (!token) {
+    console.error("EXPORT_TOKEN is not set; cannot refresh the website.");
+    return false;
+  }
+
+  try {
+    const response = UrlFetchApp.fetch(SITE_REVALIDATE_URL, {
+      method: "post",
+      contentType: "application/json",
+      payload: JSON.stringify({ token: token, slug: slug || undefined }),
+      muteHttpExceptions: true,
+    });
+    const code = response.getResponseCode();
+    if (code !== 200) {
+      console.error("Revalidate failed: " + code + " " + response.getContentText());
+      return false;
+    }
+    return true;
+  } catch (error) {
+    console.error("Revalidate request threw: " + error);
+    return false;
+  }
+}
+
+/** Run once from the Apps Script editor to install the edit trigger. */
+function setupRevalidateTrigger() {
+  const existing = ScriptApp.getProjectTriggers();
+  for (let i = 0; i < existing.length; i++) {
+    if (existing[i].getHandlerFunction() === "onSheetEdit") {
+      ScriptApp.deleteTrigger(existing[i]);
+    }
+  }
+
+  ScriptApp.newTrigger("onSheetEdit")
+    .forSpreadsheet(SpreadsheetApp.openById(SPREADSHEET_ID))
+    .onEdit()
+    .create();
+
+  console.log("Edit trigger installed. Sheet changes now refresh the website.");
+}

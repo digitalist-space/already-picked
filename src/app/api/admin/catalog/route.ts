@@ -1,4 +1,5 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
+import { CATALOG_CACHE_TAG } from "@/lib/cache";
 
 const ALLOWED_ACTIONS = new Set([
   "authenticate",
@@ -76,9 +77,11 @@ export async function POST(request: Request) {
     );
   }
 
+  revalidateTag(CATALOG_CACHE_TAG, "max");
   revalidatePath("/");
   revalidatePath("/products");
   revalidatePath("/admin");
+  revalidatePath("/sitemap.xml");
   if (body.slug) {
     revalidatePath(`/${body.slug}`);
     revalidatePath(`/themes/${body.slug}`);

@@ -1,4 +1,5 @@
 import { Product, LandingPage, PageProduct } from "./types";
+import { CATALOG_CACHE_TAG } from "./cache";
 
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const ASSOCIATE_TAG = process.env.AMAZON_ASSOCIATE_TAG || "digitalist0d-20";
@@ -238,7 +239,7 @@ async function fetchTab(
     sheetURL(tabName),
     revalidate === 0
       ? { cache: "no-store" }
-      : { next: { revalidate } }
+      : { next: { revalidate, tags: [CATALOG_CACHE_TAG] } }
   );
   if (!res.ok) {
     console.error(`Failed to fetch tab "${tabName}": ${res.status}`);
