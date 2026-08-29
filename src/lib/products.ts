@@ -100,6 +100,83 @@ function isTruthy(val: string): boolean {
   return v === "true" || v === "yes" || v === "✓" || v === "1";
 }
 
+function normalizedImageKey(imageUrl: string): string {
+  const value = String(imageUrl || "").trim().toLowerCase();
+  if (!value || value.includes("placeholder")) return "";
+  try {
+    const url = new URL(value);
+    // Amazon inserts resize/crop instructions between `._` and the extension.
+    // Removing them makes differently sized copies of the same product image
+    // resolve to one stable image identity.
+    const pathname = url.pathname.replace(/\._[^/]+(?=\.[a-z0-9]+$)/i, "");
+    return `${url.hostname}${pathname}`;
+  } catch {
+    return value.replace(/[?#].*$/, "").replace(/\._[^/]+(?=\.[a-z0-9]+$)/i, "");
+  }
+}
+
+const DEDUPE_STOP_WORDS = new Set([
+  "a", "an", "and", "for", "from", "in", "of", "on", "or", "the", "to",
+  "with", "gift", "gifts", "new", "best", "cute", "set", "pack",
+]);
+
+function titleTokens(title: string): Set<string> {
+  return new Set(
+    String(title || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter((token) => token.length > 1 && !DEDUPE_STOP_WORDS.has(token))
+  );
+}
+
+function titleSimilarity(a: Product, b: Product): number {
+  if (a.category !== b.category) return 0;
+  const left = titleTokens(a.title);
+  const right = titleTokens(b.title);
+  if (left.size < 4 || right.size < 4) return 0;
+  let intersection = 0;
+  for (const token of left) if (right.has(token)) intersection++;
+  return intersection / (left.size + right.size - intersection);
+}
+
+function preferredDuplicate(a: Product, b: Product): Product {
+  if (a.reviewCount !== b.reviewCount) {
+    return a.reviewCount > b.reviewCount ? a : b;
+  }
+  if (a.rating !== b.rating) return a.rating > b.rating ? a : b;
+  return a;
+}
+
+export function dedupeProducts(products: Product[]): Product[] {
+  const exactGroups = new Map<string, Product>();
+  const withoutStableImage: Product[] = [];
+
+  for (const product of products) {
+    const imageKey = normalizedImageKey(product.imageUrl);
+    // ASIN remains useful when the same listing was imported more than once.
+    const key = imageKey ? `image:${imageKey}` : product.asin ? `asin:${product.asin}` : "";
+    if (!key) {
+      withoutStableImage.push(product);
+      continue;
+    }
+    const existing = exactGroups.get(key);
+    exactGroups.set(key, existing ? preferredDuplicate(existing, product) : product);
+  }
+
+  const candidates = [...exactGroups.values(), ...withoutStableImage];
+  const kept: Product[] = [];
+  for (const product of candidates) {
+    const similarIndex = kept.findIndex(
+      (candidate) => titleSimilarity(candidate, product) >= 0.86
+    );
+    if (similarIndex === -1) kept.push(product);
+    else kept[similarIndex] = preferredDuplicate(kept[similarIndex], product);
+  }
+  return kept;
+}
+
 function rowToProduct(
   row: Record<string, string>,
   index: number,
@@ -167,7 +244,26 @@ async function fetchTab(
     console.error(`Failed to fetch tab "${tabName}": ${res.status}`);
     return [];
   }
-  return parseCSV(await res.text());
+  const csv = await res.text();
+  const csvRows = splitCSVIntoRows(csv);
+  const headers = csvRows.length
+    ? parseCSVRow(csvRows[0]).map((header) => header.toLowerCase().trim())
+    : [];
+  const requiredHeaders: Record<string, string[]> = {
+    Products: ["id", "title", "asin", "status"],
+    "Landing Pages": ["theme_slug", "page_title", "status"],
+    "Page Products": ["theme_slug", "asin"],
+  };
+  const missingHeaders = (requiredHeaders[tabName] || []).filter(
+    (header) => !headers.includes(header)
+  );
+  if (missingHeaders.length) {
+    console.error(
+      `Invalid Google Sheet tab "${tabName}": missing header(s) ${missingHeaders.join(", ")}`
+    );
+    return [];
+  }
+  return parseCSV(csv);
 }
 
 function rowToLandingPage(row: Record<string, string>): LandingPage {
@@ -210,9 +306,9 @@ export async function getAllProducts(
   // current Sheet values so archived products disappear immediately.
   const rows = await fetchTab("Products", 0);
   if (rows.length === 0) return SAMPLE_PRODUCTS;
-  return rows
+  return dedupeProducts(rows
     .map((r, i) => rowToProduct(r, i, affiliateTag))
-    .filter((product) => product.status === "active");
+    .filter((product) => product.status === "active"));
 }
 
 export async function getAllProductsForAdmin(): Promise<Product[]> {

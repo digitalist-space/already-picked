@@ -1,24 +1,10 @@
 import Link from "next/link";
 import GuideDirectory from "@/components/GuideDirectory";
 import FeaturedGuideRotator from "@/components/FeaturedGuideRotator";
-import {
-  getLandingPageProducts,
-  getPageProducts,
-  getPublishedLandingPages,
-} from "@/lib/products";
+import { getLandingPageProducts, getPublishedLandingPages } from "@/lib/products";
 
 export default async function Home() {
-  const [pages, pageProducts] = await Promise.all([
-    getPublishedLandingPages(),
-    getPageProducts(),
-  ]);
-  const productCounts = pageProducts.reduce<Record<string, number>>(
-    (counts, item) => {
-      counts[item.themeSlug] = (counts[item.themeSlug] || 0) + 1;
-      return counts;
-    },
-    {}
-  );
+  const pages = await getPublishedLandingPages();
   const guidesWithImages = await Promise.all(
     pages.map(async (page) => {
       const products = await getLandingPageProducts(
@@ -29,7 +15,7 @@ export default async function Home() {
         products.find((product) => product.featured) || products[0];
       return {
         page,
-        productCount: productCounts[page.themeSlug] || 0,
+        productCount: products.length,
         representativeImageUrl: representative?.imageUrl || "",
       };
     })
