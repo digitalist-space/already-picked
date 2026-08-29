@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getProducts } from "@/lib/products";
 import CompareTable from "@/components/CompareTable";
 import Link from "next/link";
+import { getCompareReturnUrl } from "@/lib/compareReturnUrl";
 
 export const metadata: Metadata = {
   title: "Compare Products",
@@ -12,9 +13,10 @@ export const metadata: Metadata = {
 export default async function ComparePage({
   searchParams,
 }: {
-  searchParams: Promise<{ ids?: string }>;
+  searchParams: Promise<{ ids?: string; returnTo?: string | string[] }>;
 }) {
-  const { ids } = await searchParams;
+  const { ids, returnTo } = await searchParams;
+  const returnUrl = getCompareReturnUrl(returnTo);
   const allProducts = await getProducts();
   const idList = ids?.split(",") || [];
   const products = idList
@@ -30,7 +32,7 @@ export default async function ComparePage({
           to Compare&quot; buttons on product cards.
         </p>
         <Link
-          href="/products"
+          href={returnUrl}
           className="mt-6 inline-block rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-700"
         >
           Browse Products
@@ -51,7 +53,7 @@ export default async function ComparePage({
           </p>
         </div>
         <Link
-          href="/products"
+          href={returnUrl}
           className="rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
         >
           Back to Products

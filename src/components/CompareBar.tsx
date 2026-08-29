@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCompare } from "./CompareContext";
 
 export default function CompareBar() {
   const { selected, toggle, clear } = useCompare();
+  const pathname = usePathname();
 
   if (selected.length === 0) return null;
 
@@ -49,12 +52,18 @@ export default function CompareBar() {
             Clear
           </button>
           {selected.length >= 2 && (
-            <a
-              href={`/compare?ids=${selected.map((p) => p.id).join(",")}`}
+            <Link
+              href={{
+                pathname: "/compare",
+                query: {
+                  ids: selected.map((p) => p.id).join(","),
+                  returnTo: pathname,
+                },
+              }}
               className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700"
             >
               Compare {selected.length} Products
-            </a>
+            </Link>
           )}
         </div>
       </div>
