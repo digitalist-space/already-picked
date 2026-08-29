@@ -6,9 +6,20 @@ import {
   getCategories,
   getLandingPage,
   getLandingPageProducts,
+  getPublishedLandingPages,
 } from "@/lib/products";
 import type { LandingPage, Product } from "@/lib/types";
 import { brandedTitle } from "@/lib/site";
+import { buildGuideJsonLd, serializeJsonLd } from "@/lib/structuredData";
+
+// Guides are prerendered at build and refreshed hourly. Edits made through
+// the admin screen call revalidatePath("/<slug>") and land immediately.
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const pages = await getPublishedLandingPages();
+  return pages.map((page) => ({ slug: page.themeSlug }));
+}
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,38 +32,22 @@ function readableList(items: string[]): string {
 }
 
 function productTypes(products: Product[]): string[] {
-  const ignored = new Set([
-    "cleaning",
-    "cleaner",
-    "best",
-    "product",
-    "products",
-    "versatile",
-    "kitchen",
-    "home",
-    "pink",
-    "stuff",
-    "stardrops",
-    "featured",
-  ]);
+  // Only `subcategory` holds real product types ("Cleaning Cloths & Towels").
+  // `tags` is a pipe-separated keyword list, so reading it here produced
+  // sentences like "the collection includes back, essentials, school".
   const counts = new Map<string, number>();
 
   products.forEach((product) => {
-    const candidates = [
-      product.subcategory,
-      ...product.tags.map((tag) => tag.replace(/[-_]/g, " ")),
-    ];
-    candidates.forEach((candidate) => {
-      const value = candidate?.trim().toLowerCase();
-      if (!value || ignored.has(value) || value.length < 4) return;
-      counts.set(value, (counts.get(value) || 0) + 1);
-    });
+    const value = product.subcategory?.trim();
+    if (!value) return;
+    counts.set(value, (counts.get(value) || 0) + 1);
   });
 
   return Array.from(counts)
+    .filter(([, count]) => count >= 2)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, 4)
-    .map(([value]) => value);
+    .map(([value]) => value.toLowerCase());
 }
 
 function buildSeoParagraph(page: LandingPage, products: Product[]): string {
@@ -88,7 +83,9 @@ function buildSeoParagraph(page: LandingPage, products: Product[]): string {
     ? `, with an average customer rating of ${averageRating.toFixed(1)} out of 5`
     : "";
 
-  return `${opening}${typeCopy}${priceCopy}${ratingCopy}. Compare product uses, prices, ratings, and key details to find the option that best fits your cleaning needs and budget.`;
+  const needs = isPinkStuff ? "cleaning needs" : "needs";
+
+  return `${opening}${typeCopy}${priceCopy}${ratingCopy}. Compare product uses, prices, ratings, and key details to find the option that best fits your ${needs} and budget.`;
 }
 
 export async function generateMetadata({
@@ -124,9 +121,16 @@ export default async function GuidePage({ params }: PageProps) {
     page.affiliateTag || undefined
   );
   const categories = getCategories(products);
+  const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
 
   return (
     <div className="guide-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(buildGuideJsonLd(page, products)),
+        }}
+      />
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span aria-hidden="true">/</span>
@@ -158,10 +162,18 @@ export default async function GuidePage({ params }: PageProps) {
           <aside className="guide-hero-copy" aria-labelledby="about-guide">
             <p className="eyebrow">A clearer way to choose</p>
             <h2 id="about-guide">About this guide</h2>
-            <p>{page.aboutCopy || buildSeoParagraph(page, products)}</p>
+            <p>{aboutCopy}</p>
           </aside>
         )}
       </header>
+
+      {page.heroImageUrl && (
+        <section className="guide-about" aria-labelledby="about-guide">
+          <p className="eyebrow">A clearer way to choose</p>
+          <h2 id="about-guide">About this guide</h2>
+          <p>{aboutCopy}</p>
+        </section>
+      )}
 
       <section className="guide-products" aria-labelledby="guide-products-title">
         <div className="section-heading">

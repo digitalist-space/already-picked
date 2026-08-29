@@ -302,9 +302,11 @@ function rowToPageProduct(row: Record<string, string>): PageProduct {
 export async function getAllProducts(
   affiliateTag?: string
 ): Promise<Product[]> {
-  // Product visibility is controlled from the admin screen. Always read the
-  // current Sheet values so archived products disappear immediately.
-  const rows = await fetchTab("Products", 0);
+  // Cached for an hour so guide pages can be prerendered. Visibility changes
+  // made through the admin screen call revalidatePath() and take effect at
+  // once; edits typed straight into the Sheet appear within the hour. The
+  // *ForAdmin readers below stay uncached so the admin screen is always live.
+  const rows = await fetchTab("Products");
   if (rows.length === 0) return SAMPLE_PRODUCTS;
   return dedupeProducts(rows
     .map((r, i) => rowToProduct(r, i, affiliateTag))
@@ -318,7 +320,7 @@ export async function getAllProductsForAdmin(): Promise<Product[]> {
 }
 
 export async function getLandingPages(): Promise<LandingPage[]> {
-  const rows = await fetchTab("Landing Pages", 0);
+  const rows = await fetchTab("Landing Pages");
   return rows.map(rowToLandingPage).filter((p) => p.themeSlug);
 }
 
@@ -340,7 +342,7 @@ export async function getLandingPage(
 }
 
 export async function getPageProducts(): Promise<PageProduct[]> {
-  const rows = await fetchTab("Page Products", 0);
+  const rows = await fetchTab("Page Products");
   return rows.map(rowToPageProduct).filter((pp) => pp.themeSlug && pp.asin);
 }
 

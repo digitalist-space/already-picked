@@ -880,3 +880,23 @@ select {
     padding: 2rem 1.4rem;
   }
 }
+
+.guide-about {
+  max-width: 44rem;
+  margin: -1.5rem 0 3rem;
+}
+
+.guide-about h2 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.guide-about > p:last-child {
+  margin-top: 0.9rem;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
