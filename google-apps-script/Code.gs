@@ -377,10 +377,13 @@ function jsonResponse(value) {
 // the hour is up. These helpers close that gap.
 //
 // One-time setup:
-//   1. Paste this file into the Apps Script editor (Extensions > Apps Script).
+//   1. Open this project from https://script.google.com/home/my — it is the
+//      one deployed as the Web App the site posts to, so do NOT paste this
+//      into a new project or the deployment URL will change.
 //   2. Run setupRevalidateTrigger() once and approve the permission prompt.
-//   3. Reload the spreadsheet — an "AlreadyPicked" menu appears with a manual
-//      "Publish changes now" option for when you want to force a refresh.
+//   3. To force a refresh by hand, run revalidateNow(). If this project is
+//      bound to the spreadsheet, reloading the sheet also gives you an
+//      "AlreadyPicked" menu with a "Publish changes now" item.
 // ---------------------------------------------------------------------------
 
 const SITE_REVALIDATE_URL = "https://www.alreadypicked.com/api/revalidate";
@@ -407,14 +410,26 @@ function onSheetEdit(event) {
   notifySite_(slugForEdit_(sheet, event.range));
 }
 
-/** Menu action: always fires, no throttle. */
+/**
+ * Force a refresh, no throttle. Run it from the "AlreadyPicked" menu if this
+ * script is bound to the spreadsheet, or straight from the Apps Script editor
+ * (pick revalidateNow in the function dropdown and press Run) if it is a
+ * standalone project — in which case there is no active spreadsheet to toast.
+ */
 function revalidateNow() {
   const result = notifySite_("");
-  SpreadsheetApp.getActive().toast(
-    result ? "Website refreshed." : "Refresh failed — check the logs.",
-    "AlreadyPicked",
-    5
-  );
+  const message = result
+    ? "Website refreshed."
+    : "Refresh failed — check the execution log.";
+
+  console.log(message);
+  try {
+    const active = SpreadsheetApp.getActive();
+    if (active) active.toast(message, "AlreadyPicked", 5);
+  } catch (error) {
+    // Standalone script: no bound spreadsheet, the log above is the feedback.
+  }
+  return result;
 }
 
 function slugForEdit_(sheet, range) {
