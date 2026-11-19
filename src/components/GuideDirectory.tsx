@@ -208,11 +208,11 @@ export default function GuideDirectory({
                 key={item}
                 className={category === item ? "active" : ""}
                 onClick={() => {
-                setCategory(category === item ? "" : item);
-                document.getElementById("guides")?.scrollIntoView({
-                  behavior: "smooth",
-                });
-              }}
+                  setCategory(category === item ? "" : item);
+                  document.getElementById("guides")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
               >
                 <span>{item}</span>
                 <small>
