@@ -61,24 +61,14 @@ export default function GuideDirectory({
 
   return (
     <div>
-      <div className="category-overview">
-        {categories.map((item) => {
-          const count = guides.filter(
-            ({ page }) => page.primaryCategory === item
-          ).length;
-          return (
-            <button
-              key={item}
-              className={category === item ? "active" : ""}
-              onClick={() => setCategory(category === item ? "" : item)}
-            >
-              <span>{item}</span>
-              <small>
-                {count} guide{count === 1 ? "" : "s"}
-              </small>
-            </button>
-          );
-        })}
+      <div className="directory-heading">
+        <div>
+          <p className="eyebrow">Explore our research</p>
+          <h2>Buying guides</h2>
+        </div>
+        <p>
+          {filtered.length} guide{filtered.length === 1 ? "" : "s"}
+        </p>
       </div>
 
       <div className="guide-toolbar">
@@ -135,16 +125,6 @@ export default function GuideDirectory({
             {item}
           </button>
         ))}
-      </div>
-
-      <div className="directory-heading">
-        <div>
-          <p className="eyebrow">Explore our research</p>
-          <h2>Buying guides</h2>
-        </div>
-        <p>
-          {filtered.length} guide{filtered.length === 1 ? "" : "s"}
-        </p>
       </div>
 
       {filtered.length ? (
@@ -211,6 +191,38 @@ export default function GuideDirectory({
           </button>
         </div>
       )}
+
+      <section className="browse-categories" aria-labelledby="browse-category-heading">
+        <div className="directory-intro">
+          <p className="eyebrow">Start with what you need</p>
+          <h2 id="browse-category-heading">Browse by category</h2>
+          <p>Choose a topic, then narrow the guides by budget or product type.</p>
+        </div>
+        <div className="category-overview">
+          {categories.map((item) => {
+            const count = guides.filter(
+              ({ page }) => page.primaryCategory === item
+            ).length;
+            return (
+              <button
+                key={item}
+                className={category === item ? "active" : ""}
+                onClick={() => {
+                  setCategory(category === item ? "" : item);
+                  document.getElementById("guides")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                <span>{item}</span>
+                <small>
+                  {count} guide{count === 1 ? "" : "s"}
+                </small>
+              </button>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

@@ -62,21 +62,23 @@ export default async function Home() {
       </section>
 
       <section className="home-directory" id="guides">
-        <div className="directory-intro">
-          <p className="eyebrow">Start with what you need</p>
-          <h2>Browse by category</h2>
-          <p>Choose a topic, then narrow the guides by budget or product type.</p>
-        </div>
         {guides.length ? (
           <GuideDirectory guides={guides} />
         ) : (
-          <div className="empty-directory">
-            <p>Published buying guides will appear here.</p>
-            <span>
-              Change a landing page&apos;s status to “published” in Google
-              Sheets when it is ready.
-            </span>
-          </div>
+          <>
+            <div className="directory-intro">
+              <p className="eyebrow">Start with what you need</p>
+              <h2>Browse by category</h2>
+              <p>Choose a topic, then narrow the guides by budget or product type.</p>
+            </div>
+            <div className="empty-directory">
+              <p>Published buying guides will appear here.</p>
+              <span>
+                Change a landing page&apos;s status to “published” in Google
+                Sheets when it is ready.
+              </span>
+            </div>
+          </>
         )}
       </section>
     </>
