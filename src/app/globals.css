@@ -348,6 +348,23 @@ select {
   max-width: 38rem;
 }
 
+.home-directory .directory-heading {
+  margin-top: 0;
+}
+
+.category-pills + .guide-grid,
+.category-pills + .empty-directory {
+  margin-top: 2rem;
+}
+
+.browse-categories {
+  margin-top: 4.8rem;
+}
+
+.browse-categories .category-overview {
+  margin-bottom: 0;
+}
+
 .directory-intro h2,
 .directory-heading h2,
 .section-heading h2 {
