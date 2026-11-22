@@ -129,28 +129,23 @@ export default function GuideDirectory({
 
       {filtered.length ? (
         <div className="guide-grid">
-          {filtered.map(({ page, productCount, representativeImageUrl }, index) => (
+          {filtered.map(({ page, productCount, representativeImageUrl }) => (
             <article className="guide-card" key={page.themeSlug}>
               <Link
                 href={`/${page.themeSlug}`}
                 className="guide-card-media"
                 aria-label={`Explore ${page.pageTitle}`}
               >
-                {page.heroImageUrl ? (
+                {page.heroImageUrl || representativeImageUrl ? (
                   // Remote sources vary by workbook; a regular img keeps them flexible.
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={page.heroImageUrl} alt="" />
+                  <img
+                    src={page.heroImageUrl || representativeImageUrl}
+                    alt=""
+                  />
                 ) : (
-                  <div className={`guide-art guide-art-${(index % 3) + 1}`}>
-                    {representativeImageUrl && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        className="guide-art-img"
-                        src={representativeImageUrl}
-                        alt=""
-                      />
-                    )}
-                    <span>{page.primaryCategory || "Product guide"}</span>
+                  <div className="guide-media-placeholder" aria-hidden="true">
+                    <span>AlreadyPicked</span>
                   </div>
                 )}
               </Link>

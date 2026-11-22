@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { LandingPage, PageProduct, Product } from "@/lib/types";
 
 type Notice = { kind: "success" | "error"; message: string } | null;
 const ADMIN_SESSION_KEY = "themecart-admin-key";
+const subscribeToClient = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export default function AdminCatalog({
   pages,
@@ -17,22 +20,28 @@ export default function AdminCatalog({
   pageProducts: PageProduct[];
 }) {
   const router = useRouter();
-  const [adminKey, setAdminKey] = useState("");
-  const [sessionUnlocked, setSessionUnlocked] = useState(false);
+  const isClient = useSyncExternalStore(
+    subscribeToClient,
+    getClientSnapshot,
+    getServerSnapshot
+  );
+  const savedAdminKey = isClient
+    ? sessionStorage.getItem(ADMIN_SESSION_KEY) || ""
+    : "";
+  const [adminKeyOverride, setAdminKeyOverride] = useState<string | null>(null);
+  const [sessionUnlockedOverride, setSessionUnlockedOverride] = useState<
+    boolean | null
+  >(null);
+  const adminKey = adminKeyOverride ?? savedAdminKey;
+  const sessionUnlocked = sessionUnlockedOverride ?? Boolean(savedAdminKey);
   const [search, setSearch] = useState("");
   const [guide, setGuide] = useState("");
   const [pending, setPending] = useState("");
   const [notice, setNotice] = useState<Notice>(null);
 
-  useEffect(() => {
-    const savedKey = sessionStorage.getItem(ADMIN_SESSION_KEY) || "";
-    setAdminKey(savedKey);
-    setSessionUnlocked(Boolean(savedKey));
-  }, []);
-
   function lockAdmin() {
-    setAdminKey("");
-    setSessionUnlocked(false);
+    setAdminKeyOverride("");
+    setSessionUnlockedOverride(false);
     sessionStorage.removeItem(ADMIN_SESSION_KEY);
   }
 
@@ -53,7 +62,7 @@ export default function AdminCatalog({
       const result = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(result.error || "The key could not be verified.");
       sessionStorage.setItem(ADMIN_SESSION_KEY, adminKey);
-      setSessionUnlocked(true);
+      setSessionUnlockedOverride(true);
       setNotice({ kind: "success", message: "Admin unlocked for this browser tab." });
     } catch (error) {
       lockAdmin();
@@ -109,7 +118,7 @@ export default function AdminCatalog({
       const result = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(result.error || "The change failed.");
       sessionStorage.setItem(ADMIN_SESSION_KEY, adminKey);
-      setSessionUnlocked(true);
+      setSessionUnlockedOverride(true);
       setNotice({ kind: "success", message: successMessage });
       window.setTimeout(() => router.refresh(), 250);
     } catch (error) {
@@ -132,8 +141,8 @@ export default function AdminCatalog({
               type="password"
               value={adminKey}
               onChange={(event) => {
-                setAdminKey(event.target.value);
-                setSessionUnlocked(false);
+                setAdminKeyOverride(event.target.value);
+                setSessionUnlockedOverride(false);
               }}
               placeholder="Enter the private admin key"
               className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-2.5 font-normal outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"

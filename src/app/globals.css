@@ -344,6 +344,54 @@ select {
   background: var(--paper);
 }
 
+.trust-strip {
+  display: grid;
+  max-width: 80rem;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 2rem;
+  grid-template-columns: 12rem 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.trust-strip-heading h2 {
+  margin-top: 0.25rem;
+  font-size: 1.35rem;
+  font-weight: 760;
+  letter-spacing: -0.025em;
+}
+
+.trust-rules {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.trust-rules div {
+  min-width: 0;
+  border-left: 1px solid #dce3df;
+  padding-left: 1rem;
+}
+
+.trust-rules strong,
+.trust-rules span {
+  display: block;
+}
+
+.trust-rules strong {
+  color: var(--forest-dark);
+  font-size: 0.82rem;
+}
+
+.trust-rules span {
+  margin-top: 0.2rem;
+  color: var(--ink-muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
 .directory-intro {
   max-width: 38rem;
 }
@@ -524,58 +572,30 @@ select {
 
 .guide-card-media {
   display: block;
-  height: 12.5rem;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #e8f1ed;
+  border-bottom: 1px solid #edf0ed;
+  background: #f2f3f0;
 }
 
 .guide-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  box-sizing: border-box;
+  padding: 1rem;
+  object-fit: contain;
 }
 
-.guide-art {
-  position: relative;
+.guide-media-placeholder {
   display: flex;
   height: 100%;
-  align-items: end;
-  padding: 1rem;
-  background:
-    radial-gradient(circle at 70% 35%, rgb(255 255 255 / 82%) 0 3.2rem, transparent 3.25rem),
-    linear-gradient(135deg, #d8ece3, #a8cdbd);
-}
-
-.guide-art-img {
-  position: absolute;
-  top: 35%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  width: 5.4rem;
-  height: 5.4rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.guide-art-2 {
-  background:
-    radial-gradient(circle at 68% 32%, rgb(255 255 255 / 84%) 0 3.2rem, transparent 3.25rem),
-    linear-gradient(135deg, #f5d8cf, #ef987e);
-}
-
-.guide-art-3 {
-  background:
-    radial-gradient(circle at 68% 32%, rgb(255 255 255 / 82%) 0 3.2rem, transparent 3.25rem),
-    linear-gradient(135deg, #dfe6dd, #b7c5b0);
-}
-
-.guide-art span {
-  border-radius: 999px;
-  padding: 0.38rem 0.65rem;
-  background: rgb(255 255 255 / 84%);
+  align-items: center;
+  justify-content: center;
   color: var(--forest);
-  font-size: 0.68rem;
-  font-weight: 750;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .guide-card-body {
@@ -832,6 +852,14 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .guide-hero {
     grid-template-columns: 1fr;
   }
@@ -867,6 +895,14 @@ select {
 
   .home-directory {
     padding: 3.5rem 1.25rem;
+  }
+
+  .trust-strip {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .trust-rules {
+    grid-template-columns: 1fr;
   }
 
   .category-overview,

@@ -23,7 +23,11 @@ export default async function ProductsPage() {
           price, rating or category.
         </p>
       </div>
-      <ProductGrid products={products} categories={categories} />
+      <ProductGrid
+        products={products}
+        categories={categories}
+        enforceQualityByDefault
+      />
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import { Product, LandingPage, PageProduct } from "./types";
 import { CATALOG_CACHE_TAG } from "./cache";
+import { applyGuideEditorialMetadata } from "./guideMetadata";
+import { qualifyingProducts } from "./productQuality";
+import { preferredSourceTitle } from "./productPresentation";
 
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const ASSOCIATE_TAG = process.env.AMAZON_ASSOCIATE_TAG || "digitalist0d-20";
@@ -189,9 +192,15 @@ function rowToProduct(
     normalizedStatus === "hidden" || normalizedStatus === "archived"
       ? normalizedStatus
       : "active";
+  const title = preferredSourceTitle(
+    row.title,
+    row.raw_title,
+    row.name,
+    row.product_name
+  );
   return {
     id: row.id || `product-${index}`,
-    title: row.title || "Untitled Product",
+    title,
     description: row.description || "",
     price: parsePrice(row.price),
     originalPrice: row.original_price
@@ -220,6 +229,7 @@ function rowToProduct(
       },
       {} as Record<string, string>
     ),
+    shortHook: row.short_hook?.trim() || undefined,
     status,
   };
 }
@@ -269,7 +279,7 @@ async function fetchTab(
 
 function rowToLandingPage(row: Record<string, string>): LandingPage {
   const status = row.status?.toLowerCase().trim();
-  return {
+  return applyGuideEditorialMetadata({
     themeSlug: row.theme_slug || "",
     pageTitle: row.page_title || "",
     seoTitle: row.seo_title || "",
@@ -284,7 +294,7 @@ function rowToLandingPage(row: Record<string, string>): LandingPage {
     heroImageUrl: row.hero_image_url || "",
     createdDate: row.created_date || "",
     updatedDate: row.updated_date || "",
-  };
+  });
 }
 
 function rowToPageProduct(row: Record<string, string>): PageProduct {
@@ -381,6 +391,13 @@ export async function getLandingPageProducts(
       });
       return matched;
     }, []);
+}
+
+export async function getQualifyingLandingPageProducts(
+  slug: string,
+  affiliateTag?: string
+): Promise<Product[]> {
+  return qualifyingProducts(await getLandingPageProducts(slug, affiliateTag));
 }
 
 // Legacy compat — used by homepage and compare page

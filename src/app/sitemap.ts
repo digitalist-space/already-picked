@@ -1,9 +1,28 @@
 import type { MetadataRoute } from "next";
-import { getPublishedLandingPages } from "@/lib/products";
+import {
+  getPublishedLandingPages,
+  getQualifyingLandingPageProducts,
+} from "@/lib/products";
 import { SITE_URL } from "@/lib/site";
+import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guides = await getPublishedLandingPages();
+  const publicGuides = (
+    await Promise.all(
+      guides.map(async (guide) => ({
+        guide,
+        productCount: (
+          await getQualifyingLandingPageProducts(
+            guide.themeSlug,
+            guide.affiliateTag || undefined
+          )
+        ).length,
+      }))
+    )
+  )
+    .filter(({ productCount }) => productCount >= MIN_HOMEPAGE_PRODUCTS)
+    .map(({ guide }) => guide);
 
   return [
     {
@@ -16,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    ...guides.map((guide) => ({
+    ...publicGuides.map((guide) => ({
       url: `${SITE_URL}/${guide.themeSlug}`,
       lastModified: guide.updatedDate || guide.createdDate || undefined,
       changeFrequency: "weekly" as const,

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import GuideDirectory from "@/components/GuideDirectory";
 import FeaturedGuideRotator from "@/components/FeaturedGuideRotator";
-import { getLandingPageProducts, getPublishedLandingPages } from "@/lib/products";
+import {
+  getPublishedLandingPages,
+  getQualifyingLandingPageProducts,
+} from "@/lib/products";
+import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
 
 export default async function Home() {
   const pages = await getPublishedLandingPages();
   const guidesWithImages = await Promise.all(
     pages.map(async (page) => {
-      const products = await getLandingPageProducts(
+      const products = await getQualifyingLandingPageProducts(
         page.themeSlug,
         page.affiliateTag
       );
@@ -20,7 +24,10 @@ export default async function Home() {
       };
     })
   );
-  const featuredGuides = guidesWithImages.map(
+  const publicGuides = guidesWithImages.filter(
+    ({ productCount }) => productCount >= MIN_HOMEPAGE_PRODUCTS
+  );
+  const featuredGuides = publicGuides.map(
     ({ page, productCount, representativeImageUrl }) => ({
       slug: page.themeSlug,
       title: page.pageTitle,
@@ -29,7 +36,7 @@ export default async function Home() {
       imageUrl: page.heroImageUrl || representativeImageUrl,
     })
   );
-  const guides = guidesWithImages;
+  const guides = publicGuides;
 
   return (
     <>
@@ -59,6 +66,31 @@ export default async function Home() {
         {featuredGuides.length > 0 && (
           <FeaturedGuideRotator guides={featuredGuides} />
         )}
+      </section>
+
+      <section className="trust-strip" aria-labelledby="how-we-pick-title">
+        <div className="trust-strip-heading">
+          <p className="eyebrow">Editorial standards</p>
+          <h2 id="how-we-pick-title">How We Pick</h2>
+        </div>
+        <div className="trust-rules">
+          <div>
+            <strong>3.8★+ rating</strong>
+            <span>A consistent quality floor</span>
+          </div>
+          <div>
+            <strong>Verified review volume</strong>
+            <span>Enough buyer feedback to compare</span>
+          </div>
+          <div>
+            <strong>Strict price caps</strong>
+            <span>Every pick stays within the guide budget</span>
+          </div>
+          <div>
+            <strong>Practical attributes</strong>
+            <span>Materials, fit, features, and included extras</span>
+          </div>
+        </div>
       </section>
 
       <section className="home-directory" id="guides">

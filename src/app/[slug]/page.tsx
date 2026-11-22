@@ -7,8 +7,12 @@ import {
   getLandingPage,
   getLandingPageProducts,
   getPublishedLandingPages,
+  getQualifyingLandingPageProducts,
 } from "@/lib/products";
 import type { LandingPage, Product } from "@/lib/types";
+import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
+import { pluralizedCount } from "@/lib/productPresentation";
+import { qualifyingProducts } from "@/lib/productQuality";
 import { brandedTitle } from "@/lib/site";
 import { buildGuideJsonLd, serializeJsonLd } from "@/lib/structuredData";
 
@@ -18,7 +22,20 @@ export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const pages = await getPublishedLandingPages();
-  return pages.map((page) => ({ slug: page.themeSlug }));
+  const publicPages = await Promise.all(
+    pages.map(async (page) => ({
+      page,
+      qualifyingCount: (
+        await getQualifyingLandingPageProducts(
+          page.themeSlug,
+          page.affiliateTag || undefined
+        )
+      ).length,
+    }))
+  );
+  return publicPages
+    .filter(({ qualifyingCount }) => qualifyingCount >= MIN_HOMEPAGE_PRODUCTS)
+    .map(({ page }) => ({ slug: page.themeSlug }));
 }
 
 type PageProps = {
@@ -94,6 +111,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getLandingPage(slug);
   if (!page || page.status !== "published") return {};
+  const qualifying = qualifyingProducts(
+    await getLandingPageProducts(slug, page.affiliateTag || undefined)
+  );
+  if (qualifying.length < MIN_HOMEPAGE_PRODUCTS) return {};
 
   return {
     title: {
@@ -116,10 +137,12 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!page || page.status !== "published") notFound();
 
-  const products = await getLandingPageProducts(
+  const allProducts = await getLandingPageProducts(
     slug,
     page.affiliateTag || undefined
   );
+  const products = qualifyingProducts(allProducts);
+  if (products.length < MIN_HOMEPAGE_PRODUCTS) notFound();
   const categories = getCategories(products);
   const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
 
@@ -145,10 +168,7 @@ export default async function GuidePage({ params }: PageProps) {
           <h1>{page.pageHeading || page.pageTitle}</h1>
           {page.introCopy && <p>{page.introCopy}</p>}
           <div className="guide-facts">
-            <span>
-              {products.length} product{products.length === 1 ? "" : "s"}{" "}
-              reviewed
-            </span>
+            <span>{pluralizedCount(products.length, "product")} reviewed</span>
             {page.updatedDate && <span>Updated {page.updatedDate}</span>}
           </div>
         </div>
@@ -189,7 +209,13 @@ export default async function GuidePage({ params }: PageProps) {
             <p>No products have been added to this guide yet.</p>
           </div>
         ) : (
-          <ProductGrid products={products} categories={categories} />
+          <ProductGrid
+            products={allProducts}
+            categories={categories}
+            enforceQualityByDefault
+            guideProductTypesOnly
+            enableEditorialBadges
+          />
         )}
       </section>
     </div>

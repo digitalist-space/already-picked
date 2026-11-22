@@ -3,6 +3,18 @@
 import Image from "next/image";
 import { Product } from "@/lib/types";
 import { useCompare } from "./CompareContext";
+import {
+  editorialProductTitle,
+  getProductHook,
+  pluralizedCount,
+} from "@/lib/productPresentation";
+import type { EditorialBadge } from "@/lib/productQuality";
+
+const editorialBadgeLabels: Record<EditorialBadge, string> = {
+  "best-overall": "★ Best Overall",
+  "best-value": "💰 Best Value",
+  "most-popular": "🔥 Most Popular",
+};
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -42,7 +54,7 @@ function formatReviewCount(count: number): string {
   if (count >= 1000) {
     return `${(count / 1000).toFixed(count >= 10000 ? 0 : 1)}K reviews`;
   }
-  return `${count} reviews`;
+  return pluralizedCount(count, "review");
 }
 
 function DiscountBadge({
@@ -56,22 +68,35 @@ function DiscountBadge({
     ((originalPrice - price) / originalPrice) * 100
   );
   return (
-    <span className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
+    <span className="absolute bottom-3 left-3 z-10 rounded-full bg-red-500 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
       -{discount}%
     </span>
   );
 }
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  editorialBadge,
+}: {
+  product: Product;
+  editorialBadge?: EditorialBadge;
+}) {
   const { toggle, isSelected, selected } = useCompare();
   const checked = isSelected(product.id);
   const atLimit = selected.length >= 4 && !checked;
+  const displayTitle = editorialProductTitle(product.title);
+  const productHook = getProductHook(product);
 
   return (
     <div
       className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-gray-800 ${checked ? "border-indigo-500 ring-2 ring-indigo-500/20" : "border-gray-200 dark:border-gray-700"}`}
     >
       <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-700">
+        {editorialBadge && (
+          <span className="absolute left-3 top-3 z-10 rounded-full bg-emerald-700 px-3 py-1.5 text-xs font-bold text-white shadow-md ring-1 ring-white/50">
+            {editorialBadgeLabels[editorialBadge]}
+          </span>
+        )}
         {product.originalPrice && product.originalPrice > product.price && (
           <DiscountBadge
             price={product.price}
@@ -98,12 +123,18 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.subcategory && ` · ${product.subcategory}`}
         </span>
 
-        <h3 className="mb-2 line-clamp-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
-          {product.title}
+        <h3
+          className="mb-2 line-clamp-2 text-sm font-semibold text-gray-900 dark:text-gray-100"
+          title={product.title}
+        >
+          {displayTitle}
         </h3>
 
-        <p className="mb-3 line-clamp-2 text-xs text-gray-500 dark:text-gray-400">
-          {product.description}
+        <p
+          className="mb-3 line-clamp-2 text-xs font-medium leading-5 text-gray-600 dark:text-gray-300"
+          title={productHook}
+        >
+          {productHook}
         </p>
 
         <div className="mb-2">

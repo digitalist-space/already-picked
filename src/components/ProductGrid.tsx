@@ -4,6 +4,12 @@ import { useState, useMemo } from "react";
 import { Product, FilterState } from "@/lib/types";
 import ProductCard from "./ProductCard";
 import SearchAndFilters from "./SearchAndFilters";
+import { pluralizedCount } from "@/lib/productPresentation";
+import {
+  EditorialBadge,
+  qualifyingProducts,
+  selectEditorialPicks,
+} from "@/lib/productQuality";
 
 type ProductType = {
   name: string;
@@ -11,8 +17,29 @@ type ProductType = {
   imageUrl: string;
 };
 
-function productTypeFor(product: Product) {
-  if (product.subcategory?.trim()) return product.subcategory.trim();
+const productTypeAliases = new Map<string, string>([
+  ["cleaning cloths and towels", "Cleaning Cloths & Towels"],
+  ["cleaning cloths & towels", "Cleaning Cloths & Towels"],
+  ["coasters and table decor", "Coasters & Table Decor"],
+  ["coasters & table decor", "Coasters & Table Decor"],
+  ["trays bowls and baskets", "Trays, Bowls & Baskets"],
+  ["trays, bowls & baskets", "Trays, Bowls & Baskets"],
+]);
+
+function normalizeProductTypeLabel(label: string): string {
+  const normalized = label
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/\s+and\s+/gi, " & ")
+    .toLocaleLowerCase();
+  return productTypeAliases.get(normalized) || label.trim();
+}
+
+function productTypeFor(product: Product, subcategoryOnly = false) {
+  if (product.subcategory?.trim()) {
+    return normalizeProductTypeLabel(product.subcategory);
+  }
+  if (subcategoryOnly) return "";
 
   const text = `${product.title} ${product.category}`.toLowerCase();
   const has = (...terms: string[]) => terms.some((term) => text.includes(term));
@@ -40,7 +67,11 @@ function productTypeFor(product: Product) {
   return "";
 }
 
-function filterAndSort(products: Product[], filters: FilterState): Product[] {
+function filterAndSort(
+  products: Product[],
+  filters: FilterState,
+  subcategoryOnly: boolean
+): Product[] {
   let result = [...products];
 
   if (filters.search) {
@@ -51,7 +82,7 @@ function filterAndSort(products: Product[], filters: FilterState): Product[] {
         p.description.toLowerCase().includes(q) ||
         p.tags.some((t) => t.toLowerCase().includes(q)) ||
         p.category.toLowerCase().includes(q) ||
-        productTypeFor(p).toLowerCase().includes(q)
+        productTypeFor(p, subcategoryOnly).toLowerCase().includes(q)
     );
   }
 
@@ -60,7 +91,9 @@ function filterAndSort(products: Product[], filters: FilterState): Product[] {
   }
 
   if (filters.subcategory) {
-    result = result.filter((p) => productTypeFor(p) === filters.subcategory);
+    result = result.filter(
+      (p) => productTypeFor(p, subcategoryOnly) === filters.subcategory
+    );
   }
 
   if (filters.minPrice !== null) {
@@ -99,10 +132,17 @@ function filterAndSort(products: Product[], filters: FilterState): Product[] {
 export default function ProductGrid({
   products,
   categories,
+  enforceQualityByDefault = false,
+  guideProductTypesOnly = false,
+  enableEditorialBadges = false,
 }: {
   products: Product[];
   categories: string[];
+  enforceQualityByDefault?: boolean;
+  guideProductTypesOnly?: boolean;
+  enableEditorialBadges?: boolean;
 }) {
+  const [showExcluded, setShowExcluded] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     search: "",
     category: "",
@@ -113,16 +153,30 @@ export default function ProductGrid({
     sort: "featured",
   });
 
+  const qualifying = useMemo(() => qualifyingProducts(products), [products]);
+  const visiblePool =
+    enforceQualityByDefault && !showExcluded ? qualifying : products;
+  const excludedCount = products.length - qualifying.length;
+  const editorialBadges = useMemo(() => {
+    if (!enableEditorialBadges) return new Map<string, EditorialBadge>();
+    return new Map(
+      selectEditorialPicks(products).map(({ productId, badge }) => [
+        productId,
+        badge,
+      ])
+    );
+  }, [enableEditorialBadges, products]);
+
   const filtered = useMemo(
-    () => filterAndSort(products, filters),
-    [products, filters]
+    () => filterAndSort(visiblePool, filters, guideProductTypesOnly),
+    [filters, guideProductTypesOnly, visiblePool]
   );
 
   const productTypes = useMemo<ProductType[]>(() => {
     const grouped = new Map<string, ProductType>();
 
-    products.forEach((product) => {
-      const name = productTypeFor(product);
+    visiblePool.forEach((product) => {
+      const name = productTypeFor(product, guideProductTypesOnly);
       if (!name) return;
       const existing = grouped.get(name);
       if (existing) {
@@ -132,10 +186,22 @@ export default function ProductGrid({
       }
     });
 
-    return [...grouped.values()]
-      .filter((type) => type.count >= 2)
+    const types = [...grouped.values()];
+    const typedProductCount = types.reduce((sum, type) => sum + type.count, 0);
+    const dominantCount = Math.max(0, ...types.map((type) => type.count));
+    const hasDominantType =
+      guideProductTypesOnly &&
+      typedProductCount > 0 &&
+      dominantCount / typedProductCount >= 0.3;
+
+    return types
+      .filter(
+        (type) =>
+          type.count >= 2 &&
+          (!hasDominantType || type.count / typedProductCount >= 0.1)
+      )
       .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-  }, [products]);
+  }, [guideProductTypesOnly, visiblePool]);
 
   return (
     <>
@@ -192,7 +258,7 @@ export default function ProductGrid({
                       {type.name}
                     </span>
                     <span className="mt-1 block text-xs text-gray-500">
-                      {type.count} product{type.count === 1 ? "" : "s"}
+                      {pluralizedCount(type.count, "product")}
                     </span>
                   </span>
                 </button>
@@ -208,6 +274,23 @@ export default function ProductGrid({
         onFilterChange={setFilters}
         resultCount={filtered.length}
       />
+
+      {enforceQualityByDefault && excludedCount > 0 && (
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+          <span>
+            {showExcluded
+              ? "Showing every linked product, including items below our review standards."
+              : `${pluralizedCount(excludedCount, "product")} hidden for having a rating below 3.8 or fewer than 5 reviews.`}
+          </span>
+          <button
+            type="button"
+            onClick={() => setShowExcluded((current) => !current)}
+            className="font-semibold underline decoration-amber-400 underline-offset-4"
+          >
+            {showExcluded ? "Hide excluded products" : "Show excluded products"}
+          </button>
+        </div>
+      )}
 
       {filtered.length === 0 ? (
         <div className="py-20 text-center">
@@ -234,7 +317,11 @@ export default function ProductGrid({
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              editorialBadge={editorialBadges.get(product.id)}
+            />
           ))}
         </div>
       )}

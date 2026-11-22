@@ -15,6 +15,7 @@ export interface Product {
   featured: boolean;
   dateAdded: string;
   specs: Record<string, string>;
+  shortHook?: string;
   editorialNote?: string;
   status?: "active" | "hidden" | "archived";
 }

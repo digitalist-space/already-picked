@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { Product } from "@/lib/types";
+import {
+  editorialProductTitle,
+  pluralizedCount,
+} from "@/lib/productPresentation";
 
 function StarRatingSmall({ rating }: { rating: number }) {
   return (
@@ -24,8 +28,10 @@ function StarRatingSmall({ rating }: { rating: number }) {
 }
 
 function formatReviewCount(count: number): string {
-  if (count >= 1000) return `${(count / 1000).toFixed(count >= 10000 ? 0 : 1)}K`;
-  return String(count);
+  if (count >= 1000) {
+    return `${(count / 1000).toFixed(count >= 10000 ? 0 : 1)}K reviews`;
+  }
+  return pluralizedCount(count, "review");
 }
 
 function getBestValue(
@@ -45,6 +51,7 @@ export default function CompareTable({ products }: { products: Product[] }) {
 
   const bestPrice = getBestValue(products, (p) => p.price, "low");
   const bestRating = getBestValue(products, (p) => p.rating, "high");
+  const mostReviews = getBestValue(products, (p) => p.reviewCount, "high");
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700">
@@ -70,8 +77,11 @@ export default function CompareTable({ products }: { products: Product[] }) {
                       sizes="112px"
                     />
                   </div>
-                  <span className="line-clamp-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
-                    {p.title}
+                  <span
+                    className="line-clamp-2 text-sm font-semibold text-gray-900 dark:text-gray-100"
+                    title={p.title}
+                  >
+                    {editorialProductTitle(p.title)}
                   </span>
                 </div>
               </th>
@@ -115,12 +125,19 @@ export default function CompareTable({ products }: { products: Product[] }) {
               <td key={p.id} className="p-4 text-center">
                 <div className="flex flex-col items-center gap-1">
                   <StarRatingSmall rating={p.rating} />
-                  <span className="text-xs text-gray-400">
-                    {formatReviewCount(p.reviewCount)} reviews
+                  <span
+                    className={`text-xs ${mostReviews.includes(p.id) ? "font-bold text-emerald-700 dark:text-emerald-400" : "text-gray-400"}`}
+                  >
+                    {formatReviewCount(p.reviewCount)}
                   </span>
                   {bestRating.includes(p.id) && (
-                    <span className="text-xs font-medium text-green-600 dark:text-green-400">
+                    <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
                       Highest Rated
+                    </span>
+                  )}
+                  {mostReviews.includes(p.id) && (
+                    <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-bold text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300">
+                      Most Reviews
                     </span>
                   )}
                 </div>
