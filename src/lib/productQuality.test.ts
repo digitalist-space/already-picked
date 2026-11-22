@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   isQualifyingProduct,
+  pinEditorialPicks,
   priceCapFromSlug,
   resolveGuideMaxPrice,
   selectEditorialPicks,
@@ -191,8 +192,56 @@ test("editorial picks select three distinct deterministic winners", () => {
 
   assert.deepEqual(selectEditorialPicks(products), [
     { productId: "overall", badge: "best-overall" },
-    { productId: "value", badge: "best-value" },
     { productId: "popular", badge: "most-popular" },
+    { productId: "value", badge: "best-value" },
+  ]);
+});
+
+test("featured guide order pins distinct winners before display order", () => {
+  const products = [
+    pickProduct("first", 4, 20, 12),
+    pickProduct("value", 4.4, 40, 8),
+    pickProduct("third", 4, 30, 14),
+    pickProduct("popular", 4.3, 2000, 11),
+    pickProduct("fifth", 4.1, 60, 13),
+    pickProduct("overall", 4.9, 500, 15),
+    pickProduct("seventh", 4.1, 50, 10),
+    pickProduct("eighth", 4, 40, 9),
+  ];
+  const picks = selectEditorialPicks(products);
+
+  assert.equal(new Set(picks.map((pick) => pick.productId)).size, 3);
+  assert.deepEqual(
+    pinEditorialPicks(products, picks).map((item) => item.id),
+    [
+      "overall",
+      "popular",
+      "value",
+      "first",
+      "third",
+      "fifth",
+      "seventh",
+      "eighth",
+    ]
+  );
+});
+
+test("overlapping badge candidates advance to distinct runners-up", () => {
+  const products = [
+    pickProduct("overall", 4.9, 500, 30),
+    pickProduct("value-and-popular", 4.5, 5000, 6),
+    pickProduct("popular-runner-up", 4.4, 3000, 18),
+    pickProduct("four", 4.1, 80, 20),
+    pickProduct("five", 4.0, 70, 21),
+    pickProduct("six", 4.2, 60, 22),
+    pickProduct("seven", 4.1, 50, 23),
+    pickProduct("eight", 4.0, 40, 24),
+  ];
+
+  assert.deepEqual(selectEditorialPicks(products), [
+    { productId: "overall", badge: "best-overall" },
+    { productId: "popular-runner-up", badge: "most-popular" },
+    { productId: "value-and-popular", badge: "best-value" },
   ]);
 });
 
@@ -215,7 +264,7 @@ test("editorial picks require eight qualifying products and respect candidate fl
 
   assert.deepEqual(selectEditorialPicks(products), [
     { productId: "overall", badge: "best-overall" },
-    { productId: "value", badge: "best-value" },
     { productId: "popular", badge: "most-popular" },
+    { productId: "value", badge: "best-value" },
   ]);
 });

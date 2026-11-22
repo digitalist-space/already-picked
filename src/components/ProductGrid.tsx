@@ -7,33 +7,18 @@ import SearchAndFilters from "./SearchAndFilters";
 import { pluralizedCount } from "@/lib/productPresentation";
 import {
   EditorialBadge,
+  EditorialPick,
+  pinEditorialPicks,
   qualifyingProducts,
   selectEditorialPicks,
 } from "@/lib/productQuality";
+import { normalizeProductTypeLabel } from "@/lib/categoryTaxonomy";
 
 type ProductType = {
   name: string;
   count: number;
   imageUrl: string;
 };
-
-const productTypeAliases = new Map<string, string>([
-  ["cleaning cloths and towels", "Cleaning Cloths & Towels"],
-  ["cleaning cloths & towels", "Cleaning Cloths & Towels"],
-  ["coasters and table decor", "Coasters & Table Decor"],
-  ["coasters & table decor", "Coasters & Table Decor"],
-  ["trays bowls and baskets", "Trays, Bowls & Baskets"],
-  ["trays, bowls & baskets", "Trays, Bowls & Baskets"],
-]);
-
-function normalizeProductTypeLabel(label: string): string {
-  const normalized = label
-    .trim()
-    .replace(/\s+/g, " ")
-    .replace(/\s+and\s+/gi, " & ")
-    .toLocaleLowerCase();
-  return productTypeAliases.get(normalized) || label.trim();
-}
 
 function productTypeFor(product: Product, subcategoryOnly = false) {
   if (product.subcategory?.trim()) {
@@ -70,7 +55,8 @@ function productTypeFor(product: Product, subcategoryOnly = false) {
 function filterAndSort(
   products: Product[],
   filters: FilterState,
-  subcategoryOnly: boolean
+  subcategoryOnly: boolean,
+  editorialPicks: EditorialPick[] = []
 ): Product[] {
   let result = [...products];
 
@@ -122,7 +108,19 @@ function filterAndSort(
       break;
     case "featured":
     default:
-      result.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+      if (editorialPicks.length) {
+        const hasCustomFilters = Boolean(
+          filters.search ||
+            filters.category ||
+            filters.subcategory ||
+            filters.minPrice !== null ||
+            filters.maxPrice !== null ||
+            filters.minRating !== null
+        );
+        if (!hasCustomFilters) result = pinEditorialPicks(result, editorialPicks);
+      } else {
+        result.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+      }
       break;
   }
 
@@ -164,19 +162,33 @@ export default function ProductGrid({
   const visiblePool =
     enforceQualityByDefault && !showExcluded ? qualifying : products;
   const excludedCount = products.length - qualifying.length;
-  const editorialBadges = useMemo(() => {
-    if (!enableEditorialBadges) return new Map<string, EditorialBadge>();
-    return new Map(
-      selectEditorialPicks(products, { maxPrice }).map(({ productId, badge }) => [
+  const editorialPicks = useMemo(
+    () =>
+      enableEditorialBadges
+        ? selectEditorialPicks(products, { maxPrice })
+        : [],
+    [enableEditorialBadges, maxPrice, products]
+  );
+  const editorialBadges = useMemo(
+    () =>
+      new Map<string, EditorialBadge>(
+        editorialPicks.map(({ productId, badge }) => [
         productId,
         badge,
-      ])
-    );
-  }, [enableEditorialBadges, maxPrice, products]);
+        ])
+      ),
+    [editorialPicks]
+  );
 
   const filtered = useMemo(
-    () => filterAndSort(visiblePool, filters, guideProductTypesOnly),
-    [filters, guideProductTypesOnly, visiblePool]
+    () =>
+      filterAndSort(
+        visiblePool,
+        filters,
+        guideProductTypesOnly,
+        editorialPicks
+      ),
+    [editorialPicks, filters, guideProductTypesOnly, visiblePool]
   );
 
   const productTypes = useMemo<ProductType[]>(() => {

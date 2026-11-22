@@ -93,6 +93,12 @@ const GUIDE_EDITORIAL_METADATA: Record<string, GuideEditorialMetadata> = {
     summary:
       "Compact LEGO sets and hands-on gifts under $20, selected for build value, age-appropriate play, and gift-friendly packaging.",
   },
+  "book-lover-gifts-and-reading-accessories-under-15": {
+    title: "Book Lover Gifts & Reading Accessories Under $15",
+    category: "Gifts & Stocking Stuffers",
+    summary:
+      "Rechargeable book lights, page holders, and reading accessories under $15, filtered for 3.8★+ ratings and reliable review volume.",
+  },
 };
 
 export function applyGuideEditorialMetadata(page: LandingPage): LandingPage {

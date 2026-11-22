@@ -117,5 +117,36 @@ export function selectEditorialPicks(
     picks.push({ productId: mostPopular.id, badge: "most-popular" });
   }
 
-  return picks;
+  const badgeOrder: EditorialBadge[] = [
+    "best-overall",
+    "most-popular",
+    "best-value",
+  ];
+  return badgeOrder.flatMap((badge) =>
+    picks.filter((pick) => pick.badge === badge)
+  );
+}
+
+export function pinEditorialPicks(
+  products: Product[],
+  picks: EditorialPick[]
+): Product[] {
+  if (!picks.length) return [...products];
+
+  const rank = new Map(
+    picks.map((pick, index) => [pick.productId, index] as const)
+  );
+  return products
+    .map((product, index) => ({ product, index }))
+    .sort((a, b) => {
+      const aRank = rank.get(a.product.id);
+      const bRank = rank.get(b.product.id);
+      if (aRank !== undefined || bRank !== undefined) {
+        if (aRank === undefined) return 1;
+        if (bRank === undefined) return -1;
+        return aRank - bRank;
+      }
+      return a.index - b.index;
+    })
+    .map(({ product }) => product);
 }

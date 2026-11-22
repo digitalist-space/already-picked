@@ -18,6 +18,7 @@ import {
 } from "@/lib/productQuality";
 import { brandedTitle } from "@/lib/site";
 import { buildGuideJsonLd, serializeJsonLd } from "@/lib/structuredData";
+import { normalizeProductTypeLabel } from "@/lib/categoryTaxonomy";
 
 // Guides are prerendered at build and refreshed hourly. Edits made through
 // the admin screen call revalidatePath("/<slug>") and land immediately.
@@ -59,7 +60,9 @@ function productTypes(products: Product[]): string[] {
   const counts = new Map<string, number>();
 
   products.forEach((product) => {
-    const value = product.subcategory?.trim();
+    const value = product.subcategory
+      ? normalizeProductTypeLabel(product.subcategory)
+      : "";
     if (!value) return;
     counts.set(value, (counts.get(value) || 0) + 1);
   });
@@ -152,6 +155,33 @@ export default async function GuidePage({ params }: PageProps) {
   if (products.length < MIN_HOMEPAGE_PRODUCTS) notFound();
   const categories = getCategories(products);
   const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
+  const relatedGuides = (
+    await Promise.all(
+      (await getPublishedLandingPages())
+        .filter((candidate) => candidate.themeSlug !== page.themeSlug)
+        .map(async (candidate) => ({
+          page: candidate,
+          productCount: (
+            await getQualifyingLandingPageProducts(
+              candidate.themeSlug,
+              candidate.affiliateTag || undefined,
+              candidate.maxPrice
+            )
+          ).length,
+        }))
+    )
+  )
+    .filter(({ productCount }) => productCount >= MIN_HOMEPAGE_PRODUCTS)
+    .sort((a, b) => {
+      const aSameCategory = a.page.primaryCategory === page.primaryCategory;
+      const bSameCategory = b.page.primaryCategory === page.primaryCategory;
+      return (
+        Number(bSameCategory) - Number(aSameCategory) ||
+        b.productCount - a.productCount ||
+        a.page.pageTitle.localeCompare(b.page.pageTitle)
+      );
+    })
+    .slice(0, 3);
 
   return (
     <div className="guide-page">
@@ -227,6 +257,33 @@ export default async function GuidePage({ params }: PageProps) {
           />
         )}
       </section>
+
+      {relatedGuides.length > 0 && (
+        <section className="related-guides" aria-labelledby="related-guides-title">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Keep exploring</p>
+              <h2 id="related-guides-title">Related Buying Guides</h2>
+            </div>
+            <p>More focused shortlists selected with the same editorial standards.</p>
+          </div>
+          <div className="related-guides-grid">
+            {relatedGuides.map(({ page: related, productCount }) => (
+              <article className="related-guide-card" key={related.themeSlug}>
+                <span>{related.primaryCategory}</span>
+                <h3>
+                  <Link href={`/${related.themeSlug}`}>{related.pageTitle}</Link>
+                </h3>
+                <p>{related.introCopy || related.metaDescription}</p>
+                <div>
+                  <strong>{pluralizedCount(productCount, "product")}</strong>
+                  <Link href={`/${related.themeSlug}`}>View guide →</Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

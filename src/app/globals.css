@@ -829,6 +829,85 @@ select {
   background: var(--paper);
 }
 
+.related-guides {
+  margin-top: 4rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.related-guides h2 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
+  font-weight: 780;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.related-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.related-guide-card {
+  display: flex;
+  min-height: 15rem;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 1.25rem;
+  background: #fff;
+  box-shadow: 0 0.6rem 1.5rem rgb(26 60 49 / 6%);
+}
+
+.related-guide-card > span {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  background: var(--mint);
+  color: var(--forest);
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.related-guide-card h3 {
+  margin-top: 0.9rem;
+  font-size: 1.15rem;
+  font-weight: 760;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.related-guide-card h3 a:hover,
+.related-guide-card > div a:hover {
+  color: var(--forest);
+}
+
+.related-guide-card > p {
+  margin-top: 0.65rem;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.related-guide-card > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: #5d6b64;
+  font-size: 0.76rem;
+}
+
+.related-guide-card > div a {
+  color: var(--forest);
+  font-weight: 740;
+}
+
 @media (max-width: 900px) {
   .home-hero {
     padding-top: 2.5rem;
@@ -861,6 +940,10 @@ select {
   }
 
   .guide-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .related-guides-grid {
     grid-template-columns: 1fr;
   }
 
