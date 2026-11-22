@@ -407,6 +407,50 @@ export async function getQualifyingLandingPageProducts(
   });
 }
 
+export type PublishedGuideDirectoryEntry = {
+  page: LandingPage;
+  productCount: number;
+};
+
+/**
+ * Build public-guide counts from one catalog snapshot.
+ *
+ * Guide index and related-guide views only need the qualifying count, not a
+ * separately fetched product collection for every landing page. Reading the
+ * three tabs once avoids an N+1 fan-out during static generation.
+ */
+export async function getPublishedGuideDirectory(): Promise<
+  PublishedGuideDirectoryEntry[]
+> {
+  const [pages, products, pageProducts] = await Promise.all([
+    getPublishedLandingPages(),
+    getAllProducts(),
+    getPageProducts(),
+  ]);
+  const productsByAsin = new Map(
+    products.flatMap((product) =>
+      product.asin ? ([[product.asin, product]] as const) : []
+    )
+  );
+  const productsByGuide = new Map<string, Product[]>();
+
+  for (const mapping of pageProducts) {
+    const product = productsByAsin.get(mapping.asin);
+    if (!product) continue;
+    const guideProducts = productsByGuide.get(mapping.themeSlug) || [];
+    guideProducts.push(product);
+    productsByGuide.set(mapping.themeSlug, guideProducts);
+  }
+
+  return pages.map((page) => ({
+    page,
+    productCount: qualifyingProducts(
+      productsByGuide.get(page.themeSlug) || [],
+      { maxPrice: page.maxPrice ?? priceCapFromSlug(page.themeSlug) }
+    ).length,
+  }));
+}
+
 // Legacy compat — used by homepage and compare page
 export async function getProducts(): Promise<Product[]> {
   return getAllProducts();

@@ -6,8 +6,7 @@ import {
   getCategories,
   getLandingPage,
   getLandingPageProducts,
-  getPublishedLandingPages,
-  getQualifyingLandingPageProducts,
+  getPublishedGuideDirectory,
 } from "@/lib/products";
 import type { LandingPage, Product } from "@/lib/types";
 import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
@@ -25,21 +24,9 @@ import { normalizeProductTypeLabel } from "@/lib/categoryTaxonomy";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  const pages = await getPublishedLandingPages();
-  const publicPages = await Promise.all(
-    pages.map(async (page) => ({
-      page,
-      qualifyingCount: (
-        await getQualifyingLandingPageProducts(
-          page.themeSlug,
-          page.affiliateTag || undefined,
-          page.maxPrice
-        )
-      ).length,
-    }))
-  );
+  const publicPages = await getPublishedGuideDirectory();
   return publicPages
-    .filter(({ qualifyingCount }) => qualifyingCount >= MIN_HOMEPAGE_PRODUCTS)
+    .filter(({ productCount }) => productCount >= MIN_HOMEPAGE_PRODUCTS)
     .map(({ page }) => ({ slug: page.themeSlug }));
 }
 
@@ -155,22 +142,8 @@ export default async function GuidePage({ params }: PageProps) {
   if (products.length < MIN_HOMEPAGE_PRODUCTS) notFound();
   const categories = getCategories(products);
   const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
-  const relatedGuides = (
-    await Promise.all(
-      (await getPublishedLandingPages())
-        .filter((candidate) => candidate.themeSlug !== page.themeSlug)
-        .map(async (candidate) => ({
-          page: candidate,
-          productCount: (
-            await getQualifyingLandingPageProducts(
-              candidate.themeSlug,
-              candidate.affiliateTag || undefined,
-              candidate.maxPrice
-            )
-          ).length,
-        }))
-    )
-  )
+  const relatedGuides = (await getPublishedGuideDirectory())
+    .filter(({ page: candidate }) => candidate.themeSlug !== page.themeSlug)
     .filter(({ productCount }) => productCount >= MIN_HOMEPAGE_PRODUCTS)
     .sort((a, b) => {
       const aSameCategory = a.page.primaryCategory === page.primaryCategory;
