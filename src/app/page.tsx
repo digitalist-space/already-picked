@@ -13,7 +13,8 @@ export default async function Home() {
     pages.map(async (page) => {
       const products = await getQualifyingLandingPageProducts(
         page.themeSlug,
-        page.affiliateTag
+        page.affiliateTag,
+        page.maxPrice
       );
       const representative =
         products.find((product) => product.featured) || products[0];

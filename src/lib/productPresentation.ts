@@ -127,6 +127,26 @@ function hookFromSpecs(specs: Record<string, string>): string {
   return selected.map(([key, value]) => `${key}: ${value}`).join(" · ");
 }
 
+function matchesGuideDescription(value: string, guideDescription?: string): boolean {
+  if (!guideDescription?.trim()) return false;
+  const normalize = (text: string) =>
+    cleanHookText(text)
+      .toLocaleLowerCase()
+      .replace(/[^\p{L}\p{N}\s]/gu, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  const candidate = normalize(value);
+  const guide = normalize(guideDescription);
+  if (!candidate || !guide) return false;
+  if (candidate === guide) return true;
+
+  const sharedPrefixLength = Math.min(candidate.length, guide.length);
+  return (
+    sharedPrefixLength >= 40 &&
+    (candidate.startsWith(guide) || guide.startsWith(candidate))
+  );
+}
+
 export function getProductHook(product: Product): string {
   const candidates = [
     product.shortHook || "",
@@ -136,6 +156,7 @@ export function getProductHook(product: Product): string {
   ];
 
   for (const candidate of candidates) {
+    if (matchesGuideDescription(candidate, product.guideDescription)) continue;
     const cleaned = removeRepeatedTitle(candidate, product.title);
     if (cleaned && cleaned.toLocaleLowerCase() !== editorialProductTitle(product.title).toLocaleLowerCase()) {
       return clampHook(cleaned);

@@ -77,26 +77,23 @@ function DiscountBadge({
 export default function ProductCard({
   product,
   editorialBadge,
+  guideDescription,
 }: {
   product: Product;
   editorialBadge?: EditorialBadge;
+  guideDescription?: string;
 }) {
   const { toggle, isSelected, selected } = useCompare();
   const checked = isSelected(product.id);
   const atLimit = selected.length >= 4 && !checked;
   const displayTitle = editorialProductTitle(product.title);
-  const productHook = getProductHook(product);
+  const productHook = getProductHook({ ...product, guideDescription });
 
   return (
     <div
       className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-gray-800 ${checked ? "border-indigo-500 ring-2 ring-indigo-500/20" : "border-gray-200 dark:border-gray-700"}`}
     >
       <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-700">
-        {editorialBadge && (
-          <span className="absolute left-3 top-3 z-10 rounded-full bg-emerald-700 px-3 py-1.5 text-xs font-bold text-white shadow-md ring-1 ring-white/50">
-            {editorialBadgeLabels[editorialBadge]}
-          </span>
-        )}
         {product.originalPrice && product.originalPrice > product.price && (
           <DiscountBadge
             price={product.price}
@@ -118,10 +115,16 @@ export default function ProductCard({
       </div>
 
       <div className="flex flex-1 flex-col p-4">
-        <span className="mb-1 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-          {product.category}
-          {product.subcategory && ` · ${product.subcategory}`}
-        </span>
+        <div className="mb-2 flex flex-wrap items-center gap-1.5">
+          <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-wider text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
+            {product.subcategory || product.category}
+          </span>
+          {editorialBadge && (
+            <span className="rounded-full bg-emerald-700 px-2.5 py-1 text-[0.68rem] font-bold text-white shadow-sm">
+              {editorialBadgeLabels[editorialBadge]}
+            </span>
+          )}
+        </div>
 
         <h3
           className="mb-2 line-clamp-2 text-sm font-semibold text-gray-900 dark:text-gray-100"

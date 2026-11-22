@@ -135,12 +135,16 @@ export default function ProductGrid({
   enforceQualityByDefault = false,
   guideProductTypesOnly = false,
   enableEditorialBadges = false,
+  maxPrice = null,
+  guideDescription,
 }: {
   products: Product[];
   categories: string[];
   enforceQualityByDefault?: boolean;
   guideProductTypesOnly?: boolean;
   enableEditorialBadges?: boolean;
+  maxPrice?: number | null;
+  guideDescription?: string;
 }) {
   const [showExcluded, setShowExcluded] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
@@ -153,19 +157,22 @@ export default function ProductGrid({
     sort: "featured",
   });
 
-  const qualifying = useMemo(() => qualifyingProducts(products), [products]);
+  const qualifying = useMemo(
+    () => qualifyingProducts(products, { maxPrice }),
+    [maxPrice, products]
+  );
   const visiblePool =
     enforceQualityByDefault && !showExcluded ? qualifying : products;
   const excludedCount = products.length - qualifying.length;
   const editorialBadges = useMemo(() => {
     if (!enableEditorialBadges) return new Map<string, EditorialBadge>();
     return new Map(
-      selectEditorialPicks(products).map(({ productId, badge }) => [
+      selectEditorialPicks(products, { maxPrice }).map(({ productId, badge }) => [
         productId,
         badge,
       ])
     );
-  }, [enableEditorialBadges, products]);
+  }, [enableEditorialBadges, maxPrice, products]);
 
   const filtered = useMemo(
     () => filterAndSort(visiblePool, filters, guideProductTypesOnly),
@@ -280,7 +287,7 @@ export default function ProductGrid({
           <span>
             {showExcluded
               ? "Showing every linked product, including items below our review standards."
-              : `${pluralizedCount(excludedCount, "product")} hidden for having a rating below 3.8 or fewer than 5 reviews.`}
+              : `${pluralizedCount(excludedCount, "product")} hidden for having a rating below 3.8, fewer than 5 reviews${maxPrice === null ? "" : `, or a price above $${maxPrice}`}.`}
           </span>
           <button
             type="button"
@@ -321,6 +328,7 @@ export default function ProductGrid({
               key={product.id}
               product={product}
               editorialBadge={editorialBadges.get(product.id)}
+              guideDescription={guideDescription}
             />
           ))}
         </div>

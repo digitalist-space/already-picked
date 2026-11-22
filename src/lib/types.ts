@@ -17,6 +17,7 @@ export interface Product {
   specs: Record<string, string>;
   shortHook?: string;
   editorialNote?: string;
+  guideDescription?: string;
   status?: "active" | "hidden" | "archived";
 }
 
@@ -34,6 +35,7 @@ export interface LandingPage {
   heroImageUrl: string;
   createdDate: string;
   updatedDate: string;
+  maxPrice?: number | null;
 }
 
 export interface PageProduct {

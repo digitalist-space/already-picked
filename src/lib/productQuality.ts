@@ -14,15 +14,38 @@ export type EditorialPick = {
   badge: EditorialBadge;
 };
 
-export function isQualifyingProduct(product: Product): boolean {
+export type ProductQualityOptions = {
+  maxPrice?: number | null;
+};
+
+export function priceCapFromSlug(slug: string): number | null {
+  const match = slug.match(/-under-(10|15|20|25|50)(?:-|$)/i);
+  return match ? Number(match[1]) : null;
+}
+
+export function resolveGuideMaxPrice(
+  slug: string,
+  explicitMaxPrice?: number | null
+): number | null {
+  return explicitMaxPrice ?? priceCapFromSlug(slug);
+}
+
+export function isQualifyingProduct(
+  product: Product,
+  { maxPrice = null }: ProductQualityOptions = {}
+): boolean {
   return (
     product.rating >= MIN_PRODUCT_RATING &&
-    product.reviewCount >= MIN_PRODUCT_REVIEWS
+    product.reviewCount >= MIN_PRODUCT_REVIEWS &&
+    (maxPrice === null || product.price <= maxPrice)
   );
 }
 
-export function qualifyingProducts(products: Product[]): Product[] {
-  return products.filter(isQualifyingProduct);
+export function qualifyingProducts(
+  products: Product[],
+  options: ProductQualityOptions = {}
+): Product[] {
+  return products.filter((product) => isQualifyingProduct(product, options));
 }
 
 function compareId(a: Product, b: Product): number {
@@ -33,8 +56,11 @@ function overallScore(product: Product): number {
   return product.rating * 0.8 + Math.log10(product.reviewCount + 1) * 0.2;
 }
 
-export function selectEditorialPicks(products: Product[]): EditorialPick[] {
-  const eligible = qualifyingProducts(products);
+export function selectEditorialPicks(
+  products: Product[],
+  options: ProductQualityOptions = {}
+): EditorialPick[] {
+  const eligible = qualifyingProducts(products, options);
   if (eligible.length < MIN_EDITORIAL_BADGE_PRODUCTS) return [];
 
   const picks: EditorialPick[] = [];

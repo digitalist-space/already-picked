@@ -1,7 +1,7 @@
 import { Product, LandingPage, PageProduct } from "./types";
 import { CATALOG_CACHE_TAG } from "./cache";
 import { applyGuideEditorialMetadata } from "./guideMetadata";
-import { qualifyingProducts } from "./productQuality";
+import { priceCapFromSlug, qualifyingProducts } from "./productQuality";
 import { preferredSourceTitle } from "./productPresentation";
 
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
@@ -294,6 +294,7 @@ function rowToLandingPage(row: Record<string, string>): LandingPage {
     heroImageUrl: row.hero_image_url || "",
     createdDate: row.created_date || "",
     updatedDate: row.updated_date || "",
+    maxPrice: row.max_price ? parsePrice(row.max_price) : null,
   });
 }
 
@@ -395,9 +396,12 @@ export async function getLandingPageProducts(
 
 export async function getQualifyingLandingPageProducts(
   slug: string,
-  affiliateTag?: string
+  affiliateTag?: string,
+  explicitMaxPrice?: number | null
 ): Promise<Product[]> {
-  return qualifyingProducts(await getLandingPageProducts(slug, affiliateTag));
+  return qualifyingProducts(await getLandingPageProducts(slug, affiliateTag), {
+    maxPrice: explicitMaxPrice ?? priceCapFromSlug(slug),
+  });
 }
 
 // Legacy compat — used by homepage and compare page

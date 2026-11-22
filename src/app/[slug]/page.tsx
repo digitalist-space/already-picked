@@ -12,7 +12,10 @@ import {
 import type { LandingPage, Product } from "@/lib/types";
 import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
 import { pluralizedCount } from "@/lib/productPresentation";
-import { qualifyingProducts } from "@/lib/productQuality";
+import {
+  qualifyingProducts,
+  resolveGuideMaxPrice,
+} from "@/lib/productQuality";
 import { brandedTitle } from "@/lib/site";
 import { buildGuideJsonLd, serializeJsonLd } from "@/lib/structuredData";
 
@@ -28,7 +31,8 @@ export async function generateStaticParams() {
       qualifyingCount: (
         await getQualifyingLandingPageProducts(
           page.themeSlug,
-          page.affiliateTag || undefined
+          page.affiliateTag || undefined,
+          page.maxPrice
         )
       ).length,
     }))
@@ -111,8 +115,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getLandingPage(slug);
   if (!page || page.status !== "published") return {};
+  const maxPrice = resolveGuideMaxPrice(page.themeSlug, page.maxPrice);
   const qualifying = qualifyingProducts(
-    await getLandingPageProducts(slug, page.affiliateTag || undefined)
+    await getLandingPageProducts(slug, page.affiliateTag || undefined),
+    { maxPrice }
   );
   if (qualifying.length < MIN_HOMEPAGE_PRODUCTS) return {};
 
@@ -141,7 +147,8 @@ export default async function GuidePage({ params }: PageProps) {
     slug,
     page.affiliateTag || undefined
   );
-  const products = qualifyingProducts(allProducts);
+  const maxPrice = resolveGuideMaxPrice(page.themeSlug, page.maxPrice);
+  const products = qualifyingProducts(allProducts, { maxPrice });
   if (products.length < MIN_HOMEPAGE_PRODUCTS) notFound();
   const categories = getCategories(products);
   const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
@@ -215,6 +222,8 @@ export default async function GuidePage({ params }: PageProps) {
             enforceQualityByDefault
             guideProductTypesOnly
             enableEditorialBadges
+            maxPrice={maxPrice}
+            guideDescription={page.introCopy}
           />
         )}
       </section>

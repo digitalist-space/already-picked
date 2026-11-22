@@ -15,7 +15,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         productCount: (
           await getQualifyingLandingPageProducts(
             guide.themeSlug,
-            guide.affiliateTag || undefined
+            guide.affiliateTag || undefined,
+            guide.maxPrice
           )
         ).length,
       }))

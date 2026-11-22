@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   isQualifyingProduct,
+  priceCapFromSlug,
+  resolveGuideMaxPrice,
   selectEditorialPicks,
 } from "./productQuality.ts";
 import {
@@ -21,6 +23,21 @@ test("public quality thresholds include their boundary values", () => {
   assert.equal(isQualifyingProduct(product), true);
   assert.equal(isQualifyingProduct({ ...product, rating: 3.79 }), false);
   assert.equal(isQualifyingProduct({ ...product, reviewCount: 4 }), false);
+});
+
+test("guide price caps exclude price drift and prefer explicit limits", () => {
+  assert.equal(
+    isQualifyingProduct({ ...product, price: 20 } as Product, { maxPrice: 20 }),
+    true
+  );
+  assert.equal(
+    isQualifyingProduct({ ...product, price: 20.01 } as Product, {
+      maxPrice: 20,
+    }),
+    false
+  );
+  assert.equal(priceCapFromSlug("small-lego-and-creative-gifts-under-20"), 20);
+  assert.equal(resolveGuideMaxPrice("gifts-under-20", 15), 15);
 });
 
 test("product titles remove keyword tails while preserving the raw-title tooltip source", () => {
@@ -96,6 +113,22 @@ test("product hooks use key specs before the guide-level editorial fallback", ()
       specs: { Players: "2–4", "Age Range": "8+", Color: "Blue" },
     } as Product),
     "Players: 2–4 · Age Range: 8+"
+  );
+});
+
+test("product hooks suppress repeated guide descriptions", () => {
+  const guideDescription =
+    "Compact LEGO sets and hands-on gifts under $20, selected for build value and age-appropriate play.";
+
+  assert.equal(
+    getProductHook({
+      title: "LEGO Creator Turtle",
+      description: `${guideDescription} Compare prices and ratings.`,
+      guideDescription,
+      specs: { Pieces: "124", "Age Range": "7+" },
+      editorialNote: "Guide-level fallback copy.",
+    } as Product),
+    "Age Range: 7+ · Pieces: 124"
   );
 });
 
