@@ -67,7 +67,7 @@ export default function RootLayout({
         </Script>
         {/* Header */}
         <header className="site-header">
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link href="/" className="site-brand">
               <span className="brand-mark">A</span>
               <div>

@@ -1,6 +1,11 @@
 import type { Product } from "./types";
 
 const MAX_PRODUCT_HOOK_LENGTH = 85;
+const BOILERPLATE_HOOK_SUFFIXES = [
+  /offers compact hands-on creative building play\.?$/i,
+  /for quick group play\.?$/i,
+  /for everyday tabletop protection\.?$/i,
+];
 
 export function preferredSourceTitle(
   sheetTitle: string,
@@ -104,6 +109,13 @@ function clampHook(value: string): string {
   return `${clipped || value.slice(0, MAX_PRODUCT_HOOK_LENGTH - 1).trim()}…`;
 }
 
+function isUsableHook(value: string): boolean {
+  const cleaned = cleanHookText(value);
+  if (!cleaned || /^[a-z]/.test(cleaned)) return false;
+  if (cleaned.split(/\s+/).filter(Boolean).length < 4) return false;
+  return !BOILERPLATE_HOOK_SUFFIXES.some((pattern) => pattern.test(cleaned));
+}
+
 function hookFromSpecs(specs: Record<string, string>): string {
   const preferredKeys = [
     /player|people|participant/i,
@@ -147,7 +159,7 @@ function matchesGuideDescription(value: string, guideDescription?: string): bool
   );
 }
 
-export function getProductHook(product: Product): string {
+export function getProductHook(product: Product): string | undefined {
   const candidates = [
     product.shortHook || "",
     product.description?.split(/(?<=[.!?])\s+/)[0] || "",
@@ -156,16 +168,15 @@ export function getProductHook(product: Product): string {
   ];
 
   for (const candidate of candidates) {
+    if (!isUsableHook(candidate)) continue;
     if (matchesGuideDescription(candidate, product.guideDescription)) continue;
     const cleaned = removeRepeatedTitle(candidate, product.title);
-    if (cleaned && cleaned.toLocaleLowerCase() !== editorialProductTitle(product.title).toLocaleLowerCase()) {
+    if (
+      isUsableHook(cleaned) &&
+      cleaned.toLocaleLowerCase() !==
+        editorialProductTitle(product.title).toLocaleLowerCase()
+    ) {
       return clampHook(cleaned);
     }
   }
-
-  if (product.subcategory?.trim()) {
-    return clampHook(`A practical ${product.subcategory.trim().toLocaleLowerCase()} pick`);
-  }
-
-  return "A practical pick for everyday use";
 }

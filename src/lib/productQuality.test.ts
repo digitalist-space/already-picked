@@ -132,6 +132,26 @@ test("product hooks suppress repeated guide descriptions", () => {
   );
 });
 
+test("product hooks suppress lowercase fragments and boilerplate", () => {
+  assert.equal(
+    getProductHook({
+      title: "LEGO Botanical Daisies",
+      description: "offers compact hands-on creative building play.",
+      shortHook: "tiny fragment",
+      specs: {},
+    } as Product),
+    undefined
+  );
+  assert.equal(
+    getProductHook({
+      title: "Family Card Game",
+      description: "Fast rounds for quick group play.",
+      specs: { Players: "2–6", "Age Range": "8+" },
+    } as Product),
+    "Players: 2–6 · Age Range: 8+"
+  );
+});
+
 test("product hooks clean, de-duplicate, and clamp description fallbacks", () => {
   const hook = getProductHook({
     title: "Wooden Brain Teaser",

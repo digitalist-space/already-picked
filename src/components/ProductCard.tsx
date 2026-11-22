@@ -133,12 +133,14 @@ export default function ProductCard({
           {displayTitle}
         </h3>
 
-        <p
-          className="mb-3 line-clamp-2 text-xs font-medium leading-5 text-gray-600 dark:text-gray-300"
-          title={productHook}
-        >
-          {productHook}
-        </p>
+        {productHook && (
+          <p
+            className="mb-3 line-clamp-2 text-xs font-medium leading-5 text-gray-600 dark:text-gray-300"
+            title={productHook}
+          >
+            {productHook}
+          </p>
+        )}
 
         <div className="mb-2">
           <StarRating rating={product.rating} />
