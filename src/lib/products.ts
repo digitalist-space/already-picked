@@ -3,6 +3,7 @@ import { CATALOG_CACHE_TAG } from "./cache";
 import { applyGuideEditorialMetadata } from "./guideMetadata";
 import { priceCapFromSlug, qualifyingProducts } from "./productQuality";
 import { preferredSourceTitle } from "./productPresentation";
+import { curateGuide } from "./guideCuration";
 import { normalizeProductTypeLabel } from "./categoryTaxonomy";
 
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
@@ -20,7 +21,7 @@ export function normalizeCategory(value: string): string {
     return "Home Cleaning";
   }
 
-  return category || "Other";
+  return normalizeProductTypeLabel(category || "Other");
 }
 
 function buildAffiliateUrl(asin: string, tag?: string): string {
@@ -202,6 +203,7 @@ function rowToProduct(
   return {
     id: row.id || `product-${index}`,
     title,
+    brand: row.brand?.trim() || undefined,
     description: row.description || "",
     price: parsePrice(row.price),
     originalPrice: row.original_price
@@ -315,7 +317,8 @@ function rowToPageProduct(row: Record<string, string>): PageProduct {
 // --- Public API ---
 
 export async function getAllProducts(
-  affiliateTag?: string
+  affiliateTag?: string,
+  preserveGuideCandidates = false
 ): Promise<Product[]> {
   // Cached for an hour so guide pages can be prerendered. Visibility changes
   // made through the admin screen call revalidatePath() and take effect at
@@ -323,9 +326,9 @@ export async function getAllProducts(
   // *ForAdmin readers below stay uncached so the admin screen is always live.
   const rows = await fetchTab("Products");
   if (rows.length === 0) return SAMPLE_PRODUCTS;
-  return dedupeProducts(rows
-    .map((r, i) => rowToProduct(r, i, affiliateTag))
-    .filter((product) => product.status === "active"));
+  const active = rows.map((r, i) => rowToProduct(r, i, affiliateTag))
+    .filter((product) => product.status === "active");
+  return preserveGuideCandidates ? active : dedupeProducts(active);
 }
 
 export async function getAllProductsForAdmin(): Promise<Product[]> {
@@ -371,7 +374,7 @@ export async function getLandingPageProducts(
   affiliateTag?: string
 ): Promise<Product[]> {
   const [allProducts, pageProducts] = await Promise.all([
-    getAllProducts(affiliateTag),
+    getAllProducts(affiliateTag, true),
     getPageProducts(),
   ]);
 
@@ -402,9 +405,9 @@ export async function getQualifyingLandingPageProducts(
   affiliateTag?: string,
   explicitMaxPrice?: number | null
 ): Promise<Product[]> {
-  return qualifyingProducts(await getLandingPageProducts(slug, affiliateTag), {
+  return curateGuide(qualifyingProducts(await getLandingPageProducts(slug, affiliateTag), {
     maxPrice: explicitMaxPrice ?? priceCapFromSlug(slug),
-  });
+  }));
 }
 
 export type PublishedGuideDirectoryEntry = {
@@ -424,7 +427,7 @@ export async function getPublishedGuideDirectory(): Promise<
 > {
   const [pages, products, pageProducts] = await Promise.all([
     getPublishedLandingPages(),
-    getAllProducts(),
+    getAllProducts(undefined, true),
     getPageProducts(),
   ]);
   const productsByAsin = new Map(
@@ -444,10 +447,10 @@ export async function getPublishedGuideDirectory(): Promise<
 
   return pages.map((page) => ({
     page,
-    productCount: qualifyingProducts(
+    productCount: curateGuide(qualifyingProducts(
       productsByGuide.get(page.themeSlug) || [],
       { maxPrice: page.maxPrice ?? priceCapFromSlug(page.themeSlug) }
-    ).length,
+    )).length,
   }));
 }
 
