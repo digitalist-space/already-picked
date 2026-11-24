@@ -1,5 +1,6 @@
 import type { Product } from "./types";
 import { BAYESIAN_MINIMUM_REVIEWS, confidence } from "./guideCuration.ts";
+import { isDeskGiftRelevant } from "./categoryTaxonomy.ts";
 
 export const MIN_PRODUCT_RATING = 3.8;
 export const MIN_PRODUCT_REVIEWS = 5;
@@ -36,6 +37,8 @@ export function isQualifyingProduct(
   { maxPrice = null }: ProductQualityOptions = {}
 ): boolean {
   return (
+    (product.category !== "Desk & Coworker Stocking Stuffers" ||
+      isDeskGiftRelevant(product.title)) &&
     product.rating >= MIN_PRODUCT_RATING &&
     product.reviewCount >= MIN_PRODUCT_REVIEWS &&
     (maxPrice === null || product.price <= maxPrice)

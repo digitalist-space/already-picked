@@ -87,6 +87,27 @@ export function archetype(product: Product): string {
   // Category names describe the whole guide ("NeeDoh sensory toys") and must
   // not leak into every item's form factor. Use item-level fields only.
   const text = normalize([product.title, ...Object.values(product.specs || {})].join(" "));
+  if (product.category === "Desk & Coworker Stocking Stuffers") {
+    if (/mug warmer|cup warmer|coffee warmer|beverage warmer|warming plate/.test(text)) {
+      return "desktop-mug-warmer";
+    }
+    if (/cable clip|cord clip|cable holder|cord holder|cable organizer/.test(text)) {
+      return "desk-cable-clips";
+    }
+    if (/desk vacuum|desktop vacuum|mini vacuum|keyboard vacuum/.test(text)) {
+      return "mini-desk-vacuum";
+    }
+    if (/drawer organizer|under desk drawer|slide out storage/.test(text)) return "desk-drawer-organizer";
+    if (/paper organizer|letter tray|paper sorter|file organizer/.test(text)) return "desk-paper-organizer";
+    if (/desk organizer|desktop organizer|pen holder|pencil holder/.test(text)) return "desktop-pen-organizer";
+    if (/sticky note|memo pad|note pad|notepad/.test(text)) return "desk-note-set";
+    if (/keyboard fidget|keycap fidget/.test(text)) return "keyboard-fidget";
+    if (/fidget spinner|finger spinner/.test(text)) return "fidget-spinner";
+    if (/fidget cube|infinity cube/.test(text)) return "fidget-cube";
+    if (/fidget pen|magnetic pen/.test(text)) return "fidget-pen";
+    if (/\b(?:pen|pens)\b/.test(text)) return "desk-pen-set";
+    if (/mouse ?pad|desk mat/.test(text)) return "desk-mat";
+  }
   if (/book light|reading light|reading lamp/.test(text)) {
     if (/zero blue|blue light free|\b630\s*nm|red light/.test(text)) return "red-light-reading-lamp";
     if (/neck|wearable|hands free/.test(text)) return "wearable-neck-reading-light";
@@ -193,6 +214,15 @@ function clusterReason(left: Product, right: Product, a: Fingerprint, b: Fingerp
   if (!sameKnownBrand && !crossBrandClustering) return null;
   const title = similarity(a.tokens, b.tokens);
   const specs = similarity(a.attributes, b.attributes);
+  const tightArchetypes = new Set([
+    "desktop-mug-warmer", "desk-cable-clips", "mini-desk-vacuum", "desk-note-set",
+    "desk-pen-set", "desk-drawer-organizer", "desk-paper-organizer",
+    "desktop-pen-organizer", "keyboard-fidget", "fidget-spinner", "fidget-cube",
+    "fidget-pen",
+  ]);
+  if (a.archetype === b.archetype && tightArchetypes.has(a.archetype)) {
+    return "white-label-clone";
+  }
   if (a.archetype === b.archetype && a.archetype !== a.bucket &&
     specs.containment >= 0.5) {
     return "white-label-clone";
@@ -244,6 +274,19 @@ function compare(left: Product, right: Product): number {
     String(left.id).localeCompare(String(right.id));
 }
 const ARCHETYPE_LABELS: Record<string, string> = {
+  "desktop-mug-warmer": "Best desktop mug warmer",
+  "desk-cable-clips": "Best cable-management clips",
+  "mini-desk-vacuum": "Best mini desk vacuum",
+  "desk-note-set": "Best sticky-note set",
+  "desk-pen-set": "Best coworker pen set",
+  "desk-drawer-organizer": "Best desk-drawer organizer",
+  "desk-paper-organizer": "Best paper organizer",
+  "desktop-pen-organizer": "Best desktop supply organizer",
+  "desk-mat": "Best desk mat",
+  "keyboard-fidget": "Best keyboard fidget",
+  "fidget-spinner": "Best fidget spinner",
+  "fidget-cube": "Best fidget cube",
+  "fidget-pen": "Best fidget pen",
   "red-light-reading-lamp": "Best red-light reading lamp",
   "wearable-neck-reading-light": "Best neck reading light",
   "clip-on-rechargeable-book-light": "Best clip-on book light",
@@ -278,6 +321,9 @@ const ARCHETYPE_LABELS: Record<string, string> = {
 
 function titleEditorialLabel(product: Product): string {
   const text = normalize(`${product.title} ${product.shortHook || ""}`);
+  if (/coaster/.test(text) && /desk|office|coworker/.test(text)) return "Best office drink coaster";
+  if (/phone stand|phone holder/.test(text)) return "Best desktop phone stand";
+  if (/keyboard cleaner|cleaning gel|screen cleaner/.test(text)) return "Best desk cleaning tool";
   if (/sticker/.test(text) && /kindle|journal|reading/.test(text)) {
     return "Best Kindle & journal stickers";
   }
@@ -307,6 +353,12 @@ function titleEditorialLabel(product: Product): string {
 
 function fallbackEditorialLabel(product: Product): string {
   const type = normalize(`${product.category} ${product.subcategory || ""}`);
+  if (/desk coworker stocking stuffers/.test(type)) {
+    if (/stress relief fidgets/.test(type)) return "Best desk fidget";
+    if (/drinkware mug warmers/.test(type)) return "Best coworker drinkware gift";
+    if (/notepads pens desk humor/.test(type)) return "Best office-humor gift";
+    return "Best desk accessory";
+  }
   if (/iphone duo/.test(type)) return "Best iPhone Duo case";
   if (/wallet style iphone/.test(type)) return "Best iPhone wallet case";
   if (/bag charm/.test(type)) return "Best personalized bag charm";

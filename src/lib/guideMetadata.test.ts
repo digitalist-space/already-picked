@@ -32,3 +32,13 @@ test("editorial metadata cleans copy without changing the route slug", () => {
 test("homepage quality gate requires eight products", () => {
   assert.equal(MIN_HOMEPAGE_PRODUCTS, 8);
 });
+
+test("desk stocking-stuffer guide joins the shared gifts directory", () => {
+  const result = applyGuideEditorialMetadata({
+    ...sourcePage,
+    themeSlug: "desk-and-coworker-stocking-stuffers-under-15",
+  });
+  assert.equal(result.primaryCategory, "Gifts & Stocking Stuffers");
+  assert.equal(result.pageTitle, "Desk & Coworker Stocking Stuffers Under $15");
+  assert.match(result.introCopy, /3\.8★\+ ratings/);
+});

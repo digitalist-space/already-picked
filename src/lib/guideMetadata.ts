@@ -99,6 +99,12 @@ const GUIDE_EDITORIAL_METADATA: Record<string, GuideEditorialMetadata> = {
     summary:
       "Rechargeable book lights, page holders, and reading accessories under $15, filtered for 3.8★+ ratings and reliable review volume.",
   },
+  "desk-and-coworker-stocking-stuffers-under-15": {
+    title: "Desk & Coworker Stocking Stuffers Under $15",
+    category: "Gifts & Stocking Stuffers",
+    summary:
+      "Desk organizers, stress-relief gifts, drinkware, and office humor under $15, filtered for 3.8★+ ratings and reliable review volume.",
+  },
 };
 
 export function applyGuideEditorialMetadata(page: LandingPage): LandingPage {

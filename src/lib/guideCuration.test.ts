@@ -194,6 +194,25 @@ test("category fallbacks produce editorial phrases instead of stitched tags", ()
  ]);
 });
 
+test("tight desk-product clones keep one Bayesian winner per form factor", () => {
+ const desk = (id: string, title: string, reviews: number): Product => ({
+  ...p(id, title, reviews), category: "Desk & Coworker Stocking Stuffers",
+  subcategory: "Desk Organizers & Cable Clips",
+ });
+ const products = [
+  desk("warmer-a", "Alpha coffee mug warmer for desk", 2000),
+  desk("warmer-b", "Beta electric cup warmer for office", 20),
+  desk("vacuum-a", "Alpha mini desktop vacuum", 1200),
+  desk("vacuum-b", "Beta cordless desk vacuum", 50),
+  desk("notes-a", "Alpha sarcastic sticky note set", 900),
+  desk("notes-b", "Beta funny memo pad sticky notes", 40),
+ ];
+ const selected = curateGuide(products);
+ assert.deepEqual(new Set(selected.map((item) => item.id)),
+  new Set(["warmer-a", "vacuum-a", "notes-a"]));
+ assert.ok(selected.every((item) => (item.bestFor || "").length <= 35));
+});
+
 test("the all-guide dry-run snapshot satisfies label quality guardrails", () => {
  const snapshot = JSON.parse(readFileSync(
   new URL("../../reports/curation-dry-run-2026-11-24.json", import.meta.url), "utf8"

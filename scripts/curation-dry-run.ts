@@ -6,6 +6,7 @@ import {
   selectEditorialPicks,
 } from "../src/lib/productQuality.ts";
 import type { Product } from "../src/lib/types.ts";
+import { normalizeDeskGiftSubcategory } from "../src/lib/categoryTaxonomy.ts";
 
 const workbookId = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const outputPath = process.argv.find((arg) => arg.startsWith("--output="))?.slice(9);
@@ -54,7 +55,9 @@ function productsFromCSV(csv: string): Product[] {
     rating: Number(row.rating) || 0,
     reviewCount: Number(row.review_count.replace(/,/g, "")) || 0,
     category: row.category || "Other",
-    subcategory: row.subcategory || undefined,
+    subcategory: row.category === "Desk & Coworker Stocking Stuffers"
+      ? normalizeDeskGiftSubcategory(row.title, row.subcategory)
+      : row.subcategory || undefined,
     asin: row.asin || undefined,
     imageUrl: row.image_url || "",
     affiliateUrl: "",

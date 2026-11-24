@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T17:40:41.275Z",
+  "generatedAt": "2026-11-24T22:28:01.253Z",
   "workbookId": "1vicbagFM6DZO7Kyh9EvHPAj9j3H86Rh9L1th-TpuEQM",
   "reports": [
     {
@@ -2279,6 +2279,1395 @@
       ]
     },
     {
+      "slug": "desk-and-coworker-stocking-stuffers-under-15",
+      "title": "Desk & Coworker Stocking Stuffers Under $15",
+      "linkedCount": 200,
+      "qualifyingCount": 145,
+      "selectedCount": 25,
+      "prunedCount": 120,
+      "defaultOrder": [
+        {
+          "position": 1,
+          "asin": "B0CZNMJHCB",
+          "title": "Funny Mouse Pad for Desk, Cute Dumpster on Fire Round Mousepad",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best desk mat",
+          "editorialBadge": "best-overall",
+          "bayesianScore": 4.6889,
+          "reviews": 850
+        },
+        {
+          "position": 2,
+          "asin": "B0D94KGBHW",
+          "title": "Quick Push Pop Game Light Up Fidget Toy for Kids Pink",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best budget desk fidget",
+          "editorialBadge": "most-popular",
+          "bayesianScore": 4.5,
+          "reviews": 885
+        },
+        {
+          "position": 3,
+          "asin": "1728200202",
+          "title": "Dad Jokes Holiday Edition: (Funny Christmas Gag Gift or Stocking Stuffer for the Dad Who Has Everything)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best office-humor gift",
+          "editorialBadge": "best-value",
+          "bayesianScore": 4.5629,
+          "reviews": 847
+        },
+        {
+          "position": 4,
+          "asin": "B0FPG1FF1R",
+          "title": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desktop supply organizer",
+          "bayesianScore": 4.6143,
+          "reviews": 667
+        },
+        {
+          "position": 5,
+          "asin": "B0H8LYZPS8",
+          "title": "Daily Affirmations For Women - Affirmation Cards For Women",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desk accessory",
+          "bayesianScore": 4.6233,
+          "reviews": 803
+        },
+        {
+          "position": 6,
+          "asin": "B0F8B9C4GF",
+          "title": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desk-drawer organizer",
+          "bayesianScore": 4.5878,
+          "reviews": 391
+        },
+        {
+          "position": 7,
+          "asin": "B0FDWSTGQ7",
+          "title": "Stocking Stuffers for Men Women, Date Night Food Decision Dice",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best budget desk accessory",
+          "bayesianScore": 4.5682,
+          "reviews": 259
+        },
+        {
+          "position": 8,
+          "asin": "B0FHF24PRD",
+          "title": "Employee Appreciation Gift Crochet Corn for Coworkers Staff- Emotional Postive Support Cute Little Desk Decor",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best compact desk accessory",
+          "bayesianScore": 4.5608,
+          "reviews": 127
+        },
+        {
+          "position": 9,
+          "asin": "B0DPZXBKV5",
+          "title": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best desk fidget",
+          "bayesianScore": 4.5633,
+          "reviews": 862
+        },
+        {
+          "position": 10,
+          "asin": "B0D7RL95F3",
+          "title": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Drinkware & Mug Warmers",
+          "reason": "Best desktop mug warmer",
+          "bayesianScore": 4.5516,
+          "reviews": 534
+        },
+        {
+          "position": 11,
+          "asin": "B0F9KY65MH",
+          "title": "Sensory Fidget Toys for Kids Adults,6PCS Flexible Fidget Sticks for Stress Anxiety Autistic ADHD, Calm Down Travel Airplane Classroom Students Prizes Toys, Stocking Stuffers for Teens Boys Girls",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best travel desk fidget",
+          "bayesianScore": 4.5554,
+          "reviews": 620
+        },
+        {
+          "position": 12,
+          "asin": "B0FB9CFBPR",
+          "title": "Inspirational Gift with Positive Affirmation Card & 6 Resin Figurines",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best inspirational desk accessory",
+          "bayesianScore": 4.5282,
+          "reviews": 82
+        },
+        {
+          "position": 13,
+          "asin": "B0FQMF1PYY",
+          "title": "Lovely Office Christmas Card for Coworker, Funny Emotional Support Christmas Card Gift for Coworker Workmate Colleague, Unique Xmas Gift for Co-worker",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best holiday office-humor gift",
+          "bayesianScore": 4.535,
+          "reviews": 66
+        },
+        {
+          "position": 14,
+          "asin": "B071X8S8WQ",
+          "title": "Infinity Cube Fidget Toys for Kids, Adults Anxiety Relief Items Fidget Cube",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best fidget cube",
+          "bayesianScore": 4.5314,
+          "reviews": 229
+        },
+        {
+          "position": 15,
+          "asin": "B09LMBLYF1",
+          "title": "Transformable Fidget Spinners 4 Pcs for Kids and Adults Stress Relief Sensory Toys for Boys and Girls Fingertip Gyros for Party Favors Christmas Stocking Stuffers Bulk for Kids",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best fidget spinner",
+          "bayesianScore": 4.5216,
+          "reviews": 138
+        },
+        {
+          "position": 16,
+          "asin": "B0HCMS5SMX",
+          "title": "Magnetic Happy Figures 6 Pack, Poseable Desk Figurines Office Gifts",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best magnetic desk accessory",
+          "bayesianScore": 4.5227,
+          "reviews": 64
+        },
+        {
+          "position": 17,
+          "asin": "B0DZ1TR4B5",
+          "title": "gianotter Mail Organizer Countertop",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best gift-ready desk accessory",
+          "bayesianScore": 4.5,
+          "reviews": 782
+        },
+        {
+          "position": 18,
+          "asin": "B07Z82895W",
+          "title": "LISEN Cell Phone Stand Phone Holder for Desk, Office Decor Gadgets for Men",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desktop phone stand",
+          "bayesianScore": 4.5,
+          "reviews": 718
+        },
+        {
+          "position": 19,
+          "asin": "B0FM2HBF3H",
+          "title": "Marbrasse 2 Tier Paper Organizer Letter Tray, Mesh File Organizer with Handle, Paper Sorter Desk Organizer for Home Office Supplies - Black",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best paper organizer",
+          "bayesianScore": 4.5,
+          "reviews": 530
+        },
+        {
+          "position": 20,
+          "asin": "B0DZXXPLLL",
+          "title": "550pcs Fidget Toys for Adults, Stress Relief Sensory Toys for Autism ADHD Anxiety,Desk Fidgets Toys,Fidgets Toys Adults Gifts",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Most popular desk fidget",
+          "bayesianScore": 4.4373,
+          "reviews": 842
+        },
+        {
+          "position": 21,
+          "asin": "B0GCLBXJNJ",
+          "title": "Funny Office Gag Gifts We're Having A Team Meeting Mini Desk Sign Cubicle Decor for Coworker Teammate Employee Boss Desk Accessories(Team meeting)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best funny office-humor gift",
+          "bayesianScore": 4.5,
+          "reviews": 38
+        },
+        {
+          "position": 22,
+          "asin": "B0FHWZH8DH",
+          "title": "Funny Office Notebook Useful Office Phrases Journal Humorous Sarcastic Gift for Women Men Coworker Colleague-Green",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best reading journal",
+          "bayesianScore": 4.5077,
+          "reviews": 42
+        },
+        {
+          "position": 23,
+          "asin": "B0F2J1NWVQ",
+          "title": "Funny Notebook for Work, Office Journal Gift for Coworker Colleague Team Member Employee",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best funny reading journal",
+          "bayesianScore": 4.5059,
+          "reviews": 6
+        },
+        {
+          "position": 24,
+          "asin": "B0GWQKVGXT",
+          "title": "Funny Office Decor Desk Accessories—Answer Desk Rates Sign",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best budget office-humor gift",
+          "bayesianScore": 4.5057,
+          "reviews": 30
+        },
+        {
+          "position": 25,
+          "asin": "B0H2HJLBRV",
+          "title": "50-Pack Funny Disgusting Face Memo Pad – Sarcastic Sticky Notes, Squared, Coworker Gifts, Office Humor Desk Decor, Aesthetic Stationery",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best sticky-note set",
+          "bayesianScore": 4.4903,
+          "reviews": 54
+        }
+      ],
+      "winners": [
+        {
+          "asin": "B0CZNMJHCB",
+          "title": "Funny Mouse Pad for Desk, Cute Dumpster on Fire Round Mousepad",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best desk mat",
+          "rating": 4.8,
+          "reviews": 850,
+          "price": 4.99
+        },
+        {
+          "asin": "B0FPG1FF1R",
+          "title": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desktop supply organizer",
+          "rating": 4.7,
+          "reviews": 667,
+          "price": 6.98
+        },
+        {
+          "asin": "B0H8LYZPS8",
+          "title": "Daily Affirmations For Women - Affirmation Cards For Women",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desk accessory",
+          "rating": 4.7,
+          "reviews": 803,
+          "price": 7.59
+        },
+        {
+          "asin": "B0F8B9C4GF",
+          "title": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desk-drawer organizer",
+          "rating": 4.7,
+          "reviews": 391,
+          "price": 11.04
+        },
+        {
+          "asin": "B0FDWSTGQ7",
+          "title": "Stocking Stuffers for Men Women, Date Night Food Decision Dice",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best budget desk accessory",
+          "rating": 4.7,
+          "reviews": 259,
+          "price": 3.19
+        },
+        {
+          "asin": "1728200202",
+          "title": "Dad Jokes Holiday Edition: (Funny Christmas Gag Gift or Stocking Stuffer for the Dad Who Has Everything)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best office-humor gift",
+          "rating": 4.6,
+          "reviews": 847,
+          "price": 3.66
+        },
+        {
+          "asin": "B0FHF24PRD",
+          "title": "Employee Appreciation Gift Crochet Corn for Coworkers Staff- Emotional Postive Support Cute Little Desk Decor",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best compact desk accessory",
+          "rating": 4.8,
+          "reviews": 127,
+          "price": 3.99
+        },
+        {
+          "asin": "B0DPZXBKV5",
+          "title": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best desk fidget",
+          "rating": 4.6,
+          "reviews": 862,
+          "price": 6.83
+        },
+        {
+          "asin": "B0D7RL95F3",
+          "title": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Drinkware & Mug Warmers",
+          "reason": "Best desktop mug warmer",
+          "rating": 4.6,
+          "reviews": 534,
+          "price": 7.99
+        },
+        {
+          "asin": "B0F9KY65MH",
+          "title": "Sensory Fidget Toys for Kids Adults,6PCS Flexible Fidget Sticks for Stress Anxiety Autistic ADHD, Calm Down Travel Airplane Classroom Students Prizes Toys, Stocking Stuffers for Teens Boys Girls",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best travel desk fidget",
+          "rating": 4.6,
+          "reviews": 620,
+          "price": 8.49
+        },
+        {
+          "asin": "B0FB9CFBPR",
+          "title": "Inspirational Gift with Positive Affirmation Card & 6 Resin Figurines",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best inspirational desk accessory",
+          "rating": 4.7,
+          "reviews": 82,
+          "price": 4.99
+        },
+        {
+          "asin": "B0FQMF1PYY",
+          "title": "Lovely Office Christmas Card for Coworker, Funny Emotional Support Christmas Card Gift for Coworker Workmate Colleague, Unique Xmas Gift for Co-worker",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best holiday office-humor gift",
+          "rating": 4.8,
+          "reviews": 66,
+          "price": 4.99
+        },
+        {
+          "asin": "B071X8S8WQ",
+          "title": "Infinity Cube Fidget Toys for Kids, Adults Anxiety Relief Items Fidget Cube",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best fidget cube",
+          "rating": 4.6,
+          "reviews": 229,
+          "price": 8.49
+        },
+        {
+          "asin": "B09LMBLYF1",
+          "title": "Transformable Fidget Spinners 4 Pcs for Kids and Adults Stress Relief Sensory Toys for Boys and Girls Fingertip Gyros for Party Favors Christmas Stocking Stuffers Bulk for Kids",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best fidget spinner",
+          "rating": 4.6,
+          "reviews": 138,
+          "price": 8.49
+        },
+        {
+          "asin": "B0HCMS5SMX",
+          "title": "Magnetic Happy Figures 6 Pack, Poseable Desk Figurines Office Gifts",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best magnetic desk accessory",
+          "rating": 4.7,
+          "reviews": 64,
+          "price": 13.99
+        },
+        {
+          "asin": "B0DZ1TR4B5",
+          "title": "gianotter Mail Organizer Countertop",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best gift-ready desk accessory",
+          "rating": 4.5,
+          "reviews": 782,
+          "price": 7.19
+        },
+        {
+          "asin": "B0D94KGBHW",
+          "title": "Quick Push Pop Game Light Up Fidget Toy for Kids Pink",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Best budget desk fidget",
+          "rating": 4.5,
+          "reviews": 885,
+          "price": 8.99
+        },
+        {
+          "asin": "B07Z82895W",
+          "title": "LISEN Cell Phone Stand Phone Holder for Desk, Office Decor Gadgets for Men",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best desktop phone stand",
+          "rating": 4.5,
+          "reviews": 718,
+          "price": 9.45
+        },
+        {
+          "asin": "B0FM2HBF3H",
+          "title": "Marbrasse 2 Tier Paper Organizer Letter Tray, Mesh File Organizer with Handle, Paper Sorter Desk Organizer for Home Office Supplies - Black",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Desk Organizers & Cable Clips",
+          "reason": "Best paper organizer",
+          "rating": 4.5,
+          "reviews": 530,
+          "price": 9.99
+        },
+        {
+          "asin": "B0DZXXPLLL",
+          "title": "550pcs Fidget Toys for Adults, Stress Relief Sensory Toys for Autism ADHD Anxiety,Desk Fidgets Toys,Fidgets Toys Adults Gifts",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Stress Relief & Fidgets",
+          "reason": "Most popular desk fidget",
+          "rating": 4.4,
+          "reviews": 842,
+          "price": 9.49
+        },
+        {
+          "asin": "B0GCLBXJNJ",
+          "title": "Funny Office Gag Gifts We're Having A Team Meeting Mini Desk Sign Cubicle Decor for Coworker Teammate Employee Boss Desk Accessories(Team meeting)",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best funny office-humor gift",
+          "rating": 4.5,
+          "reviews": 38,
+          "price": 3.49
+        },
+        {
+          "asin": "B0FHWZH8DH",
+          "title": "Funny Office Notebook Useful Office Phrases Journal Humorous Sarcastic Gift for Women Men Coworker Colleague-Green",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best reading journal",
+          "rating": 4.6,
+          "reviews": 42,
+          "price": 4.11
+        },
+        {
+          "asin": "B0F2J1NWVQ",
+          "title": "Funny Notebook for Work, Office Journal Gift for Coworker Colleague Team Member Employee",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best funny reading journal",
+          "rating": 5,
+          "reviews": 6,
+          "price": 4.11
+        },
+        {
+          "asin": "B0GWQKVGXT",
+          "title": "Funny Office Decor Desk Accessories—Answer Desk Rates Sign",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best budget office-humor gift",
+          "rating": 4.6,
+          "reviews": 30,
+          "price": 4.79
+        },
+        {
+          "asin": "B0H2HJLBRV",
+          "title": "50-Pack Funny Disgusting Face Memo Pad – Sarcastic Sticky Notes, Squared, Coworker Gifts, Office Humor Desk Decor, Aesthetic Stationery",
+          "category": "Desk & Coworker Stocking Stuffers",
+          "subcategory": "Notepads, Pens & Desk Humor",
+          "reason": "Best sticky-note set",
+          "rating": 4.4,
+          "reviews": 54,
+          "price": 0.98
+        }
+      ],
+      "removed": [
+        {
+          "asin": "B0H7JX8L8N",
+          "title": "Press to Spin Fidget Spinner Kids Stocking Stuffers Sensory Fidget Toys",
+          "reason": "exact-title",
+          "cluster": "fidget-spinner",
+          "winnerAsin": "B0H7JS629X",
+          "winnerTitle": "Press to Spin Fidget Spinner Kids Stocking Stuffers Sensory Fidget Toys"
+        },
+        {
+          "asin": "B09G9GY3DP",
+          "title": "deli Desk Organizer, Plastic Desktop Organizer with Pencil Holder and Sticky Note Tray, Office Stationery Supplies Organizers Accessories Caddy, 6 Compartments, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0C8TL1SC1",
+          "title": "Mesh Desk Organizer with Drawer, 9-Compartment Pen Holder for Desk, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0CQC63DBZ",
+          "title": "Marbrasse Desk Organizer with 2 Drawer, 360°Rotating Pen Holder, Desk Organizers and Accessories with 6 Slots Pencil Organizer + 2 Drawer, Art Supply Storage Box Caddy for Office (White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0BW898V95",
+          "title": "Pen Holder for Desk, Desk Organizers Set-3 Compartments Mesh Pencil Holder with Pencil Pen Cup and Paper Clip holder, Desk Accessories for Marker Craft, Ideal Office School Supplies(3 pack, Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0CFF5C32Q",
+          "title": "Marbrasse Desk Organizer Pen Holder for Desk with 3 Drawers, Multi-Functional Pencil Holder, Desk Organizers and Accessories with 7 Compartments for Home, School, Classroom(White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0CMX4VRFD",
+          "title": "Desk Organizers and Accessories with Pencil Pen Holder Supply 8 Compartments and 1 Pullout Drawer for Home, School, and Office. (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B08ZY9QZMN",
+          "title": "HSYMQ Gold Metal Pen Holder for Desk, Makeup Brushes Cup, Pencil Holders, Office&Home Organizer",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0H1BHWVM8",
+          "title": "SKYDUE Small Desk Organizer with Sticky Notes Holder,Pen Holder for Desk",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0FS1DQF7G",
+          "title": "HBlife Acrylic Desk Organizer with Drawer, Pen & Pencil Holder, Multifunctional Desktop Caddy for Office Supply and Organization (Clear)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0C5M4FXD3",
+          "title": "Marbrasse Desk Organizer, 360-Degree Rotating Pen Holder, Desk Organizers and Accessories with 5 Compartments Pencil Organizer, Art Supply Storage Box Caddy for Office, Home（Green）",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B00LGIW54Y",
+          "title": "Comix Mesh Pen Holder, Desk Organizer for Home Office, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0B68MKR6Z",
+          "title": "HANKOR Ceramic Pen Holder Cup Pencil Holder for Desk, Makeup Brush Holder Organizer for Office Home, White",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0C2ZBBPY9",
+          "title": "Desk Organizer with 6 Compartments and 2 Drawers, Plastic Makeup Organizer, Pen Holder for Desktop Storage, Desk Organization for School, Home, Office Supplies (White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0H9XNWLPC",
+          "title": "Marbrasse Plastic Pen Holder for Desk, Multi-Functional Desk Organizer Pencil Holder with Drawer, Desk Organizers and Accessories for Office Art Supplies(White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0GCCFBSRP",
+          "title": "Desk Organizer, 2-Tier Computer Monitor Stand Riser, Metal Office Organizer",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0BVFMC7PX",
+          "title": "LETURE Small Desk Organizer With Drawer, Office Desktop Storage Box, Business Card/Pen/Pencil/Mobile Phone/Stationery Holder Storage Box, Makeup Organizer for Office School Home (Blue)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0BVG1RVML",
+          "title": "LETURE Desktop Organizer with Drawer, Accessories Stationary Organizer Desk Caddy, Pen/Pencil/Business Card/Sticky Note Tray/Paperclip Holder Storage Box (White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0CZ9725FN",
+          "title": "Marbrasse Desk Organizer with 3 Drawer, Multi-Functional Pencil Pen Holder for Desk, Desk Organizers and Accessories with 4 Compartments, Desktop Organizer Storage for Office Home Art Supplies (White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B08F9RP8ZF",
+          "title": "Hggzeg Wooden Desk Organizer, Multi-Functional DIY Pen Holder Storage Box Desktop Stationary Storage Rack for Home, Office and School (B11 Cherry Color)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0H8N47CMF",
+          "title": "Marbrasse Mesh Pen Holder with 2 Drawers, Multi-Functional Pencil Organizer for Desk, Desk Organizers and Accessories with 3 Compartments + 2 Drawers for Office Art Supplies (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B07RZ1GWC3",
+          "title": "Amazon Basics Rectangular Plastic Desk Organizer with Storage Trays, Accessory Tray for Office Supplies and Pen Holder, 9.4 x 6.7 x 2 inch, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0GF1MVM34",
+          "title": "360° Rotating Pen Holder for Desk Adjustable Pencil Organizer, Pink",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0GWRX9G3B",
+          "title": "3-Drawer Mini Desktop Organizer, Small Plastic Storage Box for Desk Office Supplies, Makeup Organizer and Jewelry Craft Storage Drawer for Countertop (White, 1-Pack)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B08VPFB5G3",
+          "title": "Amazon Basics Mesh Desk Organizer with Pen Holder, Pullout Drawer and Office Caddy Storage, 9.25\" x 4.53\" x 3.94\", Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0G24XNWKS",
+          "title": "M&G Mesh Pen Holder for Desk, Multi-Functional Pencil Holder with Drawer Desk Organizer, Large Capacity Office Desk organizers and Accessories (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0GS4GMFLM",
+          "title": "Ceramic Pen Holder with Vertical Groove Design, Desk Pen Pencil Cup for Office, Multipurpose Ceramic Cup for Pens, Pencils, Makeup Brushes, Small Ceramic Vase, White Fluted Surface",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0DXKJB7LQ",
+          "title": "Blue Ginkgo Compact Desk Organizer, Green, Made in Korea",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B07VZNMNH9",
+          "title": "Amazon Basics Metal Mesh Desk Organizer with 6 Compartments, Anti-Slip Pen Holder Storage Tray for Office Supplies and Home, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-pen-organizer",
+          "winnerAsin": "B0FPG1FF1R",
+          "winnerTitle": "Camelmother 360°Rotating Pen&Pencil Holder For Desk With 5Slots Cute Office"
+        },
+        {
+          "asin": "B0DQ3X91R7",
+          "title": "Desk Drawer Organizer Tray,Drawer Organizer for Office and Home,Desk Organizer with Drawers,4 Compartments,Non-Slip Desk Organizers and Accessories for Stationery Makeup School (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desk-drawer-organizer",
+          "winnerAsin": "B0F8B9C4GF",
+          "winnerTitle": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)"
+        },
+        {
+          "asin": "B0GF7T2XJV",
+          "title": "Marbrasse 5 Pack Desk Drawer Organizer Set, Mesh Drawer Storage Trays with 1 Adjustable Divider, Desk Organizers and Accessories, 5 PCS Drawer for Office Supplies, Makeup & Vanity (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desk-drawer-organizer",
+          "winnerAsin": "B0F8B9C4GF",
+          "winnerTitle": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)"
+        },
+        {
+          "asin": "B0CJCJTVJ6",
+          "title": "Bostitch Konnect Under Desk Drawer, Self-Adhesive Slide Out Storage Organizer with 4 Customizable Dividers, 2-Pack",
+          "reason": "white-label-clone",
+          "cluster": "desk-drawer-organizer",
+          "winnerAsin": "B0F8B9C4GF",
+          "winnerTitle": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)"
+        },
+        {
+          "asin": "B0CSM2HN1R",
+          "title": "12 Pcs Clear Plastic Drawer Organizer, Makeup & Vanity Organizer",
+          "reason": "white-label-clone",
+          "cluster": "desk-drawer-organizer",
+          "winnerAsin": "B0F8B9C4GF",
+          "winnerTitle": "Marbrasse Desk Drawer Organizer, Metal Mesh Drawer Organizer Tray with 5 Adjustable Compartments,Desk Organizers and Accessories for Home,Office,Kitchen,Makeup,Vanity (Black)"
+        },
+        {
+          "asin": "B0DBPXSG9D",
+          "title": "Gaiatop Coffee Mug Warmer for Desk,  Beverage Heating Plate -Wood",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FNQC7JVD",
+          "title": "Maestri House ETL Listed Coffee Mug Warmer (Silver)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B00FL5V5N0",
+          "title": "Home-X Mug Warmer, Desktop Heated Coffee & Tea - Candle & Wax Warmer (Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0HB4SYFRW",
+          "title": "Coffee Mug Warmer Set with Temperature Control, Smart Heated Coffee Cup Warmer with LED Display, Auto Shut Off Electric Mug Heater for Desk Office Home, 15oz Ceramic Mug Gift Set，Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B09YCVYCQ2",
+          "title": "Candle Warmer for Large Jar, Coffee Mug Warmers",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0BDKFT3KW",
+          "title": "Home&Office Desktop Electric Mug Warmer-Coffee/Tea/Cocoa/Soup-Scented Candles Gift for Winter 1pcs(White and Black (CFW001-White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B08B72C56C",
+          "title": "Electric Desk Cup Warmer - Candle Warming Plate - Coffee Mug Heater - Also Great for Hot Tea, Hot Chocolate, Soup, Scented Candles - On/Off Indicator Light",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0DTGBT7K7",
+          "title": "Coffee Mug Warmer for Desk, Electric Coffee Cup Warmer with Warm & Hot Settings, Universal Fit for Most Mugs, Ideal Warmer for Coffee, Tea, Milk & Beverages",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0GJ4PRZGT",
+          "title": "Candle Warmer and Mug Warmers with Timer, Safely Releases Scents Without a Flame, Melt The Candle Quickly, Enjoy Your Warm Coffee Tea Milk Beverage. Gifts for Festival Birthday Women Men Mom Dad",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0G24THX6X",
+          "title": "Fast Heating Coffee Mug Warmer,POLEDY Auto Shut Off Cup Warmer, Electric Beverage Warmer for Tea, Milk, Cocoa with 2-12H Timer, 3-Temp Settings Candle Warmer Plate, Black Smart Candle Melter",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0GXBCL5WP",
+          "title": "TTKXT Smart Coffee Mug Warmer with LED Display, Intelligent Cup Material Sensing & 9 Temp Settings, Auto Shut-Off Electric Beverage Warmer for Desk, Candle Wax Warmer, (Silver)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0DRHY89LX",
+          "title": "VOBAGA 15oz Stainless Steel Coffee Mug with Flat bottom and Handle, Work with Coffee Warmer for Rapid Heating Coffee, Tea and Milk Office Desk Accessories Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0H6RCSMH1",
+          "title": "Smart Mug Warmer for Desk, 36W Fast Coffee Cup Warmer & Candle Warmer with Upgraded Touch Control, 104°F-158°F Precision Temp, 1-12H Custom Timer, Office Desktop Gift，Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0GYSFCNCD",
+          "title": "Flat Bottom Coffee Mug for Mug Warmer – 14 oz Ceramic Cup with Lid & Gold Trim, Tea Mug for Office Desk, Heater Compatible Gift for Women – Matte Pink",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FX7YS4FR",
+          "title": "Candle Warmer with Timer Coffee Mug Warmers for Large Jar",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0HFMTRJ8Q",
+          "title": "Kepwam Candle Warmer Plate -  Coffee Cup Mug Warmer for Desk Candle Melter",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0GSYNDVXW",
+          "title": "Coffee Mug Warmer, 12H Timer, Digital Display, 3 Heat Settings",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0H6FYQSN4",
+          "title": "Coffee Warmer for Desk, 4 Temp & Timer Mug Warmer, Fast Heating Cup Warmer",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0F9SMXFTP",
+          "title": "Coffee Mug Warmer for Desk, 40W Electric Cup Warmer with Digital Display, 9 Temp Settings, 1–12H Timer & Auto On/Off, LED Display Candle & Beverage Warmer Plate.",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0D7RV5WNG",
+          "title": "Gaiatop Coffee Mug Warmer, 50W Smart Cup Warmers, Fast Heating Plate-Wood",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FKN2MC8X",
+          "title": "MEION Coffee Mug Warmer for Desk, Coffee Cup Warmer, 4 Temp Settings & 1-12H Timer, Coffee Warmer with Auto Shut Off Smart Gravity Sensor, Beverage & Candle Warmer Coffee Gifts Accessories(Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0DDXTWCNX",
+          "title": "GLSY Coffee Cup Warmer, Mug Warmer for Desk, Electric Cup Beverage Warmer Plate with 2 Temperature Settings for Tea, Water, Cocoa, Milk, Auto Power Off (Round Black)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FB3GW2NF",
+          "title": "Mini Sweet Fondue Cup, Ceramic Coffee Warmer Mug, Portable Chocolate Melting Cup with Fork for Cheese, Great for Adult/Kids for Camping/Date/Movie Night/Birthday/Wedding Gifts (Red)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0CZ3ZHNBN",
+          "title": "Coffee Mug Warmer Set: Coffee Warmer for Desk Auto Shut Off Candle Warmer Plate Electric Beverage Coffee Cup Warmer Heated Coffee Mug for Coffee,Tea, Milk Up to 131°F/55°C (Green)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0H1V9WH3N",
+          "title": "Candle Warmer & Coffee Mug Warmer, Electric Coffee Warmer with Aluminum Metal Panel, 131℉ Beverages Coffee Warmer for Heating Candle, Coffee Milk Tea Cocoa, Xmas Gifts for Coffee Lovers Presents",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FN3Q4MK9",
+          "title": "Coffee Mug Warmer - Large Candle Warmer Plate, 2-Temp Setting (131℉ & 113℉) & Fast Heating, Elegant Desk Warmer for Coffee/Tea/Milk/Candle, Ideal Office Home Gift (Wood Grain)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B09BL35C9Y",
+          "title": "Coffee Warmer for Desk, Gravity Sensor Auto On & Shut Off, Black",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B000CO89T8",
+          "title": "Mr. Coffee MWBLK Plastic Mug Warmer for Office/Home Use",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0CM34VKG5",
+          "title": "Coffee Mug Warmer with 2 USB Charging Ports: Auto Shut-Off Candle Wax Warmer - Heated Beverage Coffee Accessories for Home Office Desk - U1 Wood",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0B1VHQ8QX",
+          "title": "Coffee Mug Cup Warmer Coaster for Coffee Tea Cocoa Milk Food Fruits Candle, Aluminum Metal Panel, Safe Reliable, Pink (4\" x 5\")",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0D7M149GW",
+          "title": "Coffee Mug Warmer Set for Desk, 14oz Ceramic Mug, Matte White",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0CRQBSP5W",
+          "title": "Coffee Mug Warmer with Auto Shut-Off – Compact 17W Cup Warmer for Desk with Gravity Switch – Electric Candle Warmer Plate for Jar Candles – Keeps Coffee, Tea & Drinks Warm – Safe & Durable (White)",
+          "reason": "white-label-clone",
+          "cluster": "desktop-mug-warmer",
+          "winnerAsin": "B0D7RL95F3",
+          "winnerTitle": "Gaiatop Mug Warmer, 50W Cute Cat Paw Cup Warmers, Heated Plate - Black"
+        },
+        {
+          "asin": "B0FP4JF7YG",
+          "title": "550PCS Fidget Toys Stocking Stuffer Gifts for Adults and Teens Sensory Toys",
+          "reason": "near-identical-title",
+          "cluster": "stress relief fidgets",
+          "winnerAsin": "B0F9KY65MH",
+          "winnerTitle": "Sensory Fidget Toys for Kids Adults,6PCS Flexible Fidget Sticks for Stress Anxiety Autistic ADHD, Calm Down Travel Airplane Classroom Students Prizes Toys, Stocking Stuffers for Teens Boys Girls"
+        },
+        {
+          "asin": "B0CVYK21SN",
+          "title": "PILPOC theFube Fidget Cube, Stress Relief Infinity Cube for Adults & Kids",
+          "reason": "white-label-clone",
+          "cluster": "fidget-cube",
+          "winnerAsin": "B071X8S8WQ",
+          "winnerTitle": "Infinity Cube Fidget Toys for Kids, Adults Anxiety Relief Items Fidget Cube"
+        },
+        {
+          "asin": "B0F531ZYJR",
+          "title": "Metal Fidget Spinner Toys for Teens Adults Christmas Stocking Stuffer Bike Chain Roller Gadgets ADHD Figette Anxiety Stress Relief Items Quiet Figet Desk Offices EDC Men",
+          "reason": "near-identical-title",
+          "cluster": "fidget-cube",
+          "winnerAsin": "B071X8S8WQ",
+          "winnerTitle": "Infinity Cube Fidget Toys for Kids, Adults Anxiety Relief Items Fidget Cube"
+        },
+        {
+          "asin": "B0H7JS629X",
+          "title": "Press to Spin Fidget Spinner Kids Stocking Stuffers Sensory Fidget Toys",
+          "reason": "white-label-clone",
+          "cluster": "fidget-spinner",
+          "winnerAsin": "B09LMBLYF1",
+          "winnerTitle": "Transformable Fidget Spinners 4 Pcs for Kids and Adults Stress Relief Sensory Toys for Boys and Girls Fingertip Gyros for Party Favors Christmas Stocking Stuffers Bulk for Kids"
+        },
+        {
+          "asin": "B0DVMD6647",
+          "title": "Original Finger Spinner Skill Toy – Jade Viper",
+          "reason": "white-label-clone",
+          "cluster": "fidget-spinner",
+          "winnerAsin": "B09LMBLYF1",
+          "winnerTitle": "Transformable Fidget Spinners 4 Pcs for Kids and Adults Stress Relief Sensory Toys for Boys and Girls Fingertip Gyros for Party Favors Christmas Stocking Stuffers Bulk for Kids"
+        },
+        {
+          "asin": "B0F6T8VVVH",
+          "title": "350 PCS Desk Fidget Toy, Sensory Stress Relief Fidget Toys Gift for Adults",
+          "reason": "near-identical-title",
+          "cluster": "fidget-spinner",
+          "winnerAsin": "B09LMBLYF1",
+          "winnerTitle": "Transformable Fidget Spinners 4 Pcs for Kids and Adults Stress Relief Sensory Toys for Boys and Girls Fingertip Gyros for Party Favors Christmas Stocking Stuffers Bulk for Kids"
+        },
+        {
+          "asin": "B0CPDH2MFY",
+          "title": "2 Pieces Desk Mail Organizer, Metal Mesh Small File Holders Letter Organizer, Bill/Document/Filing/Folders/Paper Organizer for Desktop (BLACK-2PCS)",
+          "reason": "white-label-clone",
+          "cluster": "desk-paper-organizer",
+          "winnerAsin": "B0FM2HBF3H",
+          "winnerTitle": "Marbrasse 2 Tier Paper Organizer Letter Tray, Mesh File Organizer with Handle, Paper Sorter Desk Organizer for Home Office Supplies - Black"
+        },
+        {
+          "asin": "B0GF34VSGH",
+          "title": "5-Tier Desk Organizers and Accessories, Paper Letter Tray Organizer with File Holder, Desktop Organizer for Office Supplies, Black",
+          "reason": "white-label-clone",
+          "cluster": "desk-paper-organizer",
+          "winnerAsin": "B0FM2HBF3H",
+          "winnerTitle": "Marbrasse 2 Tier Paper Organizer Letter Tray, Mesh File Organizer with Handle, Paper Sorter Desk Organizer for Home Office Supplies - Black"
+        },
+        {
+          "asin": "B0FX2JQ179",
+          "title": "8 Pack Textured Sensory Suction Fidget Toys for Kids Adults Quiet Sensory Strips Stickers Autism ADHD Calming Anxiety Stress Relief Classroom Desk Must Have Christmas Stocking Stuffers Gifts",
+          "reason": "near-identical-title",
+          "cluster": "stress relief fidgets",
+          "winnerAsin": "B0DZXXPLLL",
+          "winnerTitle": "550pcs Fidget Toys for Adults, Stress Relief Sensory Toys for Autism ADHD Anxiety,Desk Fidgets Toys,Fidgets Toys Adults Gifts"
+        },
+        {
+          "asin": "B0G41D9X16",
+          "title": "Fidget Sensory Toys for Kids Adult: 3 Pack Finger Fidget Toys for Autism",
+          "reason": "near-identical-title",
+          "cluster": "stress relief fidgets",
+          "winnerAsin": "B0DZXXPLLL",
+          "winnerTitle": "550pcs Fidget Toys for Adults, Stress Relief Sensory Toys for Autism ADHD Anxiety,Desk Fidgets Toys,Fidgets Toys Adults Gifts"
+        },
+        {
+          "asin": "B0CB8DZ11H",
+          "title": "Yinder 24 Pcs Inspirational Sticky Notes Gift, Appreciation, Multicolor",
+          "reason": "white-label-clone",
+          "cluster": "desk-note-set",
+          "winnerAsin": "B0H2HJLBRV",
+          "winnerTitle": "50-Pack Funny Disgusting Face Memo Pad – Sarcastic Sticky Notes, Squared, Coworker Gifts, Office Humor Desk Decor, Aesthetic Stationery"
+        },
+        {
+          "asin": "B0GF1GGJR5",
+          "title": "3D Star Fidget Toy,3D Printed Fidget Toys with Handle, Fidget Star Dual Motion Sensory Toy , Color-Changing Spiral for Stress Relief and Focus, Gift for ADHD and Office Desk (Blue)",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B091JXRHQN",
+          "title": "Original Fidget Toy Game, Rubberized Classical Controller",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B07RDD7Q31",
+          "title": "Kinetic Desk Toys,Full Body Optical Illusion Spinner Ball,Gifts for Men,Women,Kids 1.5” Size (Silver)",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0GYPHLKNG",
+          "title": "6 Pack Impossible Cone 3D Printed Fidget Toys, Spiral Cone Pyramid Passthrough Desk Sensory Fidget Toys for Kids Adults, Cool Stress Relief Gifts for Classroom Office",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0HPNQ13DF",
+          "title": "Fidget Pen, Cool Toys Decompression Magnetic Metal Pen",
+          "reason": "guide-limit",
+          "cluster": "fidget-pen"
+        },
+        {
+          "asin": "B0G8HVDL7J",
+          "title": "Magentic Fidget Pen, Gifts For Teen Boys Fathers, Teacher Appreciation & Birthday Gift For Men Women Him Her Teenage Boys, Cool Gadget Toys For Adults Office Desk Accessories, Silver",
+          "reason": "guide-limit",
+          "cluster": "fidget-pen"
+        },
+        {
+          "asin": "B0D22LJ1TR",
+          "title": "Fidget Pen, Decompression Magnetic Pen, Cool Stuff Gadgets for Boys Girls",
+          "reason": "guide-limit",
+          "cluster": "fidget-pen"
+        },
+        {
+          "asin": "B0D2ZWXRT7",
+          "title": "Morf Worm 3D Sensory Fidget Toys for Kids, Teens & Adults, Rainbow, Small",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B08YNX3FBM",
+          "title": "Kmiles Heat Changing Solar System Ceramic Mug Colour Changing Mug Magical Coffee Mug Tea Cup 12 Ounce - Novelty for Xmas Funny Gifts",
+          "reason": "guide-limit",
+          "cluster": "drinkware mug warmers"
+        },
+        {
+          "asin": "B0HG14PL1C",
+          "title": "SUNWILL Insulated Coffee Mug, Stainless Steel 14 oz, Splash-Proof Lid",
+          "reason": "guide-limit",
+          "cluster": "drinkware mug warmers"
+        },
+        {
+          "asin": "B0D7F3YF82",
+          "title": "8Pcs Fidget Toys Adults Kids 8+ Adhd Autism Toys Adults Edc Cool Gadgets Desk Toys Fidgets For Classroom Magnetic Fidget Rings Figette Spinner Christmas Stocking Stuffers Gifts for Teens Boys",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0FM6Z4S6L",
+          "title": "550 PCS Colorful Desk Fidget Toy, Putty-Like Sensory Fidget Toys for Adults",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0DB295CKH",
+          "title": "Rechargeable Automatic Stirring Coffee Mug Stainless Steel White Portable",
+          "reason": "guide-limit",
+          "cluster": "drinkware mug warmers"
+        },
+        {
+          "asin": "B09MM1NFXV",
+          "title": "Desk Sculpture Butterflies Desktop Stress Relief Toy Fidget Toy for Anxiety Office Gift (22pcs Butterflies)",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0FZ867XZL",
+          "title": "Stocking Stuffers For Brother Sister Uncle Aunt Coworker Funny Gifts",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0DD4DMB4P",
+          "title": "Worst $5 White Elephant Gift Ever: 6 x 9 Blank Lined Notebook Journal Cream - Funny Saying Sarcastic Work Gag Present for Office Coworkers, Employees, Adults, Boss",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0F2TV34B6",
+          "title": "I Wish I Was A Unicorn So I Could Just Stab Idiots With My Head: 6 x 9 Blank Lined Notebook Journal Vintage - Funny Saying Sarcastic Work Gag Gift for Office Coworkers, Employees, Adults, Boss",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0DF7J32C9",
+          "title": "White Elephant Gift Black Cat Acrylic Funny Desk Sign for Men",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0DMMSNDBD",
+          "title": "9PC Funny Pens Fun Meme Gag Ballpoint Ink Pen Set Sarcastic Quirky for Writing Club Humor Adult Women Men Work Office Coworker Boss Manager Party Friends Novelty School Items Gifts Supplies",
+          "reason": "guide-limit",
+          "cluster": "desk-pen-set"
+        },
+        {
+          "asin": "B0H2XSS3J4",
+          "title": "Fatbaby Funny Coworker Glass Ornament, You are The Reason I Don’t Punch People at Work Gift, Sarcastic Office Gift for Coworkers Boss Friends",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B00006IA5D",
+          "title": "Rubbermaid Extra Deep Desk Drawer Director Tray, Plastic, Black",
+          "reason": "guide-limit",
+          "cluster": "desk organizers cable clips"
+        },
+        {
+          "asin": "B0HBK6NPKC",
+          "title": "Press to Spin Mechanical Fidget Toys for Adults & Teens,2PCS Stress Relief Sensory Fidget Ball for Autism ADHD Anxiety,Fun Textures Gadgets,Office Desk Toy,Stocking Stuffers for Women Men Teen Gifts",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0GD6QX5XL",
+          "title": "6pcs Adult Fidget Toys,Office Desk Metal Fidget Set for Teens&Kids",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0G8HTMXRC",
+          "title": "Funny Pop Up Surprise Box, Novelty Desk Prank Gift for Office or Home, Lighthearted Gag Gift for Parties and Holidays",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0FLDQFPCG",
+          "title": "Funny Gifts for Boss Appreciation Birthday Bosses Day Gifts for Women Men Manager Coworker Colleague 5 x 5 Inch",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0GYZD5CJ2",
+          "title": "4PC Keyboard Fidget Toy, Connectable RGB Keys for Stress Relief",
+          "reason": "guide-limit",
+          "cluster": "keyboard-fidget"
+        },
+        {
+          "asin": "B0DQP45SH4",
+          "title": "Gear Ball Fidget Toys Steampunk Gear Sphere Stress Relief for Kids Adults 3D Printed Unique Funny Birthday Gift for Christmas White Elephant Stocking Stuffer Easter (Christmas Green, Dia. 2.5\" )",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0B5FDKG15",
+          "title": "Kinetic Spinning Desk Toy Metal Fidgets ADHD 1.54in Rainbow Silver",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0FQBTM5PK",
+          "title": "Caution Overstimulated Do Not Approach Desk Sign Funny Office Prank Humorous Warning Desk Sign Gag Gift Mini Office Decor Accessories for Workplace Coworkers Employees Boss Teammate, Yellow",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0BRMX3SWH",
+          "title": "Office Desk Accessories 2pcs Computer Monitor Memo Board Office Supplies",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0F43MKRP7",
+          "title": "550 PCS Ferrite Putty Stones, Magnetic Beads, Multicolor",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0F8W797NR",
+          "title": "Textured Sensory Stickers – 8 Pack Silicone Fidget Strips for Kids & Adults with ADHD, Autism & Anxiety – Quiet Toys for Desk, Travel & Office – Great for Gifting, Rewards & Fillers",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0F8B95NCT",
+          "title": "Monitor Memo Board 14\"x5\", Office Organization Memo Holders",
+          "reason": "guide-limit",
+          "cluster": "notepads pens desk humor"
+        },
+        {
+          "asin": "B0GCG6V8JP",
+          "title": "Desktop Punching Bag – Desk Fidget Toy for Stress Relief & Focus – Mini Suction Cup Punch Ball with Patented Stickio™ Technology – Office Stress Reliever for Adults, Teens & Coworkers",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0H2LJ9TN2",
+          "title": "Ocean Squishy Cube Toy, Slow Rising Sensory Squeeze Toy, Marine Themed Fidget Toy for Adults（Light Blue）",
+          "reason": "guide-limit",
+          "cluster": "slow-rising-stress-cube"
+        },
+        {
+          "asin": "B0DKCZ7NG6",
+          "title": "Magnetic Fidget Toys with 1 Magnetic Base and 195 Non-Magnetic Balls，Stress Relief Desk Toys Office Gifts Great for Boredom",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B077BJC36S",
+          "title": "Nutty Toys Squishy Cat Set - 2\" Soft Silicone Kawaii Kitties, Top Stress Relief Toy 2026 Unique Gifts for Teens Kids Women Men Adults Best Teenage Girls Teen Boy Tween Christmas Stocking Stuffers Idea",
+          "reason": "guide-limit",
+          "cluster": "novelty-squishy"
+        },
+        {
+          "asin": "B0G7S467XZ",
+          "title": "Fidget Toys Adults Stress Relief: 4 Pack Fidget Stone - Sensory Calming Desk Toys - Office Tension Relief Focus Tool - Gifts for Coworkers & Friends",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0CJJ98PJ6",
+          "title": "Furinno HERMITE Desk File Folder Organizers, 3-Shelf Desktop Office Organization Racks, Desk Top Display Book Shelf, for Paper, Office Supplies, Magazine, Espresso",
+          "reason": "guide-limit",
+          "cluster": "desk organizers cable clips"
+        },
+        {
+          "asin": "B0FRFN18GB",
+          "title": "Fidget Toy for Adult Mens, Cool Gadgets Gifts for Teen Boys 300pc Office Desk Stuff ADHD Tools Sensory Autism Stress Anxiety Fidgets Beads Balls Ferrite Putty Stones Stocking Stuffers For Adults",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0D5H24H4M",
+          "title": "Triple Fidget Slider, Magnetic Metal Fidget Toys Adults",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0G6RK6HR9",
+          "title": "3D Printed Star Fidget Toys Adults Teen with Detachable Handle",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0FVL126JN",
+          "title": "SnapMorph3.0 Little Ouchies Fidget Toys - 3-in-1 Pain Stim Toy with Spinning & Press Buttons for Anxiety Relief, Stress and Pain Relief Stimulation for Adults and Teens,2PCS Green+Colorful",
+          "reason": "guide-limit",
+          "cluster": "stress relief fidgets"
+        },
+        {
+          "asin": "B0D1QX8LDW",
+          "title": "Metal Fidget Spring Toys, Adults 20LB Stainless Steel Stress Ball Cool Gadget Office Desk Silent ADHD Anxiety Relief Item Stocking Stuffer Gift for Teen Boy Men",
+          "reason": "guide-limit",
+          "cluster": "standard-stress-ball"
+        }
+      ]
+    },
+    {
       "slug": "handmade-crochet-animals-positivity-under-5",
       "title": "Handmade Crochet Gift Animals Under $5",
       "linkedCount": 24,
@@ -2817,7 +4206,7 @@
           "title": "4.8 Inch Woven Drink Coasters Set of 4, Thick Absorbent Coasters, Boho Cotton Neutral Fabric Coaster for Desk Table Office Decor Posavasos for Coffee Cups with Gift Box (Multicolored, 4Pack) -",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best compact woven drink coaster",
+          "reason": "Best office drink coaster",
           "bayesianScore": 4.6463,
           "reviews": 476
         },
@@ -2837,7 +4226,7 @@
           "title": "OIAHOMY 8 Pcs Coasters with Holder for Beer, Coffee, Woven Cotton Coaster Set for Table Decor for Kitchen, Bar, Dining Room, Living Room, Housewarming Gifts - Yellow",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best gift-ready woven drink coaster",
+          "reason": "Best compact woven drink coaster",
           "bayesianScore": 4.6441,
           "reviews": 462
         },
@@ -2847,7 +4236,7 @@
           "title": "Boho Drink Coasters Set of 4, 4.8 Inch Absorbent Cotton Woven Coasters, Handmade Round Fabric Cup Coasters for Coffee Table, Farmhouse Kitchen, Dining Room, Desk, Neutral Home Decor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best everyday woven drink coaster",
+          "reason": "Best woven office drink coaster",
           "bayesianScore": 4.5914,
           "reviews": 219
         },
@@ -2857,7 +4246,7 @@
           "title": "MAQIHAN 8 PCS Coasters for Drinks - Woven Absorbent Coaster Set of 8 Colors | 4.3 Inch Handwoven Cotton Coasters for Boho Home Decor Coffee Table Farmhouse Kitchen Tabletop Protection & Housewarming Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best premium woven drink coaster",
+          "reason": "Best gift-ready woven drink coaster",
           "bayesianScore": 4.5628,
           "reviews": 229
         },
@@ -2867,7 +4256,7 @@
           "title": "Woven Coasters Set of 8, Absorbent Drink Coasters with Holder, Boho Cotton Coffee Cup Coaster for Table, Desk, Coffee Bar, Housewarming Gift (8 Colors,4.17 Inch)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best colorful woven drink coaster",
+          "reason": "Best budget office drink coaster",
           "bayesianScore": 4.5638,
           "reviews": 135
         },
@@ -2877,7 +4266,7 @@
           "title": "Coasters Set of 4 for Drinks, Cotton Woven 4 Colors Absorbent Boho Coasters for Home Decor Cups - Hot or Cold Drink Thickened (Khaki)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best minimalist woven drink coaster",
+          "reason": "Best everyday woven drink coaster",
           "bayesianScore": 4.5431,
           "reviews": 379
         },
@@ -2887,7 +4276,7 @@
           "title": "4 Pcs Bar Coasters for Drinks, Handmade Braided Woven Drink Coaster Set, Beermat Beverage Coaster 4.3” Non Slip Coasters, Fruit Printing",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best playful woven drink coaster",
+          "reason": "Best premium woven drink coaster",
           "bayesianScore": 4.5575,
           "reviews": 202
         },
@@ -2897,7 +4286,7 @@
           "title": "Drink Coasters Set of 8, 4 Colors Absorbent Coasters for Drinks, Minimalist Cotton Woven Coaster for Living Room Decor, Fall Home Decor, 4.3 Inches",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best classic woven drink coaster",
+          "reason": "Best colorful woven drink coaster",
           "bayesianScore": 4.5492,
           "reviews": 98
         },
@@ -2927,7 +4316,7 @@
           "title": "Handmade Crochet Cat Butt Coasters for Drinks - Set of 3 Funny Women Gifts for Cat Lovers, Absorbent Cotton Handwoven Drink Coaster Mats, Quirky Cute Themed Home Decor for Office Housewarming Mom Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best modern woven drink coaster",
+          "reason": "Best compact office drink coaster",
           "bayesianScore": 4.5165,
           "reviews": 45
         },
@@ -2937,7 +4326,7 @@
           "title": "Cotton Woven Drink Coasters Set of 4 for Kinds of Cups | Absorbent Cat Ear Shape Cup Coasters with Holder for Tabletop Protection Home Office Decor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best versatile woven drink coaster",
+          "reason": "Best gift office drink coaster",
           "bayesianScore": 4.5146,
           "reviews": 19
         },
@@ -2947,7 +4336,7 @@
           "title": "Cotton Rope Absorbent Drink Coasters Set of 8 with Holder (Gray) | Soft Non-Slip Washable Heat Resistant Woven Coaster Set for Coffee Table, Kitchen, Bar, Modern Boho Home Décor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best travel woven drink coaster",
+          "reason": "Best minimalist woven drink coaster",
           "bayesianScore": 4.5234,
           "reviews": 31
         },
@@ -2967,7 +4356,7 @@
           "title": "DomeStar Drink Coasters Set of 6, 3.5 Inch, Boho Furniture and Modern Farmhouse Decor Drink Coasters, Minimalist Non-Slip Tabletop Protection Suitable for Kinds of Cups, Living Room, Kitchen, White",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best starter woven drink coaster",
+          "reason": "Best playful woven drink coaster",
           "bayesianScore": 4.5,
           "reviews": 82
         },
@@ -2977,7 +4366,7 @@
           "title": "Handmade Boho Cotton Woven Coasters Set of 8 - Absorbent, Heat-Resistant, Stylish Multi-Color for Home Decor, Coffee Tables, and Tabletop Protection (4.13in)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best collector woven drink coaster",
+          "reason": "Best classic woven drink coaster",
           "bayesianScore": 4.5062,
           "reviews": 16
         },
@@ -2997,7 +4386,7 @@
           "title": "Desk Coasters Set of 4, Cute Coaster for Desk, Round Handmade Woven Coaster for Boho Home Decor, CupCoasters for Office Kitchen Dining Room Bar Farmhouse, Coasters Set for Drinks, Beer, Coffee",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best durable woven drink coaster",
+          "reason": "Best everyday office drink coaster",
           "bayesianScore": 4.5092,
           "reviews": 24
         },
@@ -3007,7 +4396,7 @@
           "title": "Boho Woven Coasters Set of 6, Absorbent Drink Coasters for Coffee Table, Rustic Farmhouse Table Decor, Southwestern Aesthetic, Handmade Style, Housewarming Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best light woven drink coaster",
+          "reason": "Best modern woven drink coaster",
           "bayesianScore": 4.5082,
           "reviews": 14
         }
@@ -3038,7 +4427,7 @@
           "title": "4.8 Inch Woven Drink Coasters Set of 4, Thick Absorbent Coasters, Boho Cotton Neutral Fabric Coaster for Desk Table Office Decor Posavasos for Coffee Cups with Gift Box (Multicolored, 4Pack) -",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best compact woven drink coaster",
+          "reason": "Best office drink coaster",
           "rating": 4.8,
           "reviews": 476,
           "price": 7.99
@@ -3058,7 +4447,7 @@
           "title": "OIAHOMY 8 Pcs Coasters with Holder for Beer, Coffee, Woven Cotton Coaster Set for Table Decor for Kitchen, Bar, Dining Room, Living Room, Housewarming Gifts - Yellow",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best gift-ready woven drink coaster",
+          "reason": "Best compact woven drink coaster",
           "rating": 4.8,
           "reviews": 462,
           "price": 8.99
@@ -3068,7 +4457,7 @@
           "title": "Boho Drink Coasters Set of 4, 4.8 Inch Absorbent Cotton Woven Coasters, Handmade Round Fabric Cup Coasters for Coffee Table, Farmhouse Kitchen, Dining Room, Desk, Neutral Home Decor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best everyday woven drink coaster",
+          "reason": "Best woven office drink coaster",
           "rating": 4.8,
           "reviews": 219,
           "price": 7.99
@@ -3078,7 +4467,7 @@
           "title": "MAQIHAN 8 PCS Coasters for Drinks - Woven Absorbent Coaster Set of 8 Colors | 4.3 Inch Handwoven Cotton Coasters for Boho Home Decor Coffee Table Farmhouse Kitchen Tabletop Protection & Housewarming Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best premium woven drink coaster",
+          "reason": "Best gift-ready woven drink coaster",
           "rating": 4.7,
           "reviews": 229,
           "price": 5.99
@@ -3088,7 +4477,7 @@
           "title": "Woven Coasters Set of 8, Absorbent Drink Coasters with Holder, Boho Cotton Coffee Cup Coaster for Table, Desk, Coffee Bar, Housewarming Gift (8 Colors,4.17 Inch)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best colorful woven drink coaster",
+          "reason": "Best budget office drink coaster",
           "rating": 4.8,
           "reviews": 135,
           "price": 7.99
@@ -3108,7 +4497,7 @@
           "title": "Coasters Set of 4 for Drinks, Cotton Woven 4 Colors Absorbent Boho Coasters for Home Decor Cups - Hot or Cold Drink Thickened (Khaki)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best minimalist woven drink coaster",
+          "reason": "Best everyday woven drink coaster",
           "rating": 4.6,
           "reviews": 379,
           "price": 5.99
@@ -3118,7 +4507,7 @@
           "title": "4 Pcs Bar Coasters for Drinks, Handmade Braided Woven Drink Coaster Set, Beermat Beverage Coaster 4.3” Non Slip Coasters, Fruit Printing",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best playful woven drink coaster",
+          "reason": "Best premium woven drink coaster",
           "rating": 4.7,
           "reviews": 202,
           "price": 5.99
@@ -3128,7 +4517,7 @@
           "title": "Drink Coasters Set of 8, 4 Colors Absorbent Coasters for Drinks, Minimalist Cotton Woven Coaster for Living Room Decor, Fall Home Decor, 4.3 Inches",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best classic woven drink coaster",
+          "reason": "Best colorful woven drink coaster",
           "rating": 4.8,
           "reviews": 98,
           "price": 8.99
@@ -3158,7 +4547,7 @@
           "title": "Handmade Crochet Cat Butt Coasters for Drinks - Set of 3 Funny Women Gifts for Cat Lovers, Absorbent Cotton Handwoven Drink Coaster Mats, Quirky Cute Themed Home Decor for Office Housewarming Mom Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best modern woven drink coaster",
+          "reason": "Best compact office drink coaster",
           "rating": 4.7,
           "reviews": 45,
           "price": 5.59
@@ -3168,7 +4557,7 @@
           "title": "Cotton Woven Drink Coasters Set of 4 for Kinds of Cups | Absorbent Cat Ear Shape Cup Coasters with Holder for Tabletop Protection Home Office Decor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best versatile woven drink coaster",
+          "reason": "Best gift office drink coaster",
           "rating": 4.9,
           "reviews": 19,
           "price": 6.99
@@ -3178,7 +4567,7 @@
           "title": "Cotton Rope Absorbent Drink Coasters Set of 8 with Holder (Gray) | Soft Non-Slip Washable Heat Resistant Woven Coaster Set for Coffee Table, Kitchen, Bar, Modern Boho Home Décor",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best travel woven drink coaster",
+          "reason": "Best minimalist woven drink coaster",
           "rating": 4.9,
           "reviews": 31,
           "price": 8.99
@@ -3198,7 +4587,7 @@
           "title": "DomeStar Drink Coasters Set of 6, 3.5 Inch, Boho Furniture and Modern Farmhouse Decor Drink Coasters, Minimalist Non-Slip Tabletop Protection Suitable for Kinds of Cups, Living Room, Kitchen, White",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best starter woven drink coaster",
+          "reason": "Best playful woven drink coaster",
           "rating": 4.5,
           "reviews": 82,
           "price": 7.99
@@ -3208,7 +4597,7 @@
           "title": "Handmade Boho Cotton Woven Coasters Set of 8 - Absorbent, Heat-Resistant, Stylish Multi-Color for Home Decor, Coffee Tables, and Tabletop Protection (4.13in)",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best collector woven drink coaster",
+          "reason": "Best classic woven drink coaster",
           "rating": 4.7,
           "reviews": 16,
           "price": 7.99
@@ -3228,7 +4617,7 @@
           "title": "Desk Coasters Set of 4, Cute Coaster for Desk, Round Handmade Woven Coaster for Boho Home Decor, CupCoasters for Office Kitchen Dining Room Bar Farmhouse, Coasters Set for Drinks, Beer, Coffee",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best durable woven drink coaster",
+          "reason": "Best everyday office drink coaster",
           "rating": 4.7,
           "reviews": 24,
           "price": 9.99
@@ -3238,7 +4627,7 @@
           "title": "Boho Woven Coasters Set of 6, Absorbent Drink Coasters for Coffee Table, Rustic Farmhouse Table Decor, Southwestern Aesthetic, Handmade Style, Housewarming Gift",
           "category": "Drink Coasters & Table Decor",
           "subcategory": "Cotton & Woven Coasters",
-          "reason": "Best light woven drink coaster",
+          "reason": "Best modern woven drink coaster",
           "rating": 4.8,
           "reviews": 14,
           "price": 9.99

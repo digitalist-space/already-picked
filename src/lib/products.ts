@@ -4,7 +4,10 @@ import { applyGuideEditorialMetadata } from "./guideMetadata";
 import { priceCapFromSlug, qualifyingProducts } from "./productQuality";
 import { preferredSourceTitle } from "./productPresentation";
 import { curateGuide } from "./guideCuration";
-import { normalizeProductTypeLabel } from "./categoryTaxonomy";
+import {
+  normalizeDeskGiftSubcategory,
+  normalizeProductTypeLabel,
+} from "./categoryTaxonomy";
 
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const ASSOCIATE_TAG = process.env.AMAZON_ASSOCIATE_TAG || "digitalist0d-20";
@@ -200,6 +203,7 @@ function rowToProduct(
     row.name,
     row.product_name
   );
+  const category = normalizeCategory(row.category);
   return {
     id: row.id || `product-${index}`,
     title,
@@ -211,10 +215,12 @@ function rowToProduct(
       : undefined,
     rating: Math.min(5, Math.max(0, parseFloat(row.rating) || 0)),
     reviewCount: parseInt(row.review_count?.replace(/,/g, "")) || 0,
-    category: normalizeCategory(row.category),
-    subcategory: row.subcategory
-      ? normalizeProductTypeLabel(row.subcategory)
-      : undefined,
+    category,
+    subcategory: category === "Desk & Coworker Stocking Stuffers"
+      ? normalizeDeskGiftSubcategory(title, row.subcategory)
+      : row.subcategory
+        ? normalizeProductTypeLabel(row.subcategory)
+        : undefined,
     asin,
     imageUrl: row.image_url || "/placeholder.svg",
     affiliateUrl: asin ? buildAffiliateUrl(asin, affiliateTag) : "#",
