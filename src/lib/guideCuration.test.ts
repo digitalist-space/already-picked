@@ -23,5 +23,5 @@ test("category aliases and exact ASIN duplicates collapse",()=>{
  const a={...p("a","Portable folding reading lamp"),subcategory:"BOOK LIGHTS",asin:"ABC"};
  const b={...p("b","Portable folding reading lamp",2000),subcategory:"READING LIGHTS"};
  const c={...p("c","Different title",10),asin:"ABC"};
- assert.deepEqual(curateGuide([a,b,c]).map(x=>x.id),["b","c"]); // winner-only matching is not transitive
+ assert.deepEqual(curateGuide([a,b,c]).map(x=>x.id),["b"]);
 });
