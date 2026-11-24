@@ -1,5 +1,5 @@
 import type { Product } from "./types";
-import { normalizeProductTypeLabel } from "./categoryTaxonomy";
+import { normalizeProductTypeLabel } from "./categoryTaxonomy.ts";
 
 export const MAX_GUIDE_PICKS = 25;
 const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -66,7 +66,7 @@ function compare(a: Product, b: Product): number {
 }
 
 export function curateGuide(products: Product[]): Product[] {
-  const ranked = products.filter(p => Number.isFinite(p.price) && p.price > 0).slice().sort(compare);
+  const ranked = products.filter(p => Number.isFinite(p.price) && p.price > 0 && Number.isFinite(p.reviewCount) && p.reviewCount >= 5 && Number.isFinite(p.rating) && p.rating >= 3.8).slice().sort(compare);
   const selected: Product[] = [];
   const brands = new Map<string, Product[]>();
   for (const p of ranked) {
