@@ -5,14 +5,13 @@ import ProductGrid from "@/components/ProductGrid";
 import {
   getCategories,
   getLandingPage,
-  getLandingPageProducts,
+  getQualifyingLandingPageProducts,
   getPublishedGuideDirectory,
 } from "@/lib/products";
 import type { LandingPage, Product } from "@/lib/types";
 import { MIN_HOMEPAGE_PRODUCTS } from "@/lib/guideMetadata";
 import { pluralizedCount } from "@/lib/productPresentation";
 import {
-  qualifyingProducts,
   resolveGuideMaxPrice,
 } from "@/lib/productQuality";
 import { brandedTitle } from "@/lib/site";
@@ -106,10 +105,7 @@ export async function generateMetadata({
   const page = await getLandingPage(slug);
   if (!page || page.status !== "published") return {};
   const maxPrice = resolveGuideMaxPrice(page.themeSlug, page.maxPrice);
-  const qualifying = qualifyingProducts(
-    await getLandingPageProducts(slug, page.affiliateTag || undefined),
-    { maxPrice }
-  );
+  const qualifying = await getQualifyingLandingPageProducts(slug, page.affiliateTag || undefined, maxPrice);
   if (qualifying.length < MIN_HOMEPAGE_PRODUCTS) return {};
 
   return {
@@ -133,12 +129,8 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!page || page.status !== "published") notFound();
 
-  const allProducts = await getLandingPageProducts(
-    slug,
-    page.affiliateTag || undefined
-  );
   const maxPrice = resolveGuideMaxPrice(page.themeSlug, page.maxPrice);
-  const products = qualifyingProducts(allProducts, { maxPrice });
+  const products = await getQualifyingLandingPageProducts(slug, page.affiliateTag || undefined, maxPrice);
   if (products.length < MIN_HOMEPAGE_PRODUCTS) notFound();
   const categories = getCategories(products);
   const aboutCopy = page.aboutCopy || buildSeoParagraph(page, products);
@@ -220,7 +212,7 @@ export default async function GuidePage({ params }: PageProps) {
           </div>
         ) : (
           <ProductGrid
-            products={allProducts}
+            products={products}
             categories={categories}
             enforceQualityByDefault
             guideProductTypesOnly

@@ -72,7 +72,7 @@ test("product hooks prioritize product descriptions over guide-level editorial n
       "Fast setup and travel-friendly play for families, game nights, and weekend trips.",
     description: "Compact strategy game for quick family rounds and travel.",
     specs: { Players: "2–4" },
-  } as Product);
+  } as unknown as Product);
 
   assert.equal(hook, "Compact strategy game for quick family rounds and travel.");
   assert.ok(hook.length <= 85);
@@ -86,7 +86,7 @@ test("product hooks prioritize the sheet short_hook over every fallback", () => 
       editorialNote: "A guide-specific editorial note.",
       description: "A longer product description.",
       specs: { Players: "2–4" },
-    } as Product),
+    } as unknown as Product),
     "Quick 15-minute rounds for two to four players."
   );
 });
@@ -112,7 +112,7 @@ test("product hooks use key specs before the guide-level editorial fallback", ()
       title: "Pocket Strategy Card Game",
       editorialNote: "A guide-specific editorial fallback.",
       specs: { Players: "2–4", "Age Range": "8+", Color: "Blue" },
-    } as Product),
+    } as unknown as Product),
     "Players: 2–4 · Age Range: 8+"
   );
 });
@@ -128,7 +128,7 @@ test("product hooks suppress repeated guide descriptions", () => {
       guideDescription,
       specs: { Pieces: "124", "Age Range": "7+" },
       editorialNote: "Guide-level fallback copy.",
-    } as Product),
+    } as unknown as Product),
     "Age Range: 7+ · Pieces: 124"
   );
 });
@@ -140,7 +140,7 @@ test("product hooks suppress lowercase fragments and boilerplate", () => {
       description: "offers compact hands-on creative building play.",
       shortHook: "tiny fragment",
       specs: {},
-    } as Product),
+    } as unknown as Product),
     undefined
   );
   assert.equal(
@@ -148,7 +148,7 @@ test("product hooks suppress lowercase fragments and boilerplate", () => {
       title: "Family Card Game",
       description: "Fast rounds for quick group play.",
       specs: { Players: "2–6", "Age Range": "8+" },
-    } as Product),
+    } as unknown as Product),
     "Players: 2–6 · Age Range: 8+"
   );
 });
@@ -159,7 +159,7 @@ test("product hooks clean, de-duplicate, and clamp description fallbacks", () =>
     description:
       "Wooden Brain Teaser — Builds spatial reasoning through screen-free solo play with a compact travel-ready design that stores easily.",
     specs: {},
-  } as Product);
+  } as unknown as Product);
 
   assert.equal(
     hook,

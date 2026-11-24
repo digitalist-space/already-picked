@@ -133,6 +133,9 @@ export default function ProductCard({
           {displayTitle}
         </h3>
 
+        {product.bestFor && (
+          <p className="mb-2 text-xs font-semibold text-emerald-800 dark:text-emerald-300">Best for: {product.bestFor}</p>
+        )}
         {productHook && (
           <p
             className="mb-3 line-clamp-2 text-xs font-medium leading-5 text-gray-600 dark:text-gray-300"
