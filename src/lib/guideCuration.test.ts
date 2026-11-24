@@ -16,5 +16,12 @@ test("wooden holders and embroidered bookmarks each get one winner",()=>{
 test("missing price is excluded and guide is capped",()=>{
  const products=Array.from({length:30},(_,i)=>p(String(i),"Item "+i));
  assert.equal(curateGuide([...products,p("missing","Missing price",1000,0)]).length,25);
- assert.equal(curateGuide([p("missing","Missing price",1000,0)]).length,0);
+ assert.equal(curateGuide([p("missing","Missing price",1000,0),p("no-reviews","No reviews",0)]).length,0);
+});
+
+test("category aliases and exact ASIN duplicates collapse",()=>{
+ const a={...p("a","Portable folding reading lamp"),subcategory:"BOOK LIGHTS",asin:"ABC"};
+ const b={...p("b","Portable folding reading lamp",2000),subcategory:"READING LIGHTS"};
+ const c={...p("c","Different title",10),asin:"ABC"};
+ assert.deepEqual(curateGuide([a,b,c]).map(x=>x.id),["b","c"]); // winner-only matching is not transitive
 });
