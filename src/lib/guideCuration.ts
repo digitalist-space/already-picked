@@ -2,8 +2,17 @@ import type { Product } from "./types";
 import { normalizeProductTypeLabel } from "./categoryTaxonomy.ts";
 
 export const MAX_GUIDE_PICKS = 25;
+export const BAYESIAN_MINIMUM_REVIEWS = 500;
+export const BAYESIAN_PRIOR_RATING = 4.5;
+export const BAYESIAN_PRICE_TIE_THRESHOLD = 0.015;
+export const FUNCTIONAL_JACCARD_THRESHOLD = 0.45;
+export interface CurationConfig {
+  maxPicks?: number;
+  maxWinnersPerCluster?: 1 | 2;
+  crossBrandClustering?: boolean;
+}
 export type CurationRemovalReason =
-  | "quality-floor" | "exact-asin" | "exact-title" | "same-image"
+  | "quality-floor" | "exact-id" | "exact-asin" | "exact-title" | "same-image"
   | "white-label-clone" | "near-identical-title" | "brand-archetype-cap" | "guide-limit";
 export interface CurationRemoval {
   product: Product;
@@ -30,7 +39,8 @@ interface Fingerprint {
 const STOP_WORDS = new Set([
   "a", "an", "and", "for", "from", "gift", "gifts", "in", "new", "of", "on", "or",
   "pack", "set", "the", "to", "toy", "toys", "with", "women", "men", "kids", "adult",
-  "adults", "black", "white", "blue", "green", "pink", "purple", "color",
+  "adults", "black", "white", "blue", "green", "pink", "purple", "color", "lovers",
+  "portable", "upgraded", "led", "piece", "pieces", "pcs", "item", "product",
 ]);
 const GENERIC_BRAND_WORDS = new Set([
   "best", "book", "clip", "creative", "cute", "fidget", "handmade", "magnetic", "mini",
@@ -81,7 +91,7 @@ export function archetype(product: Product): string {
     if (/zero blue|blue light free|\b630\s*nm|red light/.test(text)) return "red-light-reading-lamp";
     if (/neck|wearable|hands free/.test(text)) return "wearable-neck-reading-light";
     if (/clip|rechargeable|\busb\b/.test(text)) return "clip-on-rechargeable-book-light";
-    if (/desk|table|standing/.test(text)) return "desk-reading-lamp";
+    if (/\b(?:desk|table|standing)\b/.test(text)) return "desk-reading-lamp";
     return "portable-reading-light";
   }
   if (/page holder|thumb holder|thumb ring/.test(text)) {
@@ -118,10 +128,24 @@ export function archetype(product: Product): string {
   }
   return bucket(product);
 }
-function tokens(product: Product): Set<string> {
+function titleTokens(product: Product): Set<string> {
   const brand = new Set(brandKey(product).split(" "));
   return new Set(normalizedTitle(product).split(" ")
-    .filter((token) => token.length > 1 && !brand.has(token)));
+    .filter((token) => token.length > 1 && !/^\d+(?:\.\d+)?$/.test(token) &&
+      !STOP_WORDS.has(token) && !brand.has(token)));
+}
+export function functionalTokens(product: Product): Set<string> {
+  const result = titleTokens(product);
+  const type = archetype(product);
+  if (type !== bucket(product)) {
+    for (const token of type.split("-")) {
+      if (token.length > 1 && !STOP_WORDS.has(token)) result.add(token);
+    }
+  }
+  for (const token of attributes(product)) {
+    if (!/^\d/.test(token) && !/\d+-pack$/.test(token)) result.add(token);
+  }
+  return result;
 }
 function imageKey(product: Product): string {
   const value = String(product.imageUrl || "").trim().toLowerCase();
@@ -130,7 +154,7 @@ function imageKey(product: Product): string {
 }
 function fingerprint(product: Product): Fingerprint {
   return { brand: brandKey(product), bucket: bucket(product), archetype: archetype(product),
-    attributes: attributes(product), title: normalizedTitle(product), tokens: tokens(product),
+    attributes: attributes(product), title: normalizedTitle(product), tokens: functionalTokens(product),
     image: imageKey(product) };
 }
 function similarity(left: Set<string>, right: Set<string>) {
@@ -140,16 +164,18 @@ function similarity(left: Set<string>, right: Set<string>) {
   return { jaccard: intersection / (left.size + right.size - intersection),
     containment: intersection / Math.min(left.size, right.size) };
 }
-function clusterReason(left: Product, right: Product, a: Fingerprint, b: Fingerprint):
+function clusterReason(left: Product, right: Product, a: Fingerprint, b: Fingerprint,
+  crossBrandClustering: boolean):
   CurationRemovalReason | null {
+  if (String(left.id) === String(right.id)) return "exact-id";
   if (left.asin && right.asin && left.asin.toUpperCase() === right.asin.toUpperCase()) return "exact-asin";
   if (a.title && a.title === b.title) return "exact-title";
   if (a.image && a.image === b.image) return "same-image";
   if (a.bucket !== b.bucket) return null;
+  const sameKnownBrand = Boolean(a.brand && b.brand && a.brand === b.brand);
+  if (!sameKnownBrand && !crossBrandClustering) return null;
   const title = similarity(a.tokens, b.tokens);
-  const specs = similarity(a.attributes, b.attributes);
-  if (a.archetype === b.archetype && a.archetype !== a.bucket &&
-    (specs.containment >= 0.5 || title.jaccard >= 0.34 || title.containment >= 0.58)) {
+  if (title.jaccard >= FUNCTIONAL_JACCARD_THRESHOLD) {
     return "white-label-clone";
   }
   if (a.tokens.size >= 4 && b.tokens.size >= 4 &&
@@ -159,15 +185,12 @@ function clusterReason(left: Product, right: Product, a: Fingerprint, b: Fingerp
 
 export function confidence(product: Product): number {
   const reviews = Math.max(0, product.reviewCount || 0);
-  return (reviews * product.rating + 500 * 4) / (reviews + 500);
+  return (reviews * product.rating + BAYESIAN_MINIMUM_REVIEWS * BAYESIAN_PRIOR_RATING) /
+    (reviews + BAYESIAN_MINIMUM_REVIEWS);
 }
 function compare(left: Product, right: Product): number {
-  const established = Number(right.reviewCount >= 500) - Number(left.reviewCount >= 500);
-  if (established) return established;
   const delta = confidence(right) - confidence(left);
-  const ratio = Math.max(left.reviewCount, right.reviewCount) /
-    Math.max(1, Math.min(left.reviewCount, right.reviewCount));
-  if (Math.abs(delta) <= 0.04 && ratio <= 2) {
+  if (Math.abs(delta) <= BAYESIAN_PRICE_TIE_THRESHOLD) {
     return left.price - right.price || delta || String(left.id).localeCompare(String(right.id));
   }
   return delta || right.reviewCount - left.reviewCount || left.price - right.price ||
@@ -179,7 +202,7 @@ function label(value: string): string {
 function bestFor(winner: Product, group: Product[]): string {
   const value = archetype(winner);
   const name = value === bucket(winner)
-    ? [...tokens(winner)].slice(0, 4).join(" ")
+    ? [...titleTokens(winner)].slice(0, 4).join(" ")
     : label(value);
   if (group.length <= 1) return `Best ${name}`;
   if (winner.reviewCount === Math.max(...group.map((item) => item.reviewCount)) &&
@@ -194,56 +217,97 @@ function eligible(product: Product): boolean {
 }
 
 export function curateGuideWithReport(products: Product[],
-  options: { maxPicks?: number } = {}): GuideCurationReport {
+  options: CurationConfig = {}): GuideCurationReport {
   const maxPicks = Math.max(1, Math.min(options.maxPicks ?? MAX_GUIDE_PICKS, MAX_GUIDE_PICKS));
+  const maxWinnersPerCluster = options.maxWinnersPerCluster ?? 1;
+  const crossBrandClustering = options.crossBrandClustering ?? true;
   const removed: CurationRemoval[] = [];
-  const candidates = products.filter((product) => {
+  const eligibleCandidates = products.filter((product) => {
     if (eligible(product)) return true;
     removed.push({ product, reason: "quality-floor", cluster: archetype(product) });
     return false;
   }).sort(compare);
+  const candidates: Product[] = [];
+  const exactIds = new Map<string, Product>();
+  const exactAsins = new Map<string, Product>();
+  const exactTitles = new Map<string, Product>();
+  const exactImages = new Map<string, Product>();
+  for (const product of eligibleCandidates) {
+    const id = String(product.id);
+    const asin = product.asin?.toUpperCase() || "";
+    const title = normalizedTitle(product);
+    const image = imageKey(product);
+    const winner = exactIds.get(id) || (asin ? exactAsins.get(asin) : undefined) ||
+      (title ? exactTitles.get(title) : undefined) || (image ? exactImages.get(image) : undefined);
+    if (winner) {
+      const reason: CurationRemovalReason = exactIds.has(id) ? "exact-id" :
+        asin && exactAsins.has(asin) ? "exact-asin" :
+        title && exactTitles.has(title) ? "exact-title" : "same-image";
+      removed.push({ product, reason, winner, cluster: archetype(winner) });
+      exactIds.set(id, winner);
+      if (asin) exactAsins.set(asin, winner);
+      if (title) exactTitles.set(title, winner);
+      if (image) exactImages.set(image, winner);
+      continue;
+    }
+    candidates.push(product);
+    exactIds.set(id, product);
+    if (asin) exactAsins.set(asin, product);
+    if (title) exactTitles.set(title, product);
+    if (image) exactImages.set(image, product);
+  }
   const fingerprints = new Map(candidates.map((product) => [product, fingerprint(product)]));
   const groups: Product[][] = [];
   for (const product of candidates) {
-    const matching = groups.filter((group) => group.some((member) =>
-      clusterReason(product, member, fingerprints.get(product)!, fingerprints.get(member)!) !== null));
-    if (!matching.length) groups.push([product]);
-    else {
-      const merged = [product, ...matching.flat()].sort(compare);
-      for (const group of matching) groups.splice(groups.indexOf(group), 1);
-      groups.push(merged);
-    }
+    // Greedy leader clustering is deliberately non-transitive: a marginal
+    // A≈B≈C chain cannot merge two products whose leaders are not similar.
+    const matching = groups.find((group) => clusterReason(
+      product, group[0], fingerprints.get(product)!, fingerprints.get(group[0])!,
+      crossBrandClustering
+    ) !== null);
+    if (!matching) groups.push([product]);
+    else matching.push(product);
   }
   const selected: Product[] = [];
   const usedReasons = new Set<string>();
   for (const group of groups.map((item) => item.sort(compare)).sort((a, b) => compare(a[0], b[0]))) {
-    // One winner per form-factor cluster inherently enforces the intra-brand
-    // cap without incorrectly treating distinct LEGO builds as variants.
-    const winner = group[0];
+    const winners = group.filter((candidate, index, all) => {
+      if (index === 0) return true;
+      if (maxWinnersPerCluster === 1) return false;
+      const prior = all.slice(0, index).filter((item) => item === group[0]);
+      const sameBrand = prior.some((item) => brandKey(item) &&
+        brandKey(item) === brandKey(candidate));
+      const distinctUseCase = archetype(candidate) !== archetype(group[0]);
+      return !sameBrand && distinctUseCase;
+    }).slice(0, maxWinnersPerCluster);
     if (selected.length >= maxPicks) {
       for (const product of group) removed.push({ product, reason: "guide-limit",
         cluster: archetype(product) });
       continue;
     }
-    let reason = bestFor(winner, group);
-    if (usedReasons.has(reason)) {
-      const differentiator = [...tokens(winner)].slice(0, 4).join(" ") ||
-        brandKey(winner) || winner.asin || String(winner.id);
-      reason = `${reason} — ${differentiator}`;
-      if (usedReasons.has(reason)) reason = `${reason} ${winner.asin || winner.id}`;
+    for (const winner of winners) {
+      if (selected.length >= maxPicks) break;
+      let reason = bestFor(winner, group);
+      if (usedReasons.has(reason)) {
+        const differentiator = [...titleTokens(winner)].slice(0, 4).join(" ") ||
+          brandKey(winner) || winner.asin || String(winner.id);
+        reason = `${reason} — ${differentiator}`;
+        if (usedReasons.has(reason)) reason = `${reason} ${winner.asin || winner.id}`;
+      }
+      usedReasons.add(reason);
+      selected.push({ ...winner, bestFor: reason });
     }
-    usedReasons.add(reason);
-    selected.push({ ...winner, bestFor: reason });
     for (const product of group) {
-      if (product === winner) continue;
+      if (winners.includes(product)) continue;
+      const winner = winners[0];
       removed.push({ product,
         reason: clusterReason(product, winner, fingerprints.get(product)!,
-          fingerprints.get(winner)!) || "white-label-clone",
+          fingerprints.get(winner)!, crossBrandClustering) || "white-label-clone",
         winner, cluster: archetype(winner) });
     }
   }
-  return { inputCount: products.length, eligibleCount: candidates.length, selected, removed };
+  return { inputCount: products.length, eligibleCount: eligibleCandidates.length, selected, removed };
 }
-export function curateGuide(products: Product[]): Product[] {
-  return curateGuideWithReport(products).selected;
+export function curateGuide(products: Product[], options: CurationConfig = {}): Product[] {
+  return curateGuideWithReport(products, options).selected;
 }

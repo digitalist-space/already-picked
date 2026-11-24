@@ -87,7 +87,9 @@ const reports = guideSlugs.map((slug) => {
       return product ? [product] : [];
     });
   const maxPrice = Number(slug.match(/under-(\d+)$/)?.[1] || 0) || null;
-  const report = curateGuideWithReport(qualifyingProducts(candidates, { maxPrice }));
+  const report = curateGuideWithReport(qualifyingProducts(candidates, { maxPrice }), {
+    crossBrandClustering: !/(?:lego|collectible|trading-card|numbered)/i.test(slug),
+  });
   return {
     slug,
     title: page.page_title,

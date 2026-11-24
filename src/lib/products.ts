@@ -9,6 +9,14 @@ import { normalizeProductTypeLabel } from "./categoryTaxonomy";
 const WORKBOOK_ID = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const ASSOCIATE_TAG = process.env.AMAZON_ASSOCIATE_TAG || "digitalist0d-20";
 
+function guideCurationConfig(slug: string) {
+  return {
+    // Numbered/collectible sets are distinct shopper choices even when their
+    // titles share a brand and construction vocabulary.
+    crossBrandClustering: !/(?:lego|collectible|trading-card|numbered)/i.test(slug),
+  };
+}
+
 export function normalizeCategory(value: string): string {
   const category = String(value || "").trim();
   const normalized = category.toLowerCase();
@@ -407,7 +415,7 @@ export async function getQualifyingLandingPageProducts(
 ): Promise<Product[]> {
   return curateGuide(qualifyingProducts(await getLandingPageProducts(slug, affiliateTag), {
     maxPrice: explicitMaxPrice ?? priceCapFromSlug(slug),
-  }));
+  }), guideCurationConfig(slug));
 }
 
 export type PublishedGuideDirectoryEntry = {
@@ -450,7 +458,7 @@ export async function getPublishedGuideDirectory(): Promise<
     productCount: curateGuide(qualifyingProducts(
       productsByGuide.get(page.themeSlug) || [],
       { maxPrice: page.maxPrice ?? priceCapFromSlug(page.themeSlug) }
-    )).length,
+    ), guideCurationConfig(page.themeSlug)).length,
   }));
 }
 
