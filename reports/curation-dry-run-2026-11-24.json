@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T14:02:09.673Z",
+  "generatedAt": "2026-11-24T14:16:29.986Z",
   "workbookId": "1vicbagFM6DZO7Kyh9EvHPAj9j3H86Rh9L1th-TpuEQM",
   "reports": [
     {
@@ -37,7 +37,7 @@
         {
           "asin": "B0C6JQVWK7",
           "title": "Funny Engraved Bookmark for Book Lovers",
-          "reason": "Best bookmark — engraved bookmark book",
+          "reason": "Best overall bookmark",
           "rating": 4.9,
           "reviews": 1200,
           "price": 11.99
@@ -49,14 +49,6 @@
           "rating": 4.8,
           "reviews": 1700,
           "price": 11.99
-        },
-        {
-          "asin": "B0BSF7B746",
-          "title": "Metal Bookmark Gift, Engraved Stainless Steel Leaf Pendant Book Mark",
-          "reason": "Best metal bookmark — bookmark engraved stainless steel",
-          "rating": 4.8,
-          "reviews": 1300,
-          "price": 5.99
         },
         {
           "asin": "B0C9MCCTSF",
@@ -77,7 +69,7 @@
         {
           "asin": "B0B1DJWFTF",
           "title": "yasest 6-Piece Magnetic Cat Bookmark Set",
-          "reason": "Best magnetic bookmark",
+          "reason": "Best overall magnetic bookmark",
           "rating": 4.7,
           "reviews": 2800,
           "price": 7.99
@@ -139,17 +131,9 @@
           "price": 8.39
         },
         {
-          "asin": "B0DJR44DX8",
-          "title": "Fell Asleep Here Magnetic Faux Leather Bookmark for Book Lovers",
-          "reason": "Best magnetic bookmark — asleep here magnetic faux",
-          "rating": 4.6,
-          "reviews": 331,
-          "price": 3.45
-        },
-        {
           "asin": "B0DGXQ1DM4",
           "title": "Personalized Leather Heart Bookmark with Initials, 9 Color Options",
-          "reason": "Best bookmark — leather heart bookmark initials",
+          "reason": "Most proven leather heart corner bookmark",
           "rating": 4.6,
           "reviews": 560,
           "price": 5
@@ -161,14 +145,6 @@
           "rating": 4.7,
           "reviews": 68,
           "price": 2.79
-        },
-        {
-          "asin": "B0FSX12C94",
-          "title": "Personalized Leather Book Marks, Heart Bookmark",
-          "reason": "Best bookmark — leather book marks heart",
-          "rating": 4.6,
-          "reviews": 273,
-          "price": 4.89
         },
         {
           "asin": "B0F18NRWF3",
@@ -187,28 +163,52 @@
           "price": 11.99
         },
         {
-          "asin": "B0HFM8H4J5",
-          "title": "JACKYLED Clip on Light, 5 Color Rechargeable Lamp, 42 LED Desk Lamp",
-          "reason": "Best-value clip light rechargeable lamp",
-          "rating": 4.8,
-          "reviews": 44,
+          "asin": "B0FH1QVTW3",
+          "title": "Book Ornament, Tea Books Floral Acrylic Suncatcher for Tree, Window Hanging",
+          "reason": "Best book ornament tea books",
+          "rating": 4.5,
+          "reviews": 389,
+          "price": 5.99
+        },
+        {
+          "asin": "B0GYQ9XFZQ",
+          "title": "10 Pcs Book Pens, Aesthetic Bookish Gifts and Book Lover Gifts for Women",
+          "reason": "Best-value book pens aesthetic bookish",
+          "rating": 4.5,
+          "reviews": 131,
+          "price": 6.79
+        },
+        {
+          "asin": "B0F9W7WYKR",
+          "title": "Wooden Tree-Shaped Coasters Set for Coffee Table, Kitchen Decor",
+          "reason": "Best wooden tree shaped coasters",
+          "rating": 4.5,
+          "reviews": 815,
+          "price": 8.49
+        },
+        {
+          "asin": "B0BHTSMRS1",
+          "title": "hooga Amber Book Light – Blue Light Blocking Reading Light for Bed, Stepless Dimming",
+          "reason": "Best portable reading light",
+          "rating": 4.5,
+          "reviews": 641,
           "price": 14.99
         },
         {
-          "asin": "B0HNJHK8TT",
-          "title": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name",
-          "reason": "Best-value wooden thumb page holder",
-          "rating": 4.8,
-          "reviews": 6,
-          "price": 2.99
+          "asin": "B0BHPHZNC9",
+          "title": "Personalized Hand Embroidered Corner Bookmark",
+          "reason": "Best-value embroidered corner bookmark",
+          "rating": 4.4,
+          "reviews": 1000,
+          "price": 3.99
         },
         {
-          "asin": "B0FRN96SFN",
-          "title": "I Love You to The Moon and Back - Personalized Book Page Holder",
+          "asin": "B09GMG4MV8",
+          "title": "2 Pcs Dried Flower Book Thumb Page Holder Resin Book Accessory for Reading",
           "reason": "Best thumb page holder",
-          "rating": 4.2,
-          "reviews": 6,
-          "price": 3.99
+          "rating": 4.4,
+          "reviews": 997,
+          "price": 4.79
         }
       ],
       "removed": [
@@ -261,20 +261,20 @@
           "winnerTitle": "86lux Book Light, Rechargeable Clip-On LED Reading Light for Bed"
         },
         {
-          "asin": "B0HJQGBBL2",
-          "title": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name",
-          "reason": "exact-title",
-          "cluster": "wooden-thumb-page-holder",
-          "winnerAsin": "B0HNJHK8TT",
-          "winnerTitle": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name"
-        },
-        {
           "asin": "B0FYD8G2N1",
           "title": "Personalized Wood Book Page Holder, Custom Thumb Book Page Holder with Name, Handmade Thumb Bookmark",
           "reason": "exact-title",
           "cluster": "wooden-thumb-page-holder",
           "winnerAsin": "B0FYDCQBP6",
           "winnerTitle": "Personalized Wood Book Page Holder, Custom Thumb Book Page Holder with Name, Handmade Thumb Bookmark"
+        },
+        {
+          "asin": "B0HJQGBBL2",
+          "title": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name",
+          "reason": "exact-title",
+          "cluster": "wooden-thumb-page-holder",
+          "winnerAsin": "B0HNJHK8TT",
+          "winnerTitle": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name"
         },
         {
           "asin": "B0CBPL4RKH",
@@ -389,46 +389,6 @@
           "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
         },
         {
-          "asin": "B0FVXHZNYX",
-          "title": "Rechargeable Book Light for Reading in Bed 25 LED Eye Caring",
-          "reason": "white-label-clone",
-          "cluster": "clip-on-rechargeable-book-light",
-          "winnerAsin": "B0D7MD8BWW",
-          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
-        },
-        {
-          "asin": "B0CTHLZ3RR",
-          "title": "86lux Book Light, Rechargeable Reading Lights for Books in Bed",
-          "reason": "white-label-clone",
-          "cluster": "clip-on-rechargeable-book-light",
-          "winnerAsin": "B0D7MD8BWW",
-          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
-        },
-        {
-          "asin": "B0HG5MRBBJ",
-          "title": "EGWASER Book Light, USB-C Rechargeable Clip-On LED Reading Light for Bed",
-          "reason": "white-label-clone",
-          "cluster": "clip-on-rechargeable-book-light",
-          "winnerAsin": "B0D7MD8BWW",
-          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
-        },
-        {
-          "asin": "B0HFBNP7C7",
-          "title": "Upgraded Book Light, Rechargeable Clip-On Reading Light at Night",
-          "reason": "white-label-clone",
-          "cluster": "clip-on-rechargeable-book-light",
-          "winnerAsin": "B0D7MD8BWW",
-          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
-        },
-        {
-          "asin": "B0HNWDLCZ8",
-          "title": "Book Lights for Reading at Night in Bed, Rechargeable Clip-On Reading Light",
-          "reason": "white-label-clone",
-          "cluster": "clip-on-rechargeable-book-light",
-          "winnerAsin": "B0D7MD8BWW",
-          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
-        },
-        {
           "asin": "B07SLNJ1JT",
           "title": "Giftable Amber Book Light, Rechargeable 1600K Blue-Light-Blocking Reading Lamp",
           "reason": "white-label-clone",
@@ -485,6 +445,62 @@
           "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
         },
         {
+          "asin": "B0B7KK7T7Q",
+          "title": "hooga Red Book Light, Rechargeable Clip On 625nm LED Light for Reading in Bed. No Blue Light Emitted, Eye Care Light for Strain-Free, Healthy Eyes. Gift for Students, Kids, Travel, Nursing, Studying.",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0FVXHZNYX",
+          "title": "Rechargeable Book Light for Reading in Bed 25 LED Eye Caring",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0CTHLZ3RR",
+          "title": "86lux Book Light, Rechargeable Reading Lights for Books in Bed",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0HG5MRBBJ",
+          "title": "EGWASER Book Light, USB-C Rechargeable Clip-On LED Reading Light for Bed",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0HFBNP7C7",
+          "title": "Upgraded Book Light, Rechargeable Clip-On Reading Light at Night",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0HNWDLCZ8",
+          "title": "Book Lights for Reading at Night in Bed, Rechargeable Clip-On Reading Light",
+          "reason": "white-label-clone",
+          "cluster": "clip-on-rechargeable-book-light",
+          "winnerAsin": "B0D7MD8BWW",
+          "winnerTitle": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed"
+        },
+        {
+          "asin": "B0BSF7B746",
+          "title": "Metal Bookmark Gift, Engraved Stainless Steel Leaf Pendant Book Mark",
+          "reason": "near-identical-title",
+          "cluster": "bookmark",
+          "winnerAsin": "B0C6JQVWK7",
+          "winnerTitle": "Funny Engraved Bookmark for Book Lovers"
+        },
+        {
           "asin": "B0DCBYYPJ7",
           "title": "Dott Arts Book Lights for Reading at Night",
           "reason": "white-label-clone",
@@ -501,9 +517,33 @@
           "winnerTitle": "Glocusent 13 LED Book Lights for Reading at Night"
         },
         {
+          "asin": "B0DJR44DX8",
+          "title": "Fell Asleep Here Magnetic Faux Leather Bookmark for Book Lovers",
+          "reason": "white-label-clone",
+          "cluster": "magnetic-bookmark",
+          "winnerAsin": "B0B1DJWFTF",
+          "winnerTitle": "yasest 6-Piece Magnetic Cat Bookmark Set"
+        },
+        {
+          "asin": "B0928NQHGZ",
+          "title": "15 Pieces Bookmark, Magnetic Bookmarks for Women, Men, Book Lovers",
+          "reason": "white-label-clone",
+          "cluster": "magnetic-bookmark",
+          "winnerAsin": "B0B1DJWFTF",
+          "winnerTitle": "yasest 6-Piece Magnetic Cat Bookmark Set"
+        },
+        {
           "asin": "B0FNRQ5B8K",
           "title": "Glocusent 20 LED Reading Lights for Books in Bed, Eye Caring Reading Light",
           "reason": "white-label-clone",
+          "cluster": "portable-reading-light",
+          "winnerAsin": "B0FKST5M4D",
+          "winnerTitle": "Glocusent 26 LED Reading Lights for Books in Bed"
+        },
+        {
+          "asin": "B0GRVD5JS1",
+          "title": "Glocusent Book Light & Neck Light, 100H/10H Reading Light for Books in Bed",
+          "reason": "near-identical-title",
           "cluster": "portable-reading-light",
           "winnerAsin": "B0FKST5M4D",
           "winnerTitle": "Glocusent 26 LED Reading Lights for Books in Bed"
@@ -541,32 +581,64 @@
           "winnerTitle": "JoycuFF Book Lover Gifts for Women"
         },
         {
+          "asin": "B0FSX12C94",
+          "title": "Personalized Leather Book Marks, Heart Bookmark",
+          "reason": "white-label-clone",
+          "cluster": "leather-heart-corner-bookmark",
+          "winnerAsin": "B0DGXQ1DM4",
+          "winnerTitle": "Personalized Leather Heart Bookmark with Initials, 9 Color Options"
+        },
+        {
+          "asin": "B0HJTPKF87",
+          "title": "11-Pack Book Pens, Funny Quote Bookish Gifts and Book Lover Gifts",
+          "reason": "white-label-clone",
+          "cluster": "book annotation supplies",
+          "winnerAsin": "B0GYQ9XFZQ",
+          "winnerTitle": "10 Pcs Book Pens, Aesthetic Bookish Gifts and Book Lover Gifts for Women"
+        },
+        {
+          "asin": "B0BJ6HKPZS",
+          "title": "Personalized Hand Embroidered Corner Bookmark, Fall-J",
+          "reason": "white-label-clone",
+          "cluster": "embroidered-corner-bookmark",
+          "winnerAsin": "B0BHPHZNC9",
+          "winnerTitle": "Personalized Hand Embroidered Corner Bookmark"
+        },
+        {
+          "asin": "B0FVFLPBHD",
+          "title": "Book Lovers Gifts Book Ornament, Teacher Gifts For Women, Librarian, Reader",
+          "reason": "guide-limit",
+          "cluster": "reading gifts"
+        },
+        {
+          "asin": "B0HFM8H4J5",
+          "title": "JACKYLED Clip on Light, 5 Color Rechargeable Lamp, 42 LED Desk Lamp",
+          "reason": "guide-limit",
+          "cluster": "book lights"
+        },
+        {
           "asin": "B0HKJ5GRP5",
           "title": "5W Eye-Caring Rechargeable Clip On Lamp, White Clamp Light",
-          "reason": "white-label-clone",
-          "cluster": "book lights",
-          "winnerAsin": "B0HFM8H4J5",
-          "winnerTitle": "JACKYLED Clip on Light, 5 Color Rechargeable Lamp, 42 LED Desk Lamp"
+          "reason": "guide-limit",
+          "cluster": "book lights"
+        },
+        {
+          "asin": "B0HNJHK8TT",
+          "title": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name",
+          "reason": "guide-limit",
+          "cluster": "wooden-thumb-page-holder"
         },
         {
           "asin": "B0FYDCQBP6",
           "title": "Personalized Wood Book Page Holder, Custom Thumb Book Page Holder with Name, Handmade Thumb Bookmark",
-          "reason": "white-label-clone",
-          "cluster": "wooden-thumb-page-holder",
-          "winnerAsin": "B0HNJHK8TT",
-          "winnerTitle": "EDSG Personalized Thumb Book Page Holder, Wooden Thumb Page Holder Bookmark with Birthflower & Name"
+          "reason": "guide-limit",
+          "cluster": "wooden-thumb-page-holder"
         },
         {
-          "asin": "B0928NQHGZ",
-          "title": "15 Pieces Bookmark, Magnetic Bookmarks for Women, Men, Book Lovers",
+          "asin": "B0FRN96SFN",
+          "title": "I Love You to The Moon and Back - Personalized Book Page Holder",
           "reason": "guide-limit",
-          "cluster": "magnetic-bookmark"
-        },
-        {
-          "asin": "B0FH1QVTW3",
-          "title": "Book Ornament, Tea Books Floral Acrylic Suncatcher for Tree, Window Hanging",
-          "reason": "guide-limit",
-          "cluster": "reading gifts"
+          "cluster": "thumb-page-holder"
         },
         {
           "asin": "B0F1CSRJ46",
@@ -575,68 +647,8 @@
           "cluster": "reading gifts"
         },
         {
-          "asin": "B0GYQ9XFZQ",
-          "title": "10 Pcs Book Pens, Aesthetic Bookish Gifts and Book Lover Gifts for Women",
-          "reason": "guide-limit",
-          "cluster": "book annotation supplies"
-        },
-        {
-          "asin": "B0HJTPKF87",
-          "title": "11-Pack Book Pens, Funny Quote Bookish Gifts and Book Lover Gifts",
-          "reason": "guide-limit",
-          "cluster": "book annotation supplies"
-        },
-        {
-          "asin": "B0F9W7WYKR",
-          "title": "Wooden Tree-Shaped Coasters Set for Coffee Table, Kitchen Decor",
-          "reason": "guide-limit",
-          "cluster": "reading gifts"
-        },
-        {
           "asin": "B0GL26L547",
           "title": "Christmas Book Lovers Gifts for Women, Crochet Book, Bookish Gifts",
-          "reason": "guide-limit",
-          "cluster": "reading gifts"
-        },
-        {
-          "asin": "B0GRVD5JS1",
-          "title": "Glocusent Book Light & Neck Light, 100H/10H Reading Light for Books in Bed",
-          "reason": "guide-limit",
-          "cluster": "wearable-neck-reading-light"
-        },
-        {
-          "asin": "B0BHTSMRS1",
-          "title": "hooga Amber Book Light – Blue Light Blocking Reading Light for Bed, Stepless Dimming",
-          "reason": "guide-limit",
-          "cluster": "portable-reading-light"
-        },
-        {
-          "asin": "B0BHPHZNC9",
-          "title": "Personalized Hand Embroidered Corner Bookmark",
-          "reason": "guide-limit",
-          "cluster": "embroidered-corner-bookmark"
-        },
-        {
-          "asin": "B0BJ6HKPZS",
-          "title": "Personalized Hand Embroidered Corner Bookmark, Fall-J",
-          "reason": "guide-limit",
-          "cluster": "embroidered-corner-bookmark"
-        },
-        {
-          "asin": "B09GMG4MV8",
-          "title": "2 Pcs Dried Flower Book Thumb Page Holder Resin Book Accessory for Reading",
-          "reason": "guide-limit",
-          "cluster": "thumb-page-holder"
-        },
-        {
-          "asin": "B0B7KK7T7Q",
-          "title": "hooga Red Book Light, Rechargeable Clip On 625nm LED Light for Reading in Bed. No Blue Light Emitted, Eye Care Light for Strain-Free, Healthy Eyes. Gift for Students, Kids, Travel, Nursing, Studying.",
-          "reason": "guide-limit",
-          "cluster": "clip-on-rechargeable-book-light"
-        },
-        {
-          "asin": "B0FVFLPBHD",
-          "title": "Book Lovers Gifts Book Ornament, Teacher Gifts For Women, Librarian, Reader",
           "reason": "guide-limit",
           "cluster": "reading gifts"
         }
@@ -661,7 +673,7 @@
         {
           "asin": "B0FMS75M6P",
           "title": "LEGO Creator 3 in 1 Retro Gaming Console 31380",
-          "reason": "Best LEGO building set — creator retro gaming console",
+          "reason": "Most proven LEGO building set",
           "rating": 4.9,
           "reviews": 551,
           "price": 15.99
@@ -731,14 +743,6 @@
           "price": 19.99
         },
         {
-          "asin": "B0BLJ4FDT4",
-          "title": "LEGO Creator 3 in 1 Space Shuttle Toys - Space Toys Building Set for Boys & Girls, Ages 6+ - Option to Build 2 Spaceships or Astronaut - Educational Gift for Kids Birthday & Holidays - 31134",
-          "reason": "Best LEGO building set — creator space shuttle building",
-          "rating": 4.8,
-          "reviews": 94,
-          "price": 7.99
-        },
-        {
           "asin": "B0FNRXHL41",
           "title": "LEGO Sunflowers 40524",
           "reason": "Best LEGO building set — sunflowers",
@@ -749,7 +753,7 @@
         {
           "asin": "B0C7QR6H5C",
           "title": "12 Pack Mini Animals Building Blocks Party Favors for Kids",
-          "reason": "Best mini building block kit",
+          "reason": "Best-value mini building block kit",
           "rating": 4.6,
           "reviews": 357,
           "price": 8.48
@@ -761,30 +765,6 @@
           "rating": 4.6,
           "reviews": 395,
           "price": 8.49
-        },
-        {
-          "asin": "B0BLJ4SVWV",
-          "title": "LEGO Creator 3 in 1 Magical Unicorn Toy, Transforms to Seahorse to Peacock, Rainbow Animal Figures, Unicorn Gift for Grandchildren, Girls and Boys, Buildable Toys, 31140",
-          "reason": "Best LEGO building set — creator magical unicorn transforms",
-          "rating": 4.8,
-          "reviews": 83,
-          "price": 9.74
-        },
-        {
-          "asin": "B0FMS6WNFT",
-          "title": "LEGO DUPLO My First 3 in 1 Creative Cute Pets 10477",
-          "reason": "Best LEGO building set — duplo my first creative",
-          "rating": 4.7,
-          "reviews": 192,
-          "price": 9.97
-        },
-        {
-          "asin": "B0BLJ3LHCH",
-          "title": "LEGO Creator 3 in 1 Exotic Parrot 31136",
-          "reason": "Best LEGO building set — creator exotic parrot",
-          "rating": 4.8,
-          "reviews": 86,
-          "price": 11.19
         },
         {
           "asin": "B0BRBMNN93",
@@ -803,14 +783,6 @@
           "price": 14.53
         },
         {
-          "asin": "B0CGY3FHDR",
-          "title": "LEGO Creator 3 in 1 Retro Camera Toy, Transforms to Retro Video Camera or to TV Set, Photography Gift for Boys and Girls Ages 8 Years Old and Up Who Enjoy Creative Play, 31147",
-          "reason": "Best LEGO building set — creator retro camera transforms",
-          "rating": 4.9,
-          "reviews": 51,
-          "price": 15.99
-        },
-        {
           "asin": "B0DRW6C2RF",
           "title": "LEGO Botanicals Happy Plants 10349",
           "reason": "Best LEGO building set — botanicals happy plants",
@@ -827,20 +799,28 @@
           "price": 18.99
         },
         {
-          "asin": "B0CGY4J7QT",
-          "title": "LEGO Creator 3 in 1 Flatbed Truck with Helicopter Toy, Transforms from Flatbed Truck Toy to Propeller Plane to Hot Rod and SUV Cars, Gift Idea for Boys and Girls Ages 7 Years Old and Up, 31146",
-          "reason": "Best LEGO building set — creator flatbed truck helicopter",
-          "rating": 4.8,
-          "reviews": 71,
-          "price": 19.79
+          "asin": "8325346868",
+          "title": "LEGO: Build IT! Cards and Bricks – Animals | Creative Building Ages 6+",
+          "reason": "Best LEGO building set — build it cards bricks",
+          "rating": 4.5,
+          "reviews": 791,
+          "price": 7.99
         },
         {
-          "asin": "B0DJ1BQHQX",
-          "title": "LEGO Creator 3 in 1 Wild Animals",
-          "reason": "Best LEGO building set — creator wild animals",
+          "asin": "B0CGYN1GJ5",
+          "title": "LEGO City Blue Monster Truck Off-Road Toy Playset with a Driver Minifigure, Imaginative Toys for Kids, Fun Gift for Boys and Girls Aged 5 Plus, Mini Monster Truck, 60402",
+          "reason": "Best LEGO minifigure",
           "rating": 4.8,
           "reviews": 37,
-          "price": 6.29
+          "price": 12.78
+        },
+        {
+          "asin": "B0H6BYZC2W",
+          "title": "DAVIRO Stocking Stuffers for Kids Teen and Adult, Christmas Santa Claus Micro Building Blocks Christmas Stacking New Toys Holiday Present Box New Year Xmas Gifts for Boys Girls",
+          "reason": "Best mini building block kit",
+          "rating": 4.5,
+          "reviews": 34,
+          "price": 7.99
         },
         {
           "asin": "B0FMS8D34Q",
@@ -849,9 +829,129 @@
           "rating": 4.8,
           "reviews": 11,
           "price": 7.99
+        },
+        {
+          "asin": "B0CGXZP4T8",
+          "title": "LEGO City Go-Karts and Race Drivers 60400",
+          "reason": "Best LEGO building set — city go karts race",
+          "rating": 4.8,
+          "reviews": 26,
+          "price": 9.97
+        },
+        {
+          "asin": "1338603450",
+          "title": "Klutz Lego Gear Bots Science/STEM Activity Kit for 8-12 years",
+          "reason": "Best LEGO building set — lego gear bots science",
+          "rating": 4.6,
+          "reviews": 79,
+          "price": 17.94
+        },
+        {
+          "asin": "B08HVZ37VY",
+          "title": "LEGO Super Mario Character Packs – Series 2 (71386) Building Kit (1 of 10 to Collect), Collectible Toys for Creative Kids to Enhance Interactive Play, New 2020",
+          "reason": "Best LEGO building set — super mario character packs",
+          "rating": 4.4,
+          "reviews": 11,
+          "price": 9.41
+        },
+        {
+          "asin": "B0CGY54WQF",
+          "title": "LEGO City Fire Rescue Helicopter 60411",
+          "reason": "Best LEGO building set — city fire rescue helicopter",
+          "rating": 4.8,
+          "reviews": 16,
+          "price": 9.99
         }
       ],
       "removed": [
+        {
+          "asin": "B0BLJ4FDT4",
+          "title": "LEGO Creator 3 in 1 Space Shuttle Toys - Space Toys Building Set for Boys & Girls, Ages 6+ - Option to Build 2 Spaceships or Astronaut - Educational Gift for Kids Birthday & Holidays - 31134",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0BLJ4SVWV",
+          "title": "LEGO Creator 3 in 1 Magical Unicorn Toy, Transforms to Seahorse to Peacock, Rainbow Animal Figures, Unicorn Gift for Grandchildren, Girls and Boys, Buildable Toys, 31140",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0FMS6WNFT",
+          "title": "LEGO DUPLO My First 3 in 1 Creative Cute Pets 10477",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0BLJ3LHCH",
+          "title": "LEGO Creator 3 in 1 Exotic Parrot 31136",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0CGY3FHDR",
+          "title": "LEGO Creator 3 in 1 Retro Camera Toy, Transforms to Retro Video Camera or to TV Set, Photography Gift for Boys and Girls Ages 8 Years Old and Up Who Enjoy Creative Play, 31147",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0CGY4J7QT",
+          "title": "LEGO Creator 3 in 1 Flatbed Truck with Helicopter Toy, Transforms from Flatbed Truck Toy to Propeller Plane to Hot Rod and SUV Cars, Gift Idea for Boys and Girls Ages 7 Years Old and Up, 31146",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0DJ1BQHQX",
+          "title": "LEGO Creator 3 in 1 Wild Animals",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0FMS891HB",
+          "title": "LEGO Creator 3 in 1 Cute Hamster with a Flower 31376",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0DRW5YM7M",
+          "title": "LEGO Creator 3 in 1 Wild Animals: Tropical Toucan Building Toy for Kids- Jungle Building Blocks & Learning Toy for Girls & Boys, Ages 7+ - Build 3 Animal Toys in 1 Set - Gift for Birthdays - 31173",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0DJ1D4TYS",
+          "title": "LEGO Creator 3 in 1 Typewriter with Flowers 31169",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
+        {
+          "asin": "B0DJ19581W",
+          "title": "LEGO Creator 3 in 1 Playful Cat 31163",
+          "reason": "white-label-clone",
+          "cluster": "lego-building-set",
+          "winnerAsin": "B0FMS75M6P",
+          "winnerTitle": "LEGO Creator 3 in 1 Retro Gaming Console 31380"
+        },
         {
           "asin": "B0FMS7CRHX",
           "title": "LEGO Botanicals Daisies 11508",
@@ -869,34 +969,12 @@
           "winnerTitle": "LEGO DUPLO Classic Colorful Creative Box 10479"
         },
         {
-          "asin": "8325346868",
-          "title": "LEGO: Build IT! Cards and Bricks – Animals | Creative Building Ages 6+",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0H6BYZC2W",
-          "title": "DAVIRO Stocking Stuffers for Kids Teen and Adult, Christmas Santa Claus Micro Building Blocks Christmas Stacking New Toys Holiday Present Box New Year Xmas Gifts for Boys Girls",
-          "reason": "guide-limit",
-          "cluster": "mini-building-block-kit"
-        },
-        {
-          "asin": "B0CGXZP4T8",
-          "title": "LEGO City Go-Karts and Race Drivers 60400",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0FMS891HB",
-          "title": "LEGO Creator 3 in 1 Cute Hamster with a Flower 31376",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0CGY54WQF",
-          "title": "LEGO City Fire Rescue Helicopter 60411",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
+          "asin": "B0DYV6J47F",
+          "title": "25pcs Marine Animals Building Blocks Bricks Party Favors Toys",
+          "reason": "white-label-clone",
+          "cluster": "mini-building-block-kit",
+          "winnerAsin": "B0C7QR6H5C",
+          "winnerTitle": "12 Pack Mini Animals Building Blocks Party Favors for Kids"
         },
         {
           "asin": "B07J66V6ZS",
@@ -911,26 +989,8 @@
           "cluster": "small lego"
         },
         {
-          "asin": "B0DRW5YM7M",
-          "title": "LEGO Creator 3 in 1 Wild Animals: Tropical Toucan Building Toy for Kids- Jungle Building Blocks & Learning Toy for Girls & Boys, Ages 7+ - Build 3 Animal Toys in 1 Set - Gift for Birthdays - 31173",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0CGYN1GJ5",
-          "title": "LEGO City Blue Monster Truck Off-Road Toy Playset with a Driver Minifigure, Imaginative Toys for Kids, Fun Gift for Boys and Girls Aged 5 Plus, Mini Monster Truck, 60402",
-          "reason": "guide-limit",
-          "cluster": "lego-minifigure"
-        },
-        {
-          "asin": "B0DJ1D4TYS",
-          "title": "LEGO Creator 3 in 1 Typewriter with Flowers 31169",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B08HVZ37VY",
-          "title": "LEGO Super Mario Character Packs – Series 2 (71386) Building Kit (1 of 10 to Collect), Collectible Toys for Creative Kids to Enhance Interactive Play, New 2020",
+          "asin": "B0DJ1CGPKN",
+          "title": "LEGO F1 Collectible Race Cars 6 Pack 66796",
           "reason": "guide-limit",
           "cluster": "lego-building-set"
         },
@@ -947,10 +1007,10 @@
           "cluster": "small lego"
         },
         {
-          "asin": "B0DYV6J47F",
-          "title": "25pcs Marine Animals Building Blocks Bricks Party Favors Toys",
+          "asin": "B0918LXXVV",
+          "title": "COBFDHA STEM Projects for Kids Age 8-12, Science Kits Boys, Solar Robot Space Toys Gifts 8-14 Year Old Teen Boys Girls, 120Pcs Building Experiments Robots Teenage Ages 9 10 11 12 , Yellow",
           "reason": "guide-limit",
-          "cluster": "mini-building-block-kit"
+          "cluster": "small lego"
         },
         {
           "asin": "B08DR2D19Q",
@@ -959,34 +1019,10 @@
           "cluster": "small lego"
         },
         {
-          "asin": "B0918LXXVV",
-          "title": "COBFDHA STEM Projects for Kids Age 8-12, Science Kits Boys, Solar Robot Space Toys Gifts 8-14 Year Old Teen Boys Girls, 120Pcs Building Experiments Robots Teenage Ages 9 10 11 12 , Yellow",
-          "reason": "guide-limit",
-          "cluster": "small lego"
-        },
-        {
           "asin": "B0H451LYDC",
           "title": "2026 Advent Calendar Flowers Botanicals Christmas Building Sets for Kids 6+",
           "reason": "guide-limit",
           "cluster": "dried flowers botanicals"
-        },
-        {
-          "asin": "1338603450",
-          "title": "Klutz Lego Gear Bots Science/STEM Activity Kit for 8-12 years",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0DJ1CGPKN",
-          "title": "LEGO F1 Collectible Race Cars 6 Pack 66796",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
-        },
-        {
-          "asin": "B0DJ19581W",
-          "title": "LEGO Creator 3 in 1 Playful Cat 31163",
-          "reason": "guide-limit",
-          "cluster": "lego-building-set"
         },
         {
           "asin": "B0GDTBJXD2",
@@ -1043,7 +1079,7 @@
         {
           "asin": "B0G38X9CDQ",
           "title": "BUNMO Fidget Toys - Fidget Stones Sensory Toys – 6pk Pastel | Silicone Worry Stones for Kids Ages 3+ | Portable, Textured, Quiet Sensory Stones for Hands-On Play",
-          "reason": "Best fidget stones sensory 6pk",
+          "reason": "Best-value fidget stones sensory 6pk",
           "rating": 4.8,
           "reviews": 152,
           "price": 6.64
@@ -1059,7 +1095,7 @@
         {
           "asin": "B0DPZWVKDM",
           "title": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens",
-          "reason": "Best magnetic fidget balls silicone",
+          "reason": "Most proven magnetic fidget balls silicone",
           "rating": 4.6,
           "reviews": 856,
           "price": 7.58
@@ -1073,28 +1109,12 @@
           "price": 5.84
         },
         {
-          "asin": "B09NQQQL5Z",
-          "title": "hand2mind Express Your Feelings Sensory Bottles-Primary Emotions",
-          "reason": "Best sensory bottle",
-          "rating": 4.7,
-          "reviews": 23,
-          "price": 19.97
-        },
-        {
           "asin": "B0HCT6RWNV",
           "title": "Gumdrop Squishy Stress Ball, Fidget Toy, Non-Toxic ASTM Certified (Blue)",
           "reason": "Best standard stress ball",
           "rating": 4.4,
           "reviews": 80,
           "price": 6.99
-        },
-        {
-          "asin": "B0CM5L2YFM",
-          "title": "550pcs Fidget Toy, Sensory Toys for Adults & Teens（Colour）",
-          "reason": "Best-value fidget sensory teens colour",
-          "rating": 4.4,
-          "reviews": 29,
-          "price": 8.06
         },
         {
           "asin": "B0GZ4ZZ4QS",
@@ -1105,28 +1125,12 @@
           "price": 8.91
         },
         {
-          "asin": "B0FHB51R29",
-          "title": "Axolotl Squishy Stress Relief Toy Glitter Fidget Toys Cute Malt Sugar Axolotl Toy Fidget Toys for Kids Youth Adult, Party Favors Anxiety Relief Squishy Toys(Blue)",
-          "reason": "Best axolotl squishy",
-          "rating": 4.3,
-          "reviews": 19,
-          "price": 9.39
-        },
-        {
           "asin": "B0HF3Y5FMX",
           "title": "Sensory Fidget Toys 6 Pack Silicone Flip Cubes Quiet Textured Stress Relief Gadgets for Adults Kids with Autism ADHD Anxiety, Pocket-Sized Desk Fidgets for Office Classroom Travel, Calm Down Focus Aid",
           "reason": "Best sensory fidget silicone flip",
           "rating": 4.4,
           "reviews": 65,
           "price": 9.39
-        },
-        {
-          "asin": "B0H4RB9N5V",
-          "title": "JOYIN 3PCS Glow-in-the-Dark Cube Stress Relief Toys, 2.2Inch Squishy Toys",
-          "reason": "Best overall novelty squishy",
-          "rating": 4.4,
-          "reviews": 44,
-          "price": 9.48
         },
         {
           "asin": "B0G22BHS13",
@@ -1137,36 +1141,20 @@
           "price": 9.99
         },
         {
+          "asin": "B0FHB51R29",
+          "title": "Axolotl Squishy Stress Relief Toy Glitter Fidget Toys Cute Malt Sugar Axolotl Toy Fidget Toys for Kids Youth Adult, Party Favors Anxiety Relief Squishy Toys(Blue)",
+          "reason": "Best axolotl squishy",
+          "rating": 4.3,
+          "reviews": 19,
+          "price": 9.39
+        },
+        {
           "asin": "B07HDX46HS",
           "title": "Crayola Globbles Fidget Toy, 6ct, Sticky Stress Ball, Kid Stocking Stuffers",
           "reason": "Best standard stress ball — globbles fidget 6ct sticky",
           "rating": 4.5,
           "reviews": 212,
           "price": 11.16
-        },
-        {
-          "asin": "B0HJCT1KL7",
-          "title": "16 Pack Textured Worry Stones, Sensory Fidget Toys for Adults & Kids",
-          "reason": "Best textured worry stones sensory",
-          "rating": 4.8,
-          "reviews": 21,
-          "price": 13.99
-        },
-        {
-          "asin": "B0HKG7BTXQ",
-          "title": "15 Pcs Animal Texture Sensory Toys, Soft Silicone Tactile Fidget Toys",
-          "reason": "Best animal texture sensory soft",
-          "rating": 4.5,
-          "reviews": 5,
-          "price": 14.39
-        },
-        {
-          "asin": "B0FG779YKY",
-          "title": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults",
-          "reason": "Best overall slow rising stress cube",
-          "rating": 4.4,
-          "reviews": 29,
-          "price": 14.44
         },
         {
           "asin": "B0G51RMM8D",
@@ -1177,20 +1165,76 @@
           "price": 14.99
         },
         {
+          "asin": "B0GRSZ5TDC",
+          "title": "Schylling NeeDoh Teenie Color Change - Sensory Squeeze Toy - 4 Pack",
+          "reason": "Best dough filled squishy",
+          "rating": 4.4,
+          "reviews": 534,
+          "price": 11.79
+        },
+        {
+          "asin": "B0GWV549JV",
+          "title": "2Pcs Ice Ocean Stress Balls, Ice Marine Shells Squishies Toy, Sensory Toys for Adult with Real Sea ShellsNon-Toxic Squeeze Ball Focus Calm",
+          "reason": "Best standard stress ball — ice ocean stress balls",
+          "rating": 3.9,
+          "reviews": 82,
+          "price": 4.99
+        },
+        {
+          "asin": "B0HDSDGWJB",
+          "title": "12 Pack Cheese Squishy Toys, squishies Bulk Fidget Toys for Teens & Adults,Christmas Fidget Gifts, Party Favors, Birthday Gifts, Classroom Rewards & Stocking Stuffers",
+          "reason": "Best novelty squishy — cheese squishy squishies bulk",
+          "rating": 3.9,
+          "reviews": 74,
+          "price": 19.99
+        },
+        {
+          "asin": "B0GFBY355X",
+          "title": "Emotional Support Pals Squishy Nugget by Relatable, Color Varies, Pack of 1",
+          "reason": "Best novelty squishy — support pals squishy nugget",
+          "rating": 4,
+          "reviews": 222,
+          "price": 4.99
+        },
+        {
+          "asin": "B0F2MXQKNS",
+          "title": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers",
+          "reason": "Best overall slow rising stress cube",
+          "rating": 4.2,
+          "reviews": 507,
+          "price": 12.79
+        },
+        {
+          "asin": "B0H4RB9N5V",
+          "title": "JOYIN 3PCS Glow-in-the-Dark Cube Stress Relief Toys, 2.2Inch Squishy Toys",
+          "reason": "Best overall novelty squishy",
+          "rating": 4.4,
+          "reviews": 44,
+          "price": 9.48
+        },
+        {
+          "asin": "B0HKG7BTXQ",
+          "title": "15 Pcs Animal Texture Sensory Toys, Soft Silicone Tactile Fidget Toys",
+          "reason": "Best animal texture sensory soft",
+          "rating": 4.5,
+          "reviews": 5,
+          "price": 14.39
+        },
+        {
+          "asin": "B09NQQQL5Z",
+          "title": "hand2mind Express Your Feelings Sensory Bottles-Primary Emotions",
+          "reason": "Best sensory bottle",
+          "rating": 4.7,
+          "reviews": 23,
+          "price": 19.97
+        },
+        {
           "asin": "B0CTT6W4BN",
           "title": "JOYIN 4-Pack Sensory Fidget Tubes, Silent Fidget Toys for Kids Age 3-5, Sensory Toys for Kids with Autism, Sensory Room Must Haves, Classroom Calming Corner Items, Christmas Stocking Stuffers for Kids",
           "reason": "Best sensory fidget tube",
           "rating": 4.6,
           "reviews": 17,
           "price": 21.84
-        },
-        {
-          "asin": "B0FQCKQBCG",
-          "title": "Cat Squishy Toys, Soft TPR Sensory Fidget Squeeze Toy",
-          "reason": "Best overall novelty squishy — squishy soft tpr sensory",
-          "rating": 4.4,
-          "reviews": 209,
-          "price": 11.39
         },
         {
           "asin": "B0HCB9DWJ3",
@@ -1217,35 +1261,67 @@
           "price": 5.59
         },
         {
-          "asin": "B0GVS3BXQK",
-          "title": "Axolotl Squishy Stress Ball, Soft Slow Rising Sensory Toy",
-          "reason": "Best axolotl squishy — squishy stress ball soft",
+          "asin": "B0FQCKQBCG",
+          "title": "Cat Squishy Toys, Soft TPR Sensory Fidget Squeeze Toy",
+          "reason": "Best overall novelty squishy — squishy soft tpr sensory",
           "rating": 4.4,
-          "reviews": 335,
-          "price": 9.99
+          "reviews": 209,
+          "price": 11.39
         },
         {
-          "asin": "B0H4QZR8K3",
-          "title": "JOYIN Blue Slow Rising Cube Stress Relief Toy, 2.2 Inch Cube Squishy Toy",
-          "reason": "Best novelty squishy — slow rising cube stress",
+          "asin": "B0BQZFVJTB",
+          "title": "Schylling NeeDoh Nice Cube - Sensory Squeeze Toy with Super Solid Squish - 2.25\" Cube - Color May Vary (Pack of 1)",
+          "reason": "Best slow rising stress cube",
           "rating": 4.2,
-          "reviews": 130,
-          "price": 7.99
-        },
-        {
-          "asin": "B0GRSZ5TDC",
-          "title": "Schylling NeeDoh Teenie Color Change - Sensory Squeeze Toy - 4 Pack",
-          "reason": "Best dough filled squishy",
-          "rating": 4.4,
-          "reviews": 534,
-          "price": 11.79
+          "reviews": 91,
+          "price": 14.99
         }
       ],
       "removed": [
         {
+          "asin": "B0HJCT1KL7",
+          "title": "16 Pack Textured Worry Stones, Sensory Fidget Toys for Adults & Kids",
+          "reason": "near-identical-title",
+          "cluster": "needoh sensory toys",
+          "winnerAsin": "B0G38X9CDQ",
+          "winnerTitle": "BUNMO Fidget Toys - Fidget Stones Sensory Toys – 6pk Pastel | Silicone Worry Stones for Kids Ages 3+ | Portable, Textured, Quiet Sensory Stones for Hands-On Play"
+        },
+        {
+          "asin": "B0CM5L2YFM",
+          "title": "550pcs Fidget Toy, Sensory Toys for Adults & Teens（Colour）",
+          "reason": "near-identical-title",
+          "cluster": "needoh sensory toys",
+          "winnerAsin": "B0DPZWVKDM",
+          "winnerTitle": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens"
+        },
+        {
+          "asin": "B0FR9F41SB",
+          "title": "1100pcs Fidget Toy, Sensory Toys for Adults & Teens（colour）",
+          "reason": "near-identical-title",
+          "cluster": "needoh sensory toys",
+          "winnerAsin": "B0DPZWVKDM",
+          "winnerTitle": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens"
+        },
+        {
+          "asin": "B0GYPTBH84",
+          "title": "Fuzz Ball Squishy Stress Ball,Soft Fidget Squishy Fuzz Squeeze Ball for Adults,Anxiety Stress Relief Toys,Party Favors Gift for Adults (Pink Ball)",
+          "reason": "near-identical-title",
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
           "asin": "B0HFRY9NJ5",
           "title": "BlockPro 2.2\" 1PCS Stress Cube Sensory Fidget Toy, Stress & Anxiety Relief Cube Sugar Squeeze Ball for Adults, Slow Rising Squishy Office Desk Toy, Ideal Gift for Party Favors (Purple)",
           "reason": "white-label-clone",
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
+          "asin": "B0H6QQBG9R",
+          "title": "Stress Cube Squishy Fidget Toys: Purple Glitter Cube for Adults & Kids",
+          "reason": "near-identical-title",
           "cluster": "axolotl-squishy",
           "winnerAsin": "B0GVS485PV",
           "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
@@ -1259,12 +1335,76 @@
           "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
         },
         {
-          "asin": "B0FR9F41SB",
-          "title": "1100pcs Fidget Toy, Sensory Toys for Adults & Teens（colour）",
+          "asin": "B0GVS3BXQK",
+          "title": "Axolotl Squishy Stress Ball, Soft Slow Rising Sensory Toy",
           "reason": "white-label-clone",
-          "cluster": "needoh sensory toys",
-          "winnerAsin": "B0CM5L2YFM",
-          "winnerTitle": "550pcs Fidget Toy, Sensory Toys for Adults & Teens（Colour）"
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
+          "asin": "B0H9QRR3MJ",
+          "title": "Squishy Toys Fidget Stress Cube, Slow Rising Sensory Squeeze Toys, Cat",
+          "reason": "near-identical-title",
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
+          "asin": "B0H94948M9",
+          "title": "Squishy Toys Fidget Stress Cube, Slow Rising Sensory Squeeze Toys, Unicorn",
+          "reason": "near-identical-title",
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
+          "asin": "B0GWQRYR2V",
+          "title": "Squishy Cube, 5cm (1.97in), Slow Rising Soft squishy Sensory Fidget Toy",
+          "reason": "near-identical-title",
+          "cluster": "axolotl-squishy",
+          "winnerAsin": "B0GVS485PV",
+          "winnerTitle": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+"
+        },
+        {
+          "asin": "B0FVLMJH15",
+          "title": "JOYIN 4 PCS Stress Cube, 2'' High Density Ice Cube Squishy Toys for Kids",
+          "reason": "white-label-clone",
+          "cluster": "slow-rising-stress-cube",
+          "winnerAsin": "B0F2MXQKNS",
+          "winnerTitle": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers"
+        },
+        {
+          "asin": "B0F66VM68K",
+          "title": "Siwarm 4 Pack Stress Cubes, 2\" High Densitys Cube Squishy Toys for Kids 3+",
+          "reason": "white-label-clone",
+          "cluster": "slow-rising-stress-cube",
+          "winnerAsin": "B0F2MXQKNS",
+          "winnerTitle": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers"
+        },
+        {
+          "asin": "B0F6Y5C2MF",
+          "title": "4Pack Fidget Toys Mini Squishy Stress Cube, Stress Balls for Kids, Adults Squishies Anxiety Stress Relief, Squishy Cube Sugar Balls, Sensory Toys for Kids with Autism, Fidgets for Classroom Prize",
+          "reason": "white-label-clone",
+          "cluster": "slow-rising-stress-cube",
+          "winnerAsin": "B0F2MXQKNS",
+          "winnerTitle": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers"
+        },
+        {
+          "asin": "B0FG779YKY",
+          "title": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults",
+          "reason": "near-identical-title",
+          "cluster": "slow-rising-stress-cube",
+          "winnerAsin": "B0F2MXQKNS",
+          "winnerTitle": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers"
+        },
+        {
+          "asin": "B0H6F76175",
+          "title": "4 Pack Stress Cube Squishy Toys, 4 Color Glitter Stress Cube Fidget Toys, Sensory Squeeze Toys, Squishy Cube Pack for Kids Adult Anxiety Stress Relief, Quiet Fidgets for Classroom Home",
+          "reason": "white-label-clone",
+          "cluster": "slow-rising-stress-cube",
+          "winnerAsin": "B0F2MXQKNS",
+          "winnerTitle": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers"
         },
         {
           "asin": "B0H4QS1M5P",
@@ -1275,54 +1415,6 @@
           "winnerTitle": "JOYIN 3PCS Glow-in-the-Dark Cube Stress Relief Toys, 2.2Inch Squishy Toys"
         },
         {
-          "asin": "B0H6QQBG9R",
-          "title": "Stress Cube Squishy Fidget Toys: Purple Glitter Cube for Adults & Kids",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
-          "asin": "B0H9QRR3MJ",
-          "title": "Squishy Toys Fidget Stress Cube, Slow Rising Sensory Squeeze Toys, Cat",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
-          "asin": "B0H94948M9",
-          "title": "Squishy Toys Fidget Stress Cube, Slow Rising Sensory Squeeze Toys, Unicorn",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
-          "asin": "B0GWQRYR2V",
-          "title": "Squishy Cube, 5cm (1.97in), Slow Rising Soft squishy Sensory Fidget Toy",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
-          "asin": "B0FVLMJH15",
-          "title": "JOYIN 4 PCS Stress Cube, 2'' High Density Ice Cube Squishy Toys for Kids",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
-          "asin": "B0F66VM68K",
-          "title": "Siwarm 4 Pack Stress Cubes, 2\" High Densitys Cube Squishy Toys for Kids 3+",
-          "reason": "white-label-clone",
-          "cluster": "slow-rising-stress-cube",
-          "winnerAsin": "B0FG779YKY",
-          "winnerTitle": "Original BigBlok Premium Stress Cube, Squishy Fidget Toy, Kids & Adults"
-        },
-        {
           "asin": "B0H7RGP7FZ",
           "title": "Maltose Blue  Apple Squishy Sensory Squeeze Fidget Toys",
           "reason": "white-label-clone",
@@ -1331,10 +1423,10 @@
           "winnerTitle": "Cat Squishy Toys, Soft TPR Sensory Fidget Squeeze Toy"
         },
         {
-          "asin": "B0BQZFVJTB",
-          "title": "Schylling NeeDoh Nice Cube - Sensory Squeeze Toy with Super Solid Squish - 2.25\" Cube - Color May Vary (Pack of 1)",
+          "asin": "B0H4QZR8K3",
+          "title": "JOYIN Blue Slow Rising Cube Stress Relief Toy, 2.2 Inch Cube Squishy Toy",
           "reason": "guide-limit",
-          "cluster": "slow-rising-stress-cube"
+          "cluster": "novelty-squishy"
         },
         {
           "asin": "B0HJN47QR9",
@@ -1343,20 +1435,8 @@
           "cluster": "novelty-squishy"
         },
         {
-          "asin": "B0GWV549JV",
-          "title": "2Pcs Ice Ocean Stress Balls, Ice Marine Shells Squishies Toy, Sensory Toys for Adult with Real Sea ShellsNon-Toxic Squeeze Ball Focus Calm",
-          "reason": "guide-limit",
-          "cluster": "standard-stress-ball"
-        },
-        {
           "asin": "B0GV3HGK9P",
           "title": "Water Drop Squishy Fidget Toys, Slow Rise Squishy Stress Balls Relief Toy, Squeeze Squishies Toys for Anxiety Relief, Sensory Squeeze Ball for Kids Adults, Office Classroom Party Favors",
-          "reason": "guide-limit",
-          "cluster": "standard-stress-ball"
-        },
-        {
-          "asin": "B0GYPTBH84",
-          "title": "Fuzz Ball Squishy Stress Ball,Soft Fidget Squishy Fuzz Squeeze Ball for Adults,Anxiety Stress Relief Toys,Party Favors Gift for Adults (Pink Ball)",
           "reason": "guide-limit",
           "cluster": "standard-stress-ball"
         },
@@ -1367,40 +1447,10 @@
           "cluster": "gel-stress-ball"
         },
         {
-          "asin": "B0HDSDGWJB",
-          "title": "12 Pack Cheese Squishy Toys, squishies Bulk Fidget Toys for Teens & Adults,Christmas Fidget Gifts, Party Favors, Birthday Gifts, Classroom Rewards & Stocking Stuffers",
-          "reason": "guide-limit",
-          "cluster": "novelty-squishy"
-        },
-        {
           "asin": "B0GR8JGX95",
           "title": "Siwarm 30 Pack Mini Cube Squishy Fidget Toys for Kids and Adults",
           "reason": "guide-limit",
           "cluster": "novelty-squishy"
-        },
-        {
-          "asin": "B0GFBY355X",
-          "title": "Emotional Support Pals Squishy Nugget by Relatable, Color Varies, Pack of 1",
-          "reason": "guide-limit",
-          "cluster": "novelty-squishy"
-        },
-        {
-          "asin": "B0H6F76175",
-          "title": "4 Pack Stress Cube Squishy Toys, 4 Color Glitter Stress Cube Fidget Toys, Sensory Squeeze Toys, Squishy Cube Pack for Kids Adult Anxiety Stress Relief, Quiet Fidgets for Classroom Home",
-          "reason": "guide-limit",
-          "cluster": "slow-rising-stress-cube"
-        },
-        {
-          "asin": "B0F6Y5C2MF",
-          "title": "4Pack Fidget Toys Mini Squishy Stress Cube, Stress Balls for Kids, Adults Squishies Anxiety Stress Relief, Squishy Cube Sugar Balls, Sensory Toys for Kids with Autism, Fidgets for Classroom Prize",
-          "reason": "guide-limit",
-          "cluster": "slow-rising-stress-cube"
-        },
-        {
-          "asin": "B0F2MXQKNS",
-          "title": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers",
-          "reason": "guide-limit",
-          "cluster": "slow-rising-stress-cube"
         },
         {
           "asin": "B0GT16T874",

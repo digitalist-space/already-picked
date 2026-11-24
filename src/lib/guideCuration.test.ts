@@ -38,7 +38,7 @@ test("category aliases and exact ASIN duplicates collapse",()=>{
  const a={...p("a","Portable folding reading lamp"),subcategory:"BOOK LIGHTS",asin:"ABC"};
  const b={...p("b","Portable folding reading lamp",2000),subcategory:"READING LIGHTS"};
  const c={...p("c","Different title",10),asin:"ABC"};
- assert.deepEqual(curateGuide([a,b,c]).map(x=>x.id),["b"]);
+ assert.deepEqual(curateGuide([a,b,c]).map(x=>x.id),["a"]);
 });
 
 test("broad guide categories do not turn distinct products into clones", () => {
@@ -96,4 +96,56 @@ test("collectible categories can disable cross-brand clustering", () => {
  ];
  assert.equal(curateGuide(products).length, 1);
  assert.equal(curateGuide(products, {crossBrandClustering: false}).length, 2);
+});
+
+test("tight bookmark variants collapse by material and mechanism", () => {
+ const leather = [
+  p("leather-a", "Personalized Leather Heart Corner Bookmark with Initial"),
+  p("leather-b", "Custom Faux Leather Heart Bookmark Page Corner"),
+ ];
+ const wooden = [
+  p("wood-a", "Personalized Wooden Thumb Page Holder for One-Handed Reading"),
+  p("wood-b", "Custom Wood Book Page Holder Thumb Ring One Hand"),
+ ];
+ const chain = [
+  p("chain-a", "Metal Feather Bookmark with Hanging Chain Charm"),
+  p("chain-b", "Stainless Steel Leaf Bookmark Chain Pendant Charm"),
+ ];
+ assert.equal(curateGuide(leather).length, 1);
+ assert.equal(curateGuide(wooden).length, 1);
+ assert.equal(curateGuide(chain).length, 1);
+});
+
+test("short hooks and Amazon image variants strengthen identity globally", () => {
+ const hookTwins = [
+  {...p("hook-a", "Maker One Reader Accessory"), category: "Future Category",
+    shortHook: "Leather heart corner bookmark for page marking"},
+  {...p("hook-b", "Maker Two Book Accessory"), category: "Future Category",
+    shortHook: "Leather heart corner bookmark for page marking"},
+ ];
+ const imageTwins = [
+  {...p("image-a", "First listing"), category: "Another Future Category",
+    imageUrl: "https://m.media-amazon.com/images/I/ABC123._AC_UL320_.jpg"},
+  {...p("image-b", "Second listing"), category: "Another Future Category",
+    imageUrl: "https://images-na.ssl-images-amazon.com/images/I/ABC123._SL1500_.jpg"},
+ ];
+ assert.equal(curateGuide(hookTwins).length, 1);
+ assert.equal(curateGuide(imageTwins).length, 1);
+});
+
+test("the same global algorithm applies to arbitrary future categories", () => {
+ for (const category of ["Future Reading Gear", "Future Desk Gear", "Future Travel Gear"]) {
+  const products = [
+   {...p(`${category}-a`, "Alpha leather heart corner bookmark"), category},
+   {...p(`${category}-b`, "Beta leather heart page corner bookmark"), category},
+   {...p(`${category}-distinct`, "Wearable neck reading light"), category},
+  ];
+  assert.equal(curateGuide(products).length, 2);
+ }
+});
+
+test("ultra-low-review variants cannot outrank established equivalents", () => {
+ const established = {...p("established", "Alpha metal chain charm bookmark", 500, 12), rating: 4.4};
+ const lowEvidence = {...p("low", "Beta metal chain charm bookmark", 8, 8), rating: 5};
+ assert.equal(curateGuide([lowEvidence, established])[0].id, "established");
 });

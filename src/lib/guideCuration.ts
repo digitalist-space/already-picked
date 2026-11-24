@@ -68,14 +68,14 @@ function bucket(product: Product): string {
   return normalize(normalizeProductTypeLabel(product.subcategory || product.category || "other"));
 }
 function attributes(product: Product): Set<string> {
-  const source = normalize([product.title, product.subcategory,
+  const source = normalize([product.title, product.shortHook, product.subcategory,
     ...Object.entries(product.specs || {}).flat()].join(" "));
   const result = new Set<string>();
   const patterns = [
     /\b\d+(?:\.\d+)?\s*(?:inch|in|cm|mm|ft|oz|lb|mah|w|watt|v|volt|nm|led)\b/g,
     /\b\d+\s*pack\b/g,
-    /\b(?:bamboo|wood|wooden|metal|silicone|gel|foam|plastic|crochet|embroidered)\b/g,
-    /\b(?:rechargeable|usb c|usb|battery|clip on|wearable|magnetic|slow rising|dough filled)\b/g,
+    /\b(?:bamboo|wood|wooden|leather|faux leather|metal|stainless steel|resin|acrylic|silicone|gel|foam|plastic|crochet|embroidered)\b/g,
+    /\b(?:rechargeable|usb c|usb|battery|clip on|wearable|magnetic|slow rising|dough filled|corner|thumb|chain|charm|pendant|tassel|heart)\b/g,
   ];
   for (const pattern of patterns) {
     for (const match of source.matchAll(pattern)) result.add(match[0].replace(/\s+/g, "-"));
@@ -98,6 +98,12 @@ export function archetype(product: Product): string {
     return /wood|bamboo/.test(text) ? "wooden-thumb-page-holder" : "thumb-page-holder";
   }
   if (/bookmark/.test(text)) {
+    if (/leather/.test(text) && /heart/.test(text)) {
+      return "leather-heart-corner-bookmark";
+    }
+    if (/metal|stainless steel/.test(text) && /chain|charm|pendant|tassel/.test(text)) {
+      return "metal-chain-charm-bookmark";
+    }
     if (/corner/.test(text) && /embroider|fabric|felt/.test(text)) return "embroidered-corner-bookmark";
     if (/magnetic/.test(text)) return "magnetic-bookmark";
     if (/metal/.test(text)) return "metal-bookmark";
@@ -134,8 +140,19 @@ function titleTokens(product: Product): Set<string> {
     .filter((token) => token.length > 1 && !/^\d+(?:\.\d+)?$/.test(token) &&
       !STOP_WORDS.has(token) && !brand.has(token)));
 }
+function semanticTokens(product: Product): Set<string> {
+  const brand = new Set(brandKey(product).split(" "));
+  return new Set(normalize([
+    product.title,
+    product.shortHook,
+    ...Object.values(product.specs || {}),
+  ].join(" ")).split(" ").filter((token) =>
+    token.length > 1 && !/^\d+(?:\.\d+)?$/.test(token) &&
+    !STOP_WORDS.has(token) && !brand.has(token)
+  ));
+}
 export function functionalTokens(product: Product): Set<string> {
-  const result = titleTokens(product);
+  const result = semanticTokens(product);
   const type = archetype(product);
   if (type !== bucket(product)) {
     for (const token of type.split("-")) {
@@ -149,8 +166,14 @@ export function functionalTokens(product: Product): Set<string> {
 }
 function imageKey(product: Product): string {
   const value = String(product.imageUrl || "").trim().toLowerCase();
-  return !value || value.includes("placeholder") ? "" :
-    value.replace(/[?#].*$/, "").replace(/\._[^/]+(?=\.[a-z0-9]+$)/i, "");
+  if (!value || value.includes("placeholder")) return "";
+  try {
+    const path = new URL(value).pathname;
+    return path.split("/").pop()?.replace(/\._[^/]+(?=\.[a-z0-9]+$)/i, "") || "";
+  } catch {
+    return value.replace(/[?#].*$/, "").split("/").pop()
+      ?.replace(/\._[^/]+(?=\.[a-z0-9]+$)/i, "") || "";
+  }
 }
 function fingerprint(product: Product): Fingerprint {
   return { brand: brandKey(product), bucket: bucket(product), archetype: archetype(product),
@@ -175,8 +198,16 @@ function clusterReason(left: Product, right: Product, a: Fingerprint, b: Fingerp
   const sameKnownBrand = Boolean(a.brand && b.brand && a.brand === b.brand);
   if (!sameKnownBrand && !crossBrandClustering) return null;
   const title = similarity(a.tokens, b.tokens);
+  const specs = similarity(a.attributes, b.attributes);
+  if (a.archetype === b.archetype && a.archetype !== a.bucket &&
+    specs.containment >= 0.5) {
+    return "white-label-clone";
+  }
   if (title.jaccard >= FUNCTIONAL_JACCARD_THRESHOLD) {
     return "white-label-clone";
+  }
+  if (Math.min(a.tokens.size, b.tokens.size) >= 3 && title.containment >= 0.72) {
+    return "near-identical-title";
   }
   if (a.tokens.size >= 4 && b.tokens.size >= 4 &&
     title.jaccard >= 0.76 && title.containment >= 0.84) return "near-identical-title";
@@ -188,12 +219,34 @@ export function confidence(product: Product): number {
   return (reviews * product.rating + BAYESIAN_MINIMUM_REVIEWS * BAYESIAN_PRIOR_RATING) /
     (reviews + BAYESIAN_MINIMUM_REVIEWS);
 }
+function metadataCompleteness(product: Product): number {
+  return [
+    product.title,
+    product.description,
+    product.asin,
+    product.category,
+    product.subcategory,
+    product.shortHook,
+    imageKey(product),
+    Object.keys(product.specs || {}).length ? "specs" : "",
+  ].filter(Boolean).length;
+}
 function compare(left: Product, right: Product): number {
+  const leftEstablished = left.reviewCount >= BAYESIAN_MINIMUM_REVIEWS;
+  const rightEstablished = right.reviewCount >= BAYESIAN_MINIMUM_REVIEWS;
+  const leftUltraLow = left.reviewCount < 50;
+  const rightUltraLow = right.reviewCount < 50;
+  if (leftEstablished && rightUltraLow) return -1;
+  if (rightEstablished && leftUltraLow) return 1;
   const delta = confidence(right) - confidence(left);
   if (Math.abs(delta) <= BAYESIAN_PRICE_TIE_THRESHOLD) {
-    return left.price - right.price || delta || String(left.id).localeCompare(String(right.id));
+    return left.price - right.price ||
+      metadataCompleteness(right) - metadataCompleteness(left) ||
+      right.reviewCount - left.reviewCount || delta ||
+      String(left.id).localeCompare(String(right.id));
   }
-  return delta || right.reviewCount - left.reviewCount || left.price - right.price ||
+  return delta || right.reviewCount - left.reviewCount ||
+    metadataCompleteness(right) - metadataCompleteness(left) || left.price - right.price ||
     String(left.id).localeCompare(String(right.id));
 }
 function label(value: string): string {
