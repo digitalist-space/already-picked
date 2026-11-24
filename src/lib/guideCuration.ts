@@ -249,19 +249,110 @@ function compare(left: Product, right: Product): number {
     metadataCompleteness(right) - metadataCompleteness(left) || left.price - right.price ||
     String(left.id).localeCompare(String(right.id));
 }
-function label(value: string): string {
-  return value.split("-").map((word) => word === "lego" ? "LEGO" : word).join(" ");
+const ARCHETYPE_LABELS: Record<string, string> = {
+  "red-light-reading-lamp": "Best red-light reading lamp",
+  "wearable-neck-reading-light": "Best neck reading light",
+  "clip-on-rechargeable-book-light": "Best clip-on book light",
+  "desk-reading-lamp": "Best desk reading lamp",
+  "portable-reading-light": "Best portable reading light",
+  "wooden-thumb-page-holder": "Best wooden page holder",
+  "thumb-page-holder": "Best one-handed page holder",
+  "leather-heart-corner-bookmark": "Best leather corner bookmark",
+  "metal-chain-charm-bookmark": "Best chain-charm bookmark",
+  "embroidered-corner-bookmark": "Best embroidered bookmark",
+  "magnetic-bookmark": "Best magnetic bookmarks",
+  "metal-bookmark": "Best metal bookmark",
+  bookmark: "Best classic bookmark",
+  "reading-annotation-kit": "Best reading annotation kit",
+  "slow-rising-stress-cube": "Best slow-rising stress cube",
+  "axolotl-squishy": "Best axolotl squishy",
+  "magnetic-fidget-balls": "Best magnetic fidget balls",
+  "gel-stress-ball": "Best gel stress ball",
+  "standard-stress-ball": "Best classic stress ball",
+  "sensory-bottle": "Best sensory bottle",
+  "sensory-fidget-tube": "Best sensory fidget tubes",
+  "gel-sensory-maze": "Best gel sensory maze",
+  "dough-filled-squishy": "Best dough-filled squishy",
+  "novelty-squishy": "Best novelty squishy",
+  "lego-minifigure": "Best LEGO minifigure gift",
+  "lego-keychain": "Best LEGO keychain",
+  "lego-brickheadz": "Best LEGO BrickHeadz set",
+  "lego-polybag": "Best LEGO polybag",
+  "lego-building-set": "Best LEGO building set",
+  "mini-building-block-kit": "Best mini building-block kit",
+};
+
+function titleEditorialLabel(product: Product): string {
+  const text = normalize(`${product.title} ${product.shortHook || ""}`);
+  if (/sticker/.test(text) && /kindle|journal|reading/.test(text)) {
+    return "Best Kindle & journal stickers";
+  }
+  if (/\b(?:pen|pens)\b/.test(text) && /book|quote|reader/.test(text)) {
+    return "Best bookish quote pens";
+  }
+  if (/tote|canvas bag/.test(text) && /book|reader/.test(text)) return "Best book-lover tote";
+  if (/journal|reading tracker|book tracker/.test(text)) return "Best reading journal";
+  if (/coaster/.test(text) && /book|library|reading/.test(text)) return "Best library-themed coasters";
+  if (/coaster/.test(text) && /wood|wooden/.test(text)) return "Best wooden coasters";
+  if (/ornament|suncatcher|sun catcher/.test(text) && /book|reader|library/.test(text)) {
+    return "Best bookish ornament";
+  }
+  if (/tea|english breakfast/.test(text) && /book|literary|quote/.test(text)) {
+    return "Best literary tea gift";
+  }
+  if (/sock/.test(text) && /book|reader|writer/.test(text)) return "Best book-lover socks";
+  if (/\bmug\b|\bcup\b|tumbler/.test(text) && /book|reader|library/.test(text)) {
+    return "Best bookish drinkware";
+  }
+  if (/acrylic|paperweight|desk sign/.test(text) && /book|reader|library/.test(text)) {
+    return "Best reader desk keepsake";
+  }
+  if (/book lover|bookworm|reader gift/.test(text)) return "Best book-lover keepsake";
+  return "";
 }
-function bestFor(winner: Product, group: Product[]): string {
-  const value = archetype(winner);
-  const name = value === bucket(winner)
-    ? [...titleTokens(winner)].slice(0, 4).join(" ")
-    : label(value);
-  if (group.length <= 1) return `Best ${name}`;
-  if (winner.reviewCount === Math.max(...group.map((item) => item.reviewCount)) &&
-    winner.reviewCount >= 500) return `Most proven ${name}`;
-  if (winner.price === Math.min(...group.map((item) => item.price))) return `Best-value ${name}`;
-  return `Best overall ${name}`;
+
+function fallbackEditorialLabel(product: Product): string {
+  const source = normalizeProductTypeLabel(product.subcategory || product.category || "editorial pick")
+    .replace(/\s+/g, " ")
+    .trim();
+  return `Best ${source.toLowerCase()}`;
+}
+
+function withQualifier(label: string, product: Product, group: Product[]): string {
+  const text = normalize(product.title);
+  const noun = label.replace(/^Best\s+/i, "");
+  if (/personalized|custom|initial/.test(text)) return `Best personalized ${noun}`;
+  if (/engraved/.test(text)) return `Best engraved ${noun}`;
+  if (/magnetic/.test(text)) return `Best magnetic ${noun}`;
+  if (/wood|wooden|bamboo/.test(text)) return `Best wooden ${noun}`;
+  if (/leather/.test(text)) return `Best leather ${noun}`;
+  if (/metal|stainless steel/.test(text)) return `Best metal ${noun}`;
+  if (/floral|flower|botanical/.test(text)) return `Best floral ${noun}`;
+  if (/cat|dog|animal/.test(text)) return `Best animal-themed ${noun}`;
+  if (product.price === Math.min(...group.map((item) => item.price))) return `Best budget ${noun}`;
+  if (product.reviewCount === Math.max(...group.map((item) => item.reviewCount))) {
+    return `Most popular ${noun}`;
+  }
+  return label;
+}
+
+function compactLabel(label: string): string {
+  if (label.length <= 44) return label;
+  const shortened = label
+    .replace("personalized", "custom")
+    .replace("book-lover", "reader")
+    .replace("building-block", "brick");
+  if (shortened.length <= 44) return shortened;
+  return shortened.slice(0, 43).replace(/\s+\S*$/, "").trimEnd();
+}
+
+export function editorialBestFor(product: Product): string {
+  const typeLabel = ARCHETYPE_LABELS[archetype(product)];
+  return compactLabel(
+    typeLabel ||
+    titleEditorialLabel(product) ||
+    fallbackEditorialLabel(product)
+  );
 }
 function eligible(product: Product): boolean {
   return Number.isFinite(product.price) && product.price > 0 &&
@@ -340,12 +431,25 @@ export function curateGuideWithReport(products: Product[],
     }
     for (const winner of winners) {
       if (selected.length >= maxPicks) break;
-      let reason = bestFor(winner, group);
+      let reason = editorialBestFor(winner);
       if (usedReasons.has(reason)) {
-        const differentiator = [...titleTokens(winner)].slice(0, 4).join(" ") ||
-          brandKey(winner) || winner.asin || String(winner.id);
-        reason = `${reason} — ${differentiator}`;
-        if (usedReasons.has(reason)) reason = `${reason} ${winner.asin || winner.id}`;
+        reason = compactLabel(withQualifier(reason, winner, group));
+      }
+      if (usedReasons.has(reason)) {
+        const noun = reason.replace(/^Best\s+/i, "");
+        const brand = winner.brand || winner.title.trim().split(/\s+/)[0] || brandKey(winner);
+        reason = compactLabel(brand ? `Best ${brand} ${noun}` : `Best value ${noun}`);
+      }
+      if (usedReasons.has(reason)) {
+        const noun = editorialBestFor(winner).replace(/^Best\s+/i, "");
+        const nounTokens = new Set(normalize(noun).split(" "));
+        const descriptor = [...titleTokens(winner)]
+          .filter((token) => !nounTokens.has(token))
+          .slice(0, 2)
+          .join(" ");
+        reason = compactLabel(
+          descriptor ? `Best ${descriptor} ${noun}` : `Best versatile ${noun}`
+        );
       }
       usedReasons.add(reason);
       selected.push({ ...winner, bestFor: reason });

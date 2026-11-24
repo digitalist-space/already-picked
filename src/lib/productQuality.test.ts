@@ -181,7 +181,7 @@ function pickProduct(
 test("editorial picks select three distinct deterministic winners", () => {
   const products = [
     pickProduct("overall", 4.9, 500, 40),
-    pickProduct("value", 4.4, 40, 8),
+    pickProduct("value", 4.4, 500, 8),
     pickProduct("popular", 4.3, 2000, 30),
     pickProduct("four", 4.1, 80, 20),
     pickProduct("five", 4.0, 70, 21),
@@ -200,7 +200,7 @@ test("editorial picks select three distinct deterministic winners", () => {
 test("featured guide order pins distinct winners before display order", () => {
   const products = [
     pickProduct("first", 4, 20, 12),
-    pickProduct("value", 4.4, 40, 8),
+    pickProduct("value", 4.4, 500, 8),
     pickProduct("third", 4, 30, 14),
     pickProduct("popular", 4.3, 2000, 11),
     pickProduct("fifth", 4.1, 60, 13),
@@ -252,10 +252,10 @@ test("editorial picks require eight qualifying products and respect candidate fl
   assert.deepEqual(selectEditorialPicks(sevenProducts), []);
 
   const products = [
-    pickProduct("overall-ineligible", 5, 24, 30),
-    pickProduct("overall", 4.8, 25, 35),
-    pickProduct("value-ineligible", 4.29, 200, 5),
-    pickProduct("value", 4.3, 20, 10),
+    pickProduct("overall-ineligible", 5, 499, 30),
+    pickProduct("overall", 4.8, 500, 35),
+    pickProduct("value-ineligible", 4.29, 600, 5),
+    pickProduct("value", 4.3, 500, 10),
     pickProduct("popular", 4.2, 1000, 40),
     pickProduct("six", 4.0, 50, 20),
     pickProduct("seven", 4.0, 50, 21),
@@ -267,4 +267,23 @@ test("editorial picks require eight qualifying products and respect candidate fl
     { productId: "popular", badge: "most-popular" },
     { productId: "value", badge: "best-value" },
   ]);
+});
+
+test("low-review products are never pinned above established favorites", () => {
+  const products = [
+    pickProduct("low-review", 5, 68, 5),
+    pickProduct("overall", 4.8, 1200, 14),
+    pickProduct("value", 4.4, 700, 8),
+    pickProduct("popular", 4.3, 6600, 13),
+    pickProduct("five", 4.1, 80, 20),
+    pickProduct("six", 4.2, 60, 22),
+    pickProduct("seven", 4.1, 50, 23),
+    pickProduct("eight", 4.0, 40, 24),
+  ];
+  const picks = selectEditorialPicks(products);
+  assert.ok(!picks.some((pick) => pick.productId === "low-review"));
+  assert.deepEqual(
+    pinEditorialPicks(products, picks).slice(0, 3).map((item) => item.id),
+    ["overall", "popular", "value"]
+  );
 });

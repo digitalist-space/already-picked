@@ -1,4 +1,5 @@
 import type { Product } from "./types";
+import { BAYESIAN_MINIMUM_REVIEWS, confidence } from "./guideCuration.ts";
 
 export const MIN_PRODUCT_RATING = 3.8;
 export const MIN_PRODUCT_REVIEWS = 5;
@@ -52,8 +53,12 @@ function compareId(a: Product, b: Product): number {
   return a.id.localeCompare(b.id);
 }
 
-function overallScore(product: Product): number {
-  return product.rating * 0.8 + Math.log10(product.reviewCount + 1) * 0.2;
+function compareSocialProof(a: Product, b: Product): number {
+  return confidence(b) - confidence(a) ||
+    b.reviewCount - a.reviewCount ||
+    b.rating - a.rating ||
+    a.price - b.price ||
+    compareId(a, b);
 }
 
 export function selectEditorialPicks(
@@ -62,31 +67,26 @@ export function selectEditorialPicks(
 ): EditorialPick[] {
   const eligible = qualifyingProducts(products, options);
   if (eligible.length < MIN_EDITORIAL_BADGE_PRODUCTS) return [];
+  const established = eligible.filter(
+    (product) => product.reviewCount >= BAYESIAN_MINIMUM_REVIEWS
+  );
+  if (!established.length) return [];
 
   const picks: EditorialPick[] = [];
   const selectedIds = new Set<string>();
 
-  const bestOverall = eligible
-    .filter((product) => product.reviewCount >= 25)
-    .sort(
-      (a, b) =>
-        overallScore(b) - overallScore(a) ||
-        b.rating - a.rating ||
-        b.reviewCount - a.reviewCount ||
-        compareId(a, b)
-    )[0];
+  const bestOverall = established.slice().sort(compareSocialProof)[0];
 
   if (bestOverall) {
     picks.push({ productId: bestOverall.id, badge: "best-overall" });
     selectedIds.add(bestOverall.id);
   }
 
-  const bestValue = eligible
+  const bestValue = established
     .filter(
       (product) =>
         !selectedIds.has(product.id) &&
-        product.rating >= 4.3 &&
-        product.reviewCount >= 20
+        product.rating >= 4.3
     )
     .sort(
       (a, b) =>
@@ -101,7 +101,7 @@ export function selectEditorialPicks(
     selectedIds.add(bestValue.id);
   }
 
-  const mostPopular = eligible
+  const mostPopular = established
     .filter(
       (product) => !selectedIds.has(product.id) && product.rating >= 4.2
     )

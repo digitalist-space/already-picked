@@ -5,6 +5,7 @@ import {
  confidence,
  curateGuide,
  curateGuideWithReport,
+ editorialBestFor,
  functionalTokens,
 } from "./guideCuration.ts";
 import type { Product } from "./types.ts";
@@ -66,7 +67,7 @@ test("reports preserve winner evidence and removal reasons", () => {
  assert.equal(report.selected[0].id, "winner");
  assert.equal(report.removed[0].winner?.id, "winner");
  assert.equal(report.removed[0].reason, "white-label-clone");
- assert.match(report.selected[0].bestFor || "", /clip on rechargeable book light/);
+ assert.equal(report.selected[0].bestFor, "Best clip-on book light");
 });
 
 test("Bayesian confidence uses m=500 and C=4.5", () => {
@@ -148,4 +149,31 @@ test("ultra-low-review variants cannot outrank established equivalents", () => {
  const established = {...p("established", "Alpha metal chain charm bookmark", 500, 12), rating: 4.4};
  const lowEvidence = {...p("low", "Beta metal chain charm bookmark", 8, 8), rating: 5};
  assert.equal(curateGuide([lowEvidence, established])[0].id, "established");
+});
+
+test("editorial labels use concise natural copy instead of token concatenation", () => {
+ assert.equal(
+  editorialBestFor(p("stickers", "50 PCS Bookish Stickers for Kindle and Reading Journals")),
+  "Best Kindle & journal stickers"
+ );
+ assert.equal(
+  editorialBestFor(p("pens", "10 Book Pens with Bookish Quotes for Readers")),
+  "Best bookish quote pens"
+ );
+ assert.equal(
+  editorialBestFor(p("holder", "Personalized Wooden Thumb Page Holder")),
+  "Best wooden page holder"
+ );
+});
+
+test("every selected label is unique and card-line length", () => {
+ const products = [
+  p("a", "Metal Feather Bookmark"),
+  p("b", "Metal Leaf Bookmark"),
+  p("c", "Magnetic Cat Bookmark"),
+  p("d", "Book Lover Acrylic Desk Sign"),
+ ];
+ const labels = curateGuide(products).map((item) => item.bestFor || "");
+ assert.equal(new Set(labels).size, labels.length);
+ assert.ok(labels.every((label) => label.length > 0 && label.length <= 44));
 });

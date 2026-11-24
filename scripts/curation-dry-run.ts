@@ -1,6 +1,10 @@
 import { writeFile } from "node:fs/promises";
-import { curateGuideWithReport } from "../src/lib/guideCuration.ts";
-import { qualifyingProducts } from "../src/lib/productQuality.ts";
+import { confidence, curateGuideWithReport } from "../src/lib/guideCuration.ts";
+import {
+  pinEditorialPicks,
+  qualifyingProducts,
+  selectEditorialPicks,
+} from "../src/lib/productQuality.ts";
 import type { Product } from "../src/lib/types.ts";
 
 const workbookId = process.env.GOOGLE_SHEET_WORKBOOK_ID;
@@ -88,6 +92,8 @@ const reports = guideSlugs.map((slug) => {
     });
   const maxPrice = Number(slug.match(/under-(\d+)$/)?.[1] || 0) || null;
   const report = curateGuideWithReport(qualifyingProducts(candidates, { maxPrice }));
+  const editorialPicks = selectEditorialPicks(report.selected, { maxPrice });
+  const defaultOrder = pinEditorialPicks(report.selected, editorialPicks);
   return {
     slug,
     title: page.page_title,
@@ -95,6 +101,15 @@ const reports = guideSlugs.map((slug) => {
     qualifyingCount: report.inputCount,
     selectedCount: report.selected.length,
     prunedCount: report.inputCount - report.selected.length,
+    defaultOrder: defaultOrder.map((product, index) => ({
+      position: index + 1,
+      asin: product.asin,
+      title: product.title,
+      reason: product.bestFor,
+      editorialBadge: editorialPicks.find((pick) => pick.productId === product.id)?.badge,
+      bayesianScore: Number(confidence(product).toFixed(4)),
+      reviews: product.reviewCount,
+    })),
     winners: report.selected.map((product) => ({
       asin: product.asin, title: product.title, reason: product.bestFor,
       rating: product.rating, reviews: product.reviewCount, price: product.price,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T14:16:29.986Z",
+  "generatedAt": "2026-11-24T14:26:52.299Z",
   "workbookId": "1vicbagFM6DZO7Kyh9EvHPAj9j3H86Rh9L1th-TpuEQM",
   "reports": [
     {
@@ -9,11 +9,216 @@
       "qualifyingCount": 82,
       "selectedCount": 25,
       "prunedCount": 57,
+      "defaultOrder": [
+        {
+          "position": 1,
+          "asin": "B07WFT3R27",
+          "title": "Metal Feather Bookmark for Women Who Love Reading",
+          "reason": "Best metal bookmark",
+          "editorialBadge": "best-overall",
+          "bayesianScore": 4.793,
+          "reviews": 20900
+        },
+        {
+          "position": 2,
+          "asin": "B0D7MD8BWW",
+          "title": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed",
+          "reason": "Best clip-on book light",
+          "editorialBadge": "most-popular",
+          "bayesianScore": 4.7894,
+          "reviews": 13600
+        },
+        {
+          "position": 3,
+          "asin": "1441324232",
+          "title": "Coffee & Books Beaded Bookmark, 1Pc",
+          "reason": "Best classic bookmark",
+          "editorialBadge": "best-value",
+          "bayesianScore": 4.7789,
+          "reviews": 6600
+        },
+        {
+          "position": 4,
+          "asin": "B0C6JQVWK7",
+          "title": "Funny Engraved Bookmark for Book Lovers",
+          "reason": "Best engraved classic bookmark",
+          "bayesianScore": 4.7824,
+          "reviews": 1200
+        },
+        {
+          "position": 5,
+          "asin": "B0GKGDH6VH",
+          "title": "Glocusent 13 LED Book Lights for Reading at Night",
+          "reason": "Best portable reading light",
+          "bayesianScore": 4.7318,
+          "reviews": 1700
+        },
+        {
+          "position": 6,
+          "asin": "B0C9MCCTSF",
+          "title": "Cute Canvas Tote Bag, Book Lovers Gifts - Christmas",
+          "reason": "Best book-lover tote",
+          "bayesianScore": 4.6895,
+          "reviews": 858
+        },
+        {
+          "position": 7,
+          "asin": "B0GCPJXF74",
+          "title": "50 PCS Bookish Stickers for Kindle, Reading Stickers, Aesthetic Kindle Sticker",
+          "reason": "Best Kindle & journal stickers",
+          "bayesianScore": 4.6722,
+          "reviews": 674
+        },
+        {
+          "position": 8,
+          "asin": "B0B1DJWFTF",
+          "title": "yasest 6-Piece Magnetic Cat Bookmark Set",
+          "reason": "Best magnetic bookmarks",
+          "bayesianScore": 4.6697,
+          "reviews": 2800
+        },
+        {
+          "position": 9,
+          "asin": "B0GQM58MF1",
+          "title": "Glocusent 630nm Red Light Reading Light, 26 LED Zero Blue Light Book Lamp",
+          "reason": "Best red-light reading lamp",
+          "bayesianScore": 4.6808,
+          "reviews": 4700
+        },
+        {
+          "position": 10,
+          "asin": "B0FKST5M4D",
+          "title": "Glocusent 26 LED Reading Lights for Books in Bed",
+          "reason": "Most popular portable reading light",
+          "bayesianScore": 4.6808,
+          "reviews": 4700
+        },
+        {
+          "position": 11,
+          "asin": "B002RT2W1M",
+          "title": "Novel Teas 25-Count English Breakfast Tea with Literary Quotes",
+          "reason": "Best literary tea gift",
+          "bayesianScore": 4.6655,
+          "reviews": 2400
+        },
+        {
+          "position": 12,
+          "asin": "B0B8RT1KG1",
+          "title": "Vintage Library Due Date Card Coaster Set, 4pcs Library Card Coasters",
+          "reason": "Best library-themed coasters",
+          "bayesianScore": 4.6434,
+          "reviews": 458
+        },
+        {
+          "position": 13,
+          "asin": "B0DNJP3CFT",
+          "title": "JoycuFF Book Lover Gifts for Women",
+          "reason": "Best book-lover keepsake",
+          "bayesianScore": 4.6199,
+          "reviews": 333
+        },
+        {
+          "position": 14,
+          "asin": "B0D9KNQV32",
+          "title": "ZICOTO Beautiful Reading Journal for Book Lovers - Linen Hard Cover Tracker",
+          "reason": "Best reading journal",
+          "bayesianScore": 4.5867,
+          "reviews": 383
+        },
+        {
+          "position": 15,
+          "asin": "B0CJXG3RZ9",
+          "title": "Cup, Book Lovers Gifts - Gifts for Book Lovers Women, Bookworm, Girls",
+          "reason": "Best bookish drinkware",
+          "bayesianScore": 4.5682,
+          "reviews": 259
+        },
+        {
+          "position": 16,
+          "asin": "B0DGXQ1DM4",
+          "title": "Personalized Leather Heart Bookmark with Initials, 9 Color Options",
+          "reason": "Best leather corner bookmark",
+          "bayesianScore": 4.5528,
+          "reviews": 560
+        },
+        {
+          "position": 17,
+          "asin": "B0DGPWY8BL",
+          "title": "Cat Bookmark with Gift Box",
+          "reason": "Best animal-themed classic bookmark",
+          "bayesianScore": 4.5239,
+          "reviews": 68
+        },
+        {
+          "position": 18,
+          "asin": "B0F18NRWF3",
+          "title": "Book Lovers Gifts, Acrylic Heart Sign Paperweight Presents",
+          "reason": "Best reader desk keepsake",
+          "bayesianScore": 4.5255,
+          "reviews": 171
+        },
+        {
+          "position": 19,
+          "asin": "B0GXVFH4N9",
+          "title": "Book Lover Socks - Reading and Writer Gifts for Men Women",
+          "reason": "Best book-lover socks",
+          "bayesianScore": 4.5305,
+          "reviews": 219
+        },
+        {
+          "position": 20,
+          "asin": "B0FH1QVTW3",
+          "title": "Book Ornament, Tea Books Floral Acrylic Suncatcher for Tree, Window Hanging",
+          "reason": "Best bookish ornament",
+          "bayesianScore": 4.5,
+          "reviews": 389
+        },
+        {
+          "position": 21,
+          "asin": "B0GYQ9XFZQ",
+          "title": "10 Pcs Book Pens, Aesthetic Bookish Gifts and Book Lover Gifts for Women",
+          "reason": "Best bookish quote pens",
+          "bayesianScore": 4.5,
+          "reviews": 131
+        },
+        {
+          "position": 22,
+          "asin": "B0F9W7WYKR",
+          "title": "Wooden Tree-Shaped Coasters Set for Coffee Table, Kitchen Decor",
+          "reason": "Best wooden coasters",
+          "bayesianScore": 4.5,
+          "reviews": 815
+        },
+        {
+          "position": 23,
+          "asin": "B0BHTSMRS1",
+          "title": "hooga Amber Book Light – Blue Light Blocking Reading Light for Bed, Stepless Dimming",
+          "reason": "Best budget portable reading light",
+          "bayesianScore": 4.5,
+          "reviews": 641
+        },
+        {
+          "position": 24,
+          "asin": "B0BHPHZNC9",
+          "title": "Personalized Hand Embroidered Corner Bookmark",
+          "reason": "Best embroidered bookmark",
+          "bayesianScore": 4.4333,
+          "reviews": 1000
+        },
+        {
+          "position": 25,
+          "asin": "B09GMG4MV8",
+          "title": "2 Pcs Dried Flower Book Thumb Page Holder Resin Book Accessory for Reading",
+          "reason": "Best one-handed page holder",
+          "bayesianScore": 4.4334,
+          "reviews": 997
+        }
+      ],
       "winners": [
         {
           "asin": "1441324232",
           "title": "Coffee & Books Beaded Bookmark, 1Pc",
-          "reason": "Best bookmark",
+          "reason": "Best classic bookmark",
           "rating": 4.8,
           "reviews": 6600,
           "price": 2.95
@@ -29,7 +234,7 @@
         {
           "asin": "B0D7MD8BWW",
           "title": "Gritin Reading Light, Rechargeable Book Light for Reading in Bed",
-          "reason": "Best overall clip on rechargeable book light",
+          "reason": "Best clip-on book light",
           "rating": 4.8,
           "reviews": 13600,
           "price": 9.34
@@ -37,7 +242,7 @@
         {
           "asin": "B0C6JQVWK7",
           "title": "Funny Engraved Bookmark for Book Lovers",
-          "reason": "Best overall bookmark",
+          "reason": "Best engraved classic bookmark",
           "rating": 4.9,
           "reviews": 1200,
           "price": 11.99
@@ -45,7 +250,7 @@
         {
           "asin": "B0GKGDH6VH",
           "title": "Glocusent 13 LED Book Lights for Reading at Night",
-          "reason": "Most proven portable reading light",
+          "reason": "Best portable reading light",
           "rating": 4.8,
           "reviews": 1700,
           "price": 11.99
@@ -53,7 +258,7 @@
         {
           "asin": "B0C9MCCTSF",
           "title": "Cute Canvas Tote Bag, Book Lovers Gifts - Christmas",
-          "reason": "Best cute canvas tote bag",
+          "reason": "Best book-lover tote",
           "rating": 4.8,
           "reviews": 858,
           "price": 7.19
@@ -61,7 +266,7 @@
         {
           "asin": "B0GCPJXF74",
           "title": "50 PCS Bookish Stickers for Kindle, Reading Stickers, Aesthetic Kindle Sticker",
-          "reason": "Best bookish stickers kindle reading",
+          "reason": "Best Kindle & journal stickers",
           "rating": 4.8,
           "reviews": 674,
           "price": 4.99
@@ -69,7 +274,7 @@
         {
           "asin": "B0B1DJWFTF",
           "title": "yasest 6-Piece Magnetic Cat Bookmark Set",
-          "reason": "Best overall magnetic bookmark",
+          "reason": "Best magnetic bookmarks",
           "rating": 4.7,
           "reviews": 2800,
           "price": 7.99
@@ -77,7 +282,7 @@
         {
           "asin": "B0GQM58MF1",
           "title": "Glocusent 630nm Red Light Reading Light, 26 LED Zero Blue Light Book Lamp",
-          "reason": "Best red light reading lamp",
+          "reason": "Best red-light reading lamp",
           "rating": 4.7,
           "reviews": 4700,
           "price": 11.46
@@ -85,7 +290,7 @@
         {
           "asin": "B0FKST5M4D",
           "title": "Glocusent 26 LED Reading Lights for Books in Bed",
-          "reason": "Most proven portable reading light — reading lights books bed",
+          "reason": "Most popular portable reading light",
           "rating": 4.7,
           "reviews": 4700,
           "price": 13.59
@@ -93,7 +298,7 @@
         {
           "asin": "B002RT2W1M",
           "title": "Novel Teas 25-Count English Breakfast Tea with Literary Quotes",
-          "reason": "Best teas count english breakfast",
+          "reason": "Best literary tea gift",
           "rating": 4.7,
           "reviews": 2400,
           "price": 12.95
@@ -101,7 +306,7 @@
         {
           "asin": "B0B8RT1KG1",
           "title": "Vintage Library Due Date Card Coaster Set, 4pcs Library Card Coasters",
-          "reason": "Best library due date card",
+          "reason": "Best library-themed coasters",
           "rating": 4.8,
           "reviews": 458,
           "price": 8.96
@@ -109,7 +314,7 @@
         {
           "asin": "B0DNJP3CFT",
           "title": "JoycuFF Book Lover Gifts for Women",
-          "reason": "Best overall book lover",
+          "reason": "Best book-lover keepsake",
           "rating": 4.8,
           "reviews": 333,
           "price": 13.24
@@ -117,7 +322,7 @@
         {
           "asin": "B0D9KNQV32",
           "title": "ZICOTO Beautiful Reading Journal for Book Lovers - Linen Hard Cover Tracker",
-          "reason": "Best beautiful reading journal book",
+          "reason": "Best reading journal",
           "rating": 4.7,
           "reviews": 383,
           "price": 6.79
@@ -125,7 +330,7 @@
         {
           "asin": "B0CJXG3RZ9",
           "title": "Cup, Book Lovers Gifts - Gifts for Book Lovers Women, Bookworm, Girls",
-          "reason": "Best book bookworm girls",
+          "reason": "Best bookish drinkware",
           "rating": 4.7,
           "reviews": 259,
           "price": 8.39
@@ -133,7 +338,7 @@
         {
           "asin": "B0DGXQ1DM4",
           "title": "Personalized Leather Heart Bookmark with Initials, 9 Color Options",
-          "reason": "Most proven leather heart corner bookmark",
+          "reason": "Best leather corner bookmark",
           "rating": 4.6,
           "reviews": 560,
           "price": 5
@@ -141,7 +346,7 @@
         {
           "asin": "B0DGPWY8BL",
           "title": "Cat Bookmark with Gift Box",
-          "reason": "Best bookmark — bookmark box",
+          "reason": "Best animal-themed classic bookmark",
           "rating": 4.7,
           "reviews": 68,
           "price": 2.79
@@ -149,7 +354,7 @@
         {
           "asin": "B0F18NRWF3",
           "title": "Book Lovers Gifts, Acrylic Heart Sign Paperweight Presents",
-          "reason": "Best book acrylic heart sign",
+          "reason": "Best reader desk keepsake",
           "rating": 4.6,
           "reviews": 171,
           "price": 5.3
@@ -157,7 +362,7 @@
         {
           "asin": "B0GXVFH4N9",
           "title": "Book Lover Socks - Reading and Writer Gifts for Men Women",
-          "reason": "Best book lover socks reading",
+          "reason": "Best book-lover socks",
           "rating": 4.6,
           "reviews": 219,
           "price": 11.99
@@ -165,7 +370,7 @@
         {
           "asin": "B0FH1QVTW3",
           "title": "Book Ornament, Tea Books Floral Acrylic Suncatcher for Tree, Window Hanging",
-          "reason": "Best book ornament tea books",
+          "reason": "Best bookish ornament",
           "rating": 4.5,
           "reviews": 389,
           "price": 5.99
@@ -173,7 +378,7 @@
         {
           "asin": "B0GYQ9XFZQ",
           "title": "10 Pcs Book Pens, Aesthetic Bookish Gifts and Book Lover Gifts for Women",
-          "reason": "Best-value book pens aesthetic bookish",
+          "reason": "Best bookish quote pens",
           "rating": 4.5,
           "reviews": 131,
           "price": 6.79
@@ -181,7 +386,7 @@
         {
           "asin": "B0F9W7WYKR",
           "title": "Wooden Tree-Shaped Coasters Set for Coffee Table, Kitchen Decor",
-          "reason": "Best wooden tree shaped coasters",
+          "reason": "Best wooden coasters",
           "rating": 4.5,
           "reviews": 815,
           "price": 8.49
@@ -189,7 +394,7 @@
         {
           "asin": "B0BHTSMRS1",
           "title": "hooga Amber Book Light – Blue Light Blocking Reading Light for Bed, Stepless Dimming",
-          "reason": "Best portable reading light",
+          "reason": "Best budget portable reading light",
           "rating": 4.5,
           "reviews": 641,
           "price": 14.99
@@ -197,7 +402,7 @@
         {
           "asin": "B0BHPHZNC9",
           "title": "Personalized Hand Embroidered Corner Bookmark",
-          "reason": "Best-value embroidered corner bookmark",
+          "reason": "Best embroidered bookmark",
           "rating": 4.4,
           "reviews": 1000,
           "price": 3.99
@@ -205,7 +410,7 @@
         {
           "asin": "B09GMG4MV8",
           "title": "2 Pcs Dried Flower Book Thumb Page Holder Resin Book Accessory for Reading",
-          "reason": "Best thumb page holder",
+          "reason": "Best one-handed page holder",
           "rating": 4.4,
           "reviews": 997,
           "price": 4.79
@@ -661,6 +866,211 @@
       "qualifyingCount": 54,
       "selectedCount": 25,
       "prunedCount": 29,
+      "defaultOrder": [
+        {
+          "position": 1,
+          "asin": "B0FMS779RQ",
+          "title": "LEGO Friends Axolotl Adventure Boat 42681",
+          "reason": "Best LEGO building set",
+          "editorialBadge": "best-overall",
+          "bayesianScore": 4.7185,
+          "reviews": 602
+        },
+        {
+          "position": 2,
+          "asin": "B0FMS9D14R",
+          "title": "LEGO Minecraft Chicken Farm 21585",
+          "reason": "Best minecraft chicken LEGO building set",
+          "editorialBadge": "most-popular",
+          "bayesianScore": 4.6812,
+          "reviews": 763
+        },
+        {
+          "position": 3,
+          "asin": "8325346868",
+          "title": "LEGO: Build IT! Cards and Bricks – Animals | Creative Building Ages 6+",
+          "reason": "Best animal-themed LEGO building set",
+          "editorialBadge": "best-value",
+          "bayesianScore": 4.5,
+          "reviews": 791
+        },
+        {
+          "position": 4,
+          "asin": "B0FMS75M6P",
+          "title": "LEGO Creator 3 in 1 Retro Gaming Console 31380",
+          "reason": "Most popular LEGO building set",
+          "bayesianScore": 4.7097,
+          "reviews": 551
+        },
+        {
+          "position": 5,
+          "asin": "B0FMS915ND",
+          "title": "LEGO City EV Supercar 60486",
+          "reason": "Best budget LEGO building set",
+          "bayesianScore": 4.6872,
+          "reviews": 440
+        },
+        {
+          "position": 6,
+          "asin": "B0FMYW35D4",
+          "title": "LEGO Technic Yellow Motorcycle 42225",
+          "reason": "Best LEGO budget LEGO building set",
+          "bayesianScore": 4.6692,
+          "reviews": 647
+        },
+        {
+          "position": 7,
+          "asin": "B0G2T25FMG",
+          "title": "LEGO Bluey Grannies with Bingo and Bluey 11216",
+          "reason": "Best bluey grannies LEGO building set",
+          "bayesianScore": 4.6063,
+          "reviews": 181
+        },
+        {
+          "position": 8,
+          "asin": "B0DJ184XFZ",
+          "title": "LEGO DUPLO Town Creative Garden & Flowers 10444",
+          "reason": "Best floral LEGO building set",
+          "bayesianScore": 4.6143,
+          "reviews": 200
+        },
+        {
+          "position": 9,
+          "asin": "B0G2T44SK9",
+          "title": "LEGO Botanicals Cosmos Flowers 11514",
+          "reason": "Best LEGO floral LEGO building set",
+          "bayesianScore": 4.6093,
+          "reviews": 188
+        },
+        {
+          "position": 10,
+          "asin": "B0G2KJ8V5R",
+          "title": "LEGO Snowman Ornaments 40812",
+          "reason": "Best snowman ornaments LEGO building set",
+          "bayesianScore": 4.5887,
+          "reviews": 210
+        },
+        {
+          "position": 11,
+          "asin": "B0G2T19K85",
+          "title": "LEGO DUPLO Classic Colorful Creative Box 10479",
+          "reason": "Best duplo classic LEGO building set",
+          "bayesianScore": 4.5894,
+          "reviews": 144
+        },
+        {
+          "position": 12,
+          "asin": "B0FNRXHL41",
+          "title": "LEGO Sunflowers 40524",
+          "reason": "Best sunflowers LEGO building set",
+          "bayesianScore": 4.5611,
+          "reviews": 128
+        },
+        {
+          "position": 13,
+          "asin": "B0C7QR6H5C",
+          "title": "12 Pack Mini Animals Building Blocks Party Favors for Kids",
+          "reason": "Best mini building-block kit",
+          "bayesianScore": 4.5417,
+          "reviews": 357
+        },
+        {
+          "position": 14,
+          "asin": "B0FSKR8GZH",
+          "title": "Botanicals Plants Building Blocks Toy, Compatible with Lego Botanicals",
+          "reason": "Best Botanicals floral LEGO building set",
+          "bayesianScore": 4.5441,
+          "reviews": 395
+        },
+        {
+          "position": 15,
+          "asin": "B0BRBMNN93",
+          "title": "LEGO Heart Ornament Building Toy Set - Fun Arts and Crafts Idea for Girls and Boys, Ages 9+ - Display on The Wall as Home Decoration - Gifts for Kids - 40638",
+          "reason": "Best heart ornament LEGO building set",
+          "bayesianScore": 4.5378,
+          "reviews": 72
+        },
+        {
+          "position": 16,
+          "asin": "B0DJ2MQD6C",
+          "title": "Rolife 3D Wooden Puzzle Flower for Adults, DIY Sakura Bonsai Tree Plants for Home Table Decor, Creative Cherry Blossom Crafts Birthday Model Building Kits Toys",
+          "reason": "Best small lego",
+          "bayesianScore": 4.5461,
+          "reviews": 428
+        },
+        {
+          "position": 17,
+          "asin": "B0DRW6C2RF",
+          "title": "LEGO Botanicals Happy Plants 10349",
+          "reason": "Best botanicals happy LEGO building set",
+          "bayesianScore": 4.539,
+          "reviews": 54
+        },
+        {
+          "position": 18,
+          "asin": "1338219634",
+          "title": "LEGO Gadgets (Klutz Science/STEM Activity Kit) 10.25\" Length x 0.75\" Width x 10\" Height",
+          "reason": "Best gadgets klutz LEGO building set",
+          "bayesianScore": 4.5496,
+          "reviews": 165
+        },
+        {
+          "position": 19,
+          "asin": "B0CGYN1GJ5",
+          "title": "LEGO City Blue Monster Truck Off-Road Toy Playset with a Driver Minifigure, Imaginative Toys for Kids, Fun Gift for Boys and Girls Aged 5 Plus, Mini Monster Truck, 60402",
+          "reason": "Best LEGO minifigure gift",
+          "bayesianScore": 4.5207,
+          "reviews": 37
+        },
+        {
+          "position": 20,
+          "asin": "B0H6BYZC2W",
+          "title": "DAVIRO Stocking Stuffers for Kids Teen and Adult, Christmas Santa Claus Micro Building Blocks Christmas Stacking New Toys Holiday Present Box New Year Xmas Gifts for Boys Girls",
+          "reason": "Best budget mini building-block kit",
+          "bayesianScore": 4.5,
+          "reviews": 34
+        },
+        {
+          "position": 21,
+          "asin": "B0FMS8D34Q",
+          "title": "LEGO Minecraft Steve’s Taiga Adventure 21583",
+          "reason": "Best minecraft steve LEGO building set",
+          "bayesianScore": 4.5065,
+          "reviews": 11
+        },
+        {
+          "position": 22,
+          "asin": "B0CGXZP4T8",
+          "title": "LEGO City Go-Karts and Race Drivers 60400",
+          "reason": "Best city go LEGO building set",
+          "bayesianScore": 4.5148,
+          "reviews": 26
+        },
+        {
+          "position": 23,
+          "asin": "1338603450",
+          "title": "Klutz Lego Gear Bots Science/STEM Activity Kit for 8-12 years",
+          "reason": "Best Klutz budget LEGO building set",
+          "bayesianScore": 4.5136,
+          "reviews": 79
+        },
+        {
+          "position": 24,
+          "asin": "B08HVZ37VY",
+          "title": "LEGO Super Mario Character Packs – Series 2 (71386) Building Kit (1 of 10 to Collect), Collectible Toys for Creative Kids to Enhance Interactive Play, New 2020",
+          "reason": "Best super mario LEGO building set",
+          "bayesianScore": 4.4978,
+          "reviews": 11
+        },
+        {
+          "position": 25,
+          "asin": "B0CGY54WQF",
+          "title": "LEGO City Fire Rescue Helicopter 60411",
+          "reason": "Best city fire LEGO building set",
+          "bayesianScore": 4.5093,
+          "reviews": 16
+        }
+      ],
       "winners": [
         {
           "asin": "B0FMS779RQ",
@@ -673,7 +1083,7 @@
         {
           "asin": "B0FMS75M6P",
           "title": "LEGO Creator 3 in 1 Retro Gaming Console 31380",
-          "reason": "Most proven LEGO building set",
+          "reason": "Most popular LEGO building set",
           "rating": 4.9,
           "reviews": 551,
           "price": 15.99
@@ -681,7 +1091,7 @@
         {
           "asin": "B0FMS915ND",
           "title": "LEGO City EV Supercar 60486",
-          "reason": "Best LEGO building set — city ev supercar",
+          "reason": "Best budget LEGO building set",
           "rating": 4.9,
           "reviews": 440,
           "price": 7.19
@@ -689,7 +1099,7 @@
         {
           "asin": "B0FMYW35D4",
           "title": "LEGO Technic Yellow Motorcycle 42225",
-          "reason": "Best LEGO building set — technic yellow motorcycle",
+          "reason": "Best LEGO budget LEGO building set",
           "rating": 4.8,
           "reviews": 647,
           "price": 9.97
@@ -697,7 +1107,7 @@
         {
           "asin": "B0FMS9D14R",
           "title": "LEGO Minecraft Chicken Farm 21585",
-          "reason": "Best LEGO building set — minecraft chicken farm",
+          "reason": "Best minecraft chicken LEGO building set",
           "rating": 4.8,
           "reviews": 763,
           "price": 15.99
@@ -705,7 +1115,7 @@
         {
           "asin": "B0G2T25FMG",
           "title": "LEGO Bluey Grannies with Bingo and Bluey 11216",
-          "reason": "Best LEGO building set — bluey grannies bingo",
+          "reason": "Best bluey grannies LEGO building set",
           "rating": 4.9,
           "reviews": 181,
           "price": 9.99
@@ -713,7 +1123,7 @@
         {
           "asin": "B0DJ184XFZ",
           "title": "LEGO DUPLO Town Creative Garden & Flowers 10444",
-          "reason": "Best LEGO building set — duplo town creative garden",
+          "reason": "Best floral LEGO building set",
           "rating": 4.9,
           "reviews": 200,
           "price": 10
@@ -721,7 +1131,7 @@
         {
           "asin": "B0G2T44SK9",
           "title": "LEGO Botanicals Cosmos Flowers 11514",
-          "reason": "Best overall LEGO building set",
+          "reason": "Best LEGO floral LEGO building set",
           "rating": 4.9,
           "reviews": 188,
           "price": 14.96
@@ -729,7 +1139,7 @@
         {
           "asin": "B0G2KJ8V5R",
           "title": "LEGO Snowman Ornaments 40812",
-          "reason": "Best LEGO building set — snowman ornaments",
+          "reason": "Best snowman ornaments LEGO building set",
           "rating": 4.8,
           "reviews": 210,
           "price": 10.29
@@ -737,7 +1147,7 @@
         {
           "asin": "B0G2T19K85",
           "title": "LEGO DUPLO Classic Colorful Creative Box 10479",
-          "reason": "Best-value LEGO building set",
+          "reason": "Best duplo classic LEGO building set",
           "rating": 4.9,
           "reviews": 144,
           "price": 19.99
@@ -745,7 +1155,7 @@
         {
           "asin": "B0FNRXHL41",
           "title": "LEGO Sunflowers 40524",
-          "reason": "Best LEGO building set — sunflowers",
+          "reason": "Best sunflowers LEGO building set",
           "rating": 4.8,
           "reviews": 128,
           "price": 8.99
@@ -753,7 +1163,7 @@
         {
           "asin": "B0C7QR6H5C",
           "title": "12 Pack Mini Animals Building Blocks Party Favors for Kids",
-          "reason": "Best-value mini building block kit",
+          "reason": "Best mini building-block kit",
           "rating": 4.6,
           "reviews": 357,
           "price": 8.48
@@ -761,7 +1171,7 @@
         {
           "asin": "B0FSKR8GZH",
           "title": "Botanicals Plants Building Blocks Toy, Compatible with Lego Botanicals",
-          "reason": "Best LEGO building set — plants building blocks compatible",
+          "reason": "Best Botanicals floral LEGO building set",
           "rating": 4.6,
           "reviews": 395,
           "price": 8.49
@@ -769,7 +1179,7 @@
         {
           "asin": "B0BRBMNN93",
           "title": "LEGO Heart Ornament Building Toy Set - Fun Arts and Crafts Idea for Girls and Boys, Ages 9+ - Display on The Wall as Home Decoration - Gifts for Kids - 40638",
-          "reason": "Best LEGO building set — heart ornament building fun",
+          "reason": "Best heart ornament LEGO building set",
           "rating": 4.8,
           "reviews": 72,
           "price": 12.99
@@ -777,7 +1187,7 @@
         {
           "asin": "B0DJ2MQD6C",
           "title": "Rolife 3D Wooden Puzzle Flower for Adults, DIY Sakura Bonsai Tree Plants for Home Table Decor, Creative Cherry Blossom Crafts Birthday Model Building Kits Toys",
-          "reason": "Best 3d wooden puzzle flower",
+          "reason": "Best small lego",
           "rating": 4.6,
           "reviews": 428,
           "price": 14.53
@@ -785,7 +1195,7 @@
         {
           "asin": "B0DRW6C2RF",
           "title": "LEGO Botanicals Happy Plants 10349",
-          "reason": "Best LEGO building set — botanicals happy plants",
+          "reason": "Best botanicals happy LEGO building set",
           "rating": 4.9,
           "reviews": 54,
           "price": 18.35
@@ -793,7 +1203,7 @@
         {
           "asin": "1338219634",
           "title": "LEGO Gadgets (Klutz Science/STEM Activity Kit) 10.25\" Length x 0.75\" Width x 10\" Height",
-          "reason": "Best LEGO building set — gadgets klutz science stem",
+          "reason": "Best gadgets klutz LEGO building set",
           "rating": 4.7,
           "reviews": 165,
           "price": 18.99
@@ -801,7 +1211,7 @@
         {
           "asin": "8325346868",
           "title": "LEGO: Build IT! Cards and Bricks – Animals | Creative Building Ages 6+",
-          "reason": "Best LEGO building set — build it cards bricks",
+          "reason": "Best animal-themed LEGO building set",
           "rating": 4.5,
           "reviews": 791,
           "price": 7.99
@@ -809,7 +1219,7 @@
         {
           "asin": "B0CGYN1GJ5",
           "title": "LEGO City Blue Monster Truck Off-Road Toy Playset with a Driver Minifigure, Imaginative Toys for Kids, Fun Gift for Boys and Girls Aged 5 Plus, Mini Monster Truck, 60402",
-          "reason": "Best LEGO minifigure",
+          "reason": "Best LEGO minifigure gift",
           "rating": 4.8,
           "reviews": 37,
           "price": 12.78
@@ -817,7 +1227,7 @@
         {
           "asin": "B0H6BYZC2W",
           "title": "DAVIRO Stocking Stuffers for Kids Teen and Adult, Christmas Santa Claus Micro Building Blocks Christmas Stacking New Toys Holiday Present Box New Year Xmas Gifts for Boys Girls",
-          "reason": "Best mini building block kit",
+          "reason": "Best budget mini building-block kit",
           "rating": 4.5,
           "reviews": 34,
           "price": 7.99
@@ -825,7 +1235,7 @@
         {
           "asin": "B0FMS8D34Q",
           "title": "LEGO Minecraft Steve’s Taiga Adventure 21583",
-          "reason": "Best LEGO building set — minecraft steve taiga adventure",
+          "reason": "Best minecraft steve LEGO building set",
           "rating": 4.8,
           "reviews": 11,
           "price": 7.99
@@ -833,7 +1243,7 @@
         {
           "asin": "B0CGXZP4T8",
           "title": "LEGO City Go-Karts and Race Drivers 60400",
-          "reason": "Best LEGO building set — city go karts race",
+          "reason": "Best city go LEGO building set",
           "rating": 4.8,
           "reviews": 26,
           "price": 9.97
@@ -841,7 +1251,7 @@
         {
           "asin": "1338603450",
           "title": "Klutz Lego Gear Bots Science/STEM Activity Kit for 8-12 years",
-          "reason": "Best LEGO building set — lego gear bots science",
+          "reason": "Best Klutz budget LEGO building set",
           "rating": 4.6,
           "reviews": 79,
           "price": 17.94
@@ -849,7 +1259,7 @@
         {
           "asin": "B08HVZ37VY",
           "title": "LEGO Super Mario Character Packs – Series 2 (71386) Building Kit (1 of 10 to Collect), Collectible Toys for Creative Kids to Enhance Interactive Play, New 2020",
-          "reason": "Best LEGO building set — super mario character packs",
+          "reason": "Best super mario LEGO building set",
           "rating": 4.4,
           "reviews": 11,
           "price": 9.41
@@ -857,7 +1267,7 @@
         {
           "asin": "B0CGY54WQF",
           "title": "LEGO City Fire Rescue Helicopter 60411",
-          "reason": "Best LEGO building set — city fire rescue helicopter",
+          "reason": "Best city fire LEGO building set",
           "rating": 4.8,
           "reviews": 16,
           "price": 9.99
@@ -1075,11 +1485,216 @@
       "qualifyingCount": 49,
       "selectedCount": 25,
       "prunedCount": 24,
+      "defaultOrder": [
+        {
+          "position": 1,
+          "asin": "B0DPZWVKDM",
+          "title": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens",
+          "reason": "Best magnetic needoh sensory toys",
+          "editorialBadge": "best-overall",
+          "bayesianScore": 4.5631,
+          "reviews": 856
+        },
+        {
+          "position": 2,
+          "asin": "B0GRSZ5TDC",
+          "title": "Schylling NeeDoh Teenie Color Change - Sensory Squeeze Toy - 4 Pack",
+          "reason": "Best dough-filled squishy",
+          "editorialBadge": "most-popular",
+          "bayesianScore": 4.4484,
+          "reviews": 534
+        },
+        {
+          "position": 3,
+          "asin": "B0G22BHS13",
+          "title": "Toymendous Squishy Carrot – Jumbo 11.5 Inch Squishy Vegetable | Giant Stress Relief Toy | Fidget Sensory Food Fun for Kids, Teens & Adults",
+          "reason": "Best budget novelty squishy",
+          "editorialBadge": "best-value",
+          "bayesianScore": 4.5,
+          "reviews": 739
+        },
+        {
+          "position": 4,
+          "asin": "B0G38X9CDQ",
+          "title": "BUNMO Fidget Toys - Fidget Stones Sensory Toys – 6pk Pastel | Silicone Worry Stones for Kids Ages 3+ | Portable, Textured, Quiet Sensory Stones for Hands-On Play",
+          "reason": "Best needoh sensory toys",
+          "bayesianScore": 4.5699,
+          "reviews": 152
+        },
+        {
+          "position": 5,
+          "asin": "B0H1DDC5B2",
+          "title": "Squeeze Please Scented Marshmallow Stress Relief Sensory Fidget Squishy Toy",
+          "reason": "Best novelty squishy",
+          "bayesianScore": 4.5708,
+          "reviews": 274
+        },
+        {
+          "position": 6,
+          "asin": "B0GVS485PV",
+          "title": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+",
+          "reason": "Best axolotl squishy",
+          "bayesianScore": 4.5,
+          "reviews": 96
+        },
+        {
+          "position": 7,
+          "asin": "B0HCT6RWNV",
+          "title": "Gumdrop Squishy Stress Ball, Fidget Toy, Non-Toxic ASTM Certified (Blue)",
+          "reason": "Best classic stress ball",
+          "bayesianScore": 4.4862,
+          "reviews": 80
+        },
+        {
+          "position": 8,
+          "asin": "B0GZ4ZZ4QS",
+          "title": "Horizon Group USA Slimygloop Gelli Gels, Minecraft Creeper",
+          "reason": "Best budget needoh sensory toys",
+          "bayesianScore": 4.4934,
+          "reviews": 17
+        },
+        {
+          "position": 9,
+          "asin": "B0HF3Y5FMX",
+          "title": "Sensory Fidget Toys 6 Pack Silicone Flip Cubes Quiet Textured Stress Relief Gadgets for Adults Kids with Autism ADHD Anxiety, Pocket-Sized Desk Fidgets for Office Classroom Travel, Calm Down Focus Aid",
+          "reason": "Best Sensory budget needoh sensory toys",
+          "bayesianScore": 4.4885,
+          "reviews": 65
+        },
+        {
+          "position": 10,
+          "asin": "B0FHB51R29",
+          "title": "Axolotl Squishy Stress Relief Toy Glitter Fidget Toys Cute Malt Sugar Axolotl Toy Fidget Toys for Kids Youth Adult, Party Favors Anxiety Relief Squishy Toys(Blue)",
+          "reason": "Best budget axolotl squishy",
+          "bayesianScore": 4.4927,
+          "reviews": 19
+        },
+        {
+          "position": 11,
+          "asin": "B07HDX46HS",
+          "title": "Crayola Globbles Fidget Toy, 6ct, Sticky Stress Ball, Kid Stocking Stuffers",
+          "reason": "Best budget classic stress ball",
+          "bayesianScore": 4.5,
+          "reviews": 212
+        },
+        {
+          "position": 12,
+          "asin": "B0G51RMM8D",
+          "title": "Premium Cloud Squishy Toy, Glow in the Dark Stress Ball, Odor-Free Slow Rise Crystal Clear, Non-Toxic, Easy to Clean, Durable, Gift-Ready, Children Safety Certificate & ASTM Certified 3+",
+          "reason": "Best animal-themed classic stress ball",
+          "bayesianScore": 4.5,
+          "reviews": 410
+        },
+        {
+          "position": 13,
+          "asin": "B0GWV549JV",
+          "title": "2Pcs Ice Ocean Stress Balls, Ice Marine Shells Squishies Toy, Sensory Toys for Adult with Real Sea ShellsNon-Toxic Squeeze Ball Focus Calm",
+          "reason": "Best 2Pcs budget classic stress ball",
+          "bayesianScore": 4.4155,
+          "reviews": 82
+        },
+        {
+          "position": 14,
+          "asin": "B0HDSDGWJB",
+          "title": "12 Pack Cheese Squishy Toys, squishies Bulk Fidget Toys for Teens & Adults,Christmas Fidget Gifts, Party Favors, Birthday Gifts, Classroom Rewards & Stocking Stuffers",
+          "reason": "Best 12 budget novelty squishy",
+          "bayesianScore": 4.4226,
+          "reviews": 74
+        },
+        {
+          "position": 15,
+          "asin": "B0GFBY355X",
+          "title": "Emotional Support Pals Squishy Nugget by Relatable, Color Varies, Pack of 1",
+          "reason": "Best Emotional budget novelty squishy",
+          "bayesianScore": 4.3463,
+          "reviews": 222
+        },
+        {
+          "position": 16,
+          "asin": "B0F2MXQKNS",
+          "title": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers",
+          "reason": "Best slow-rising stress cube",
+          "bayesianScore": 4.349,
+          "reviews": 507
+        },
+        {
+          "position": 17,
+          "asin": "B0H4RB9N5V",
+          "title": "JOYIN 3PCS Glow-in-the-Dark Cube Stress Relief Toys, 2.2Inch Squishy Toys",
+          "reason": "Best JOYIN novelty squishy",
+          "bayesianScore": 4.4919,
+          "reviews": 44
+        },
+        {
+          "position": 18,
+          "asin": "B0HKG7BTXQ",
+          "title": "15 Pcs Animal Texture Sensory Toys, Soft Silicone Tactile Fidget Toys",
+          "reason": "Best animal-themed needoh sensory toys",
+          "bayesianScore": 4.5,
+          "reviews": 5
+        },
+        {
+          "position": 19,
+          "asin": "B09NQQQL5Z",
+          "title": "hand2mind Express Your Feelings Sensory Bottles-Primary Emotions",
+          "reason": "Best sensory bottle",
+          "bayesianScore": 4.5088,
+          "reviews": 23
+        },
+        {
+          "position": 20,
+          "asin": "B0CTT6W4BN",
+          "title": "JOYIN 4-Pack Sensory Fidget Tubes, Silent Fidget Toys for Kids Age 3-5, Sensory Toys for Kids with Autism, Sensory Room Must Haves, Classroom Calming Corner Items, Christmas Stocking Stuffers for Kids",
+          "reason": "Best sensory fidget tubes",
+          "bayesianScore": 4.5033,
+          "reviews": 17
+        },
+        {
+          "position": 21,
+          "asin": "B0HCB9DWJ3",
+          "title": "4Pack Christmas Squishy Set,Squishy Fidget Toys(Santa, Snowman, Deer, Tree)",
+          "reason": "Best 4Pack budget novelty squishy",
+          "bayesianScore": 4.4783,
+          "reviews": 39
+        },
+        {
+          "position": 22,
+          "asin": "B0HBLCGNSY",
+          "title": "Sensory Fidget Toys for Kids, 4 Pack Textured Squeeze and Bounce Toys, Quiet Tactile Sensory Play with 4 Unique Textures, Stress Relief Fidget Toys for Children Ages 3+, Adults",
+          "reason": "Best Sensory budget novelty squishy",
+          "bayesianScore": 4.4817,
+          "reviews": 24
+        },
+        {
+          "position": 23,
+          "asin": "B0H3345YPB",
+          "title": "Squeeze Toys - Axolotl Squishy Cute Fidget Toy for Stress Relief Portable Fun & Relaxing Companion for Kids and Adults Giftuse(1 Pack Blue)",
+          "reason": "Best Squeeze budget axolotl squishy",
+          "bayesianScore": 4.4626,
+          "reviews": 115
+        },
+        {
+          "position": 24,
+          "asin": "B0FQCKQBCG",
+          "title": "Cat Squishy Toys, Soft TPR Sensory Fidget Squeeze Toy",
+          "reason": "Best animal-themed novelty squishy",
+          "bayesianScore": 4.4705,
+          "reviews": 209
+        },
+        {
+          "position": 25,
+          "asin": "B0BQZFVJTB",
+          "title": "Schylling NeeDoh Nice Cube - Sensory Squeeze Toy with Super Solid Squish - 2.25\" Cube - Color May Vary (Pack of 1)",
+          "reason": "Best budget slow-rising stress cube",
+          "bayesianScore": 4.4538,
+          "reviews": 91
+        }
+      ],
       "winners": [
         {
           "asin": "B0G38X9CDQ",
           "title": "BUNMO Fidget Toys - Fidget Stones Sensory Toys – 6pk Pastel | Silicone Worry Stones for Kids Ages 3+ | Portable, Textured, Quiet Sensory Stones for Hands-On Play",
-          "reason": "Best-value fidget stones sensory 6pk",
+          "reason": "Best needoh sensory toys",
           "rating": 4.8,
           "reviews": 152,
           "price": 6.64
@@ -1095,7 +1710,7 @@
         {
           "asin": "B0DPZWVKDM",
           "title": "Magnetic Fidget Balls, 6 Pack Silicone Sensory Toys for Adults & Teens",
-          "reason": "Most proven magnetic fidget balls silicone",
+          "reason": "Best magnetic needoh sensory toys",
           "rating": 4.6,
           "reviews": 856,
           "price": 7.58
@@ -1103,7 +1718,7 @@
         {
           "asin": "B0GVS485PV",
           "title": "Blue Axolotl Squeeze Stress Relief Toy, Glitter Squishy Fidget Toy, Soft Sensory Toy for Anxiety Relief, Stretchable Slow Rising Desk Toy, Party Favor,Kids Age 3+",
-          "reason": "Best overall axolotl squishy",
+          "reason": "Best axolotl squishy",
           "rating": 4.5,
           "reviews": 96,
           "price": 5.84
@@ -1111,7 +1726,7 @@
         {
           "asin": "B0HCT6RWNV",
           "title": "Gumdrop Squishy Stress Ball, Fidget Toy, Non-Toxic ASTM Certified (Blue)",
-          "reason": "Best standard stress ball",
+          "reason": "Best classic stress ball",
           "rating": 4.4,
           "reviews": 80,
           "price": 6.99
@@ -1119,7 +1734,7 @@
         {
           "asin": "B0GZ4ZZ4QS",
           "title": "Horizon Group USA Slimygloop Gelli Gels, Minecraft Creeper",
-          "reason": "Best group usa slimygloop gelli",
+          "reason": "Best budget needoh sensory toys",
           "rating": 4.3,
           "reviews": 17,
           "price": 8.91
@@ -1127,7 +1742,7 @@
         {
           "asin": "B0HF3Y5FMX",
           "title": "Sensory Fidget Toys 6 Pack Silicone Flip Cubes Quiet Textured Stress Relief Gadgets for Adults Kids with Autism ADHD Anxiety, Pocket-Sized Desk Fidgets for Office Classroom Travel, Calm Down Focus Aid",
-          "reason": "Best sensory fidget silicone flip",
+          "reason": "Best Sensory budget needoh sensory toys",
           "rating": 4.4,
           "reviews": 65,
           "price": 9.39
@@ -1135,7 +1750,7 @@
         {
           "asin": "B0G22BHS13",
           "title": "Toymendous Squishy Carrot – Jumbo 11.5 Inch Squishy Vegetable | Giant Stress Relief Toy | Fidget Sensory Food Fun for Kids, Teens & Adults",
-          "reason": "Best novelty squishy — squishy carrot jumbo inch",
+          "reason": "Best budget novelty squishy",
           "rating": 4.5,
           "reviews": 739,
           "price": 9.99
@@ -1143,7 +1758,7 @@
         {
           "asin": "B0FHB51R29",
           "title": "Axolotl Squishy Stress Relief Toy Glitter Fidget Toys Cute Malt Sugar Axolotl Toy Fidget Toys for Kids Youth Adult, Party Favors Anxiety Relief Squishy Toys(Blue)",
-          "reason": "Best axolotl squishy",
+          "reason": "Best budget axolotl squishy",
           "rating": 4.3,
           "reviews": 19,
           "price": 9.39
@@ -1151,7 +1766,7 @@
         {
           "asin": "B07HDX46HS",
           "title": "Crayola Globbles Fidget Toy, 6ct, Sticky Stress Ball, Kid Stocking Stuffers",
-          "reason": "Best standard stress ball — globbles fidget 6ct sticky",
+          "reason": "Best budget classic stress ball",
           "rating": 4.5,
           "reviews": 212,
           "price": 11.16
@@ -1159,7 +1774,7 @@
         {
           "asin": "B0G51RMM8D",
           "title": "Premium Cloud Squishy Toy, Glow in the Dark Stress Ball, Odor-Free Slow Rise Crystal Clear, Non-Toxic, Easy to Clean, Durable, Gift-Ready, Children Safety Certificate & ASTM Certified 3+",
-          "reason": "Best standard stress ball — cloud squishy glow dark",
+          "reason": "Best animal-themed classic stress ball",
           "rating": 4.5,
           "reviews": 410,
           "price": 14.99
@@ -1167,7 +1782,7 @@
         {
           "asin": "B0GRSZ5TDC",
           "title": "Schylling NeeDoh Teenie Color Change - Sensory Squeeze Toy - 4 Pack",
-          "reason": "Best dough filled squishy",
+          "reason": "Best dough-filled squishy",
           "rating": 4.4,
           "reviews": 534,
           "price": 11.79
@@ -1175,7 +1790,7 @@
         {
           "asin": "B0GWV549JV",
           "title": "2Pcs Ice Ocean Stress Balls, Ice Marine Shells Squishies Toy, Sensory Toys for Adult with Real Sea ShellsNon-Toxic Squeeze Ball Focus Calm",
-          "reason": "Best standard stress ball — ice ocean stress balls",
+          "reason": "Best 2Pcs budget classic stress ball",
           "rating": 3.9,
           "reviews": 82,
           "price": 4.99
@@ -1183,7 +1798,7 @@
         {
           "asin": "B0HDSDGWJB",
           "title": "12 Pack Cheese Squishy Toys, squishies Bulk Fidget Toys for Teens & Adults,Christmas Fidget Gifts, Party Favors, Birthday Gifts, Classroom Rewards & Stocking Stuffers",
-          "reason": "Best novelty squishy — cheese squishy squishies bulk",
+          "reason": "Best 12 budget novelty squishy",
           "rating": 3.9,
           "reviews": 74,
           "price": 19.99
@@ -1191,7 +1806,7 @@
         {
           "asin": "B0GFBY355X",
           "title": "Emotional Support Pals Squishy Nugget by Relatable, Color Varies, Pack of 1",
-          "reason": "Best novelty squishy — support pals squishy nugget",
+          "reason": "Best Emotional budget novelty squishy",
           "rating": 4,
           "reviews": 222,
           "price": 4.99
@@ -1199,7 +1814,7 @@
         {
           "asin": "B0F2MXQKNS",
           "title": "Squishy Stress Cube Fidget Toys Adults - Glow in The Dark Sensory Toys for Kids with Autism Stress Balls for Kids Teens Squeeze Toys for Anxiety Easter Basket Stuffers",
-          "reason": "Best overall slow rising stress cube",
+          "reason": "Best slow-rising stress cube",
           "rating": 4.2,
           "reviews": 507,
           "price": 12.79
@@ -1207,7 +1822,7 @@
         {
           "asin": "B0H4RB9N5V",
           "title": "JOYIN 3PCS Glow-in-the-Dark Cube Stress Relief Toys, 2.2Inch Squishy Toys",
-          "reason": "Best overall novelty squishy",
+          "reason": "Best JOYIN novelty squishy",
           "rating": 4.4,
           "reviews": 44,
           "price": 9.48
@@ -1215,7 +1830,7 @@
         {
           "asin": "B0HKG7BTXQ",
           "title": "15 Pcs Animal Texture Sensory Toys, Soft Silicone Tactile Fidget Toys",
-          "reason": "Best animal texture sensory soft",
+          "reason": "Best animal-themed needoh sensory toys",
           "rating": 4.5,
           "reviews": 5,
           "price": 14.39
@@ -1231,7 +1846,7 @@
         {
           "asin": "B0CTT6W4BN",
           "title": "JOYIN 4-Pack Sensory Fidget Tubes, Silent Fidget Toys for Kids Age 3-5, Sensory Toys for Kids with Autism, Sensory Room Must Haves, Classroom Calming Corner Items, Christmas Stocking Stuffers for Kids",
-          "reason": "Best sensory fidget tube",
+          "reason": "Best sensory fidget tubes",
           "rating": 4.6,
           "reviews": 17,
           "price": 21.84
@@ -1239,7 +1854,7 @@
         {
           "asin": "B0HCB9DWJ3",
           "title": "4Pack Christmas Squishy Set,Squishy Fidget Toys(Santa, Snowman, Deer, Tree)",
-          "reason": "Best novelty squishy — 4pack christmas squishy fidget",
+          "reason": "Best 4Pack budget novelty squishy",
           "rating": 4.2,
           "reviews": 39,
           "price": 12.99
@@ -1247,7 +1862,7 @@
         {
           "asin": "B0HBLCGNSY",
           "title": "Sensory Fidget Toys for Kids, 4 Pack Textured Squeeze and Bounce Toys, Quiet Tactile Sensory Play with 4 Unique Textures, Stress Relief Fidget Toys for Children Ages 3+, Adults",
-          "reason": "Best novelty squishy — sensory fidget textured squeeze",
+          "reason": "Best Sensory budget novelty squishy",
           "rating": 4.1,
           "reviews": 24,
           "price": 14.99
@@ -1255,7 +1870,7 @@
         {
           "asin": "B0H3345YPB",
           "title": "Squeeze Toys - Axolotl Squishy Cute Fidget Toy for Stress Relief Portable Fun & Relaxing Companion for Kids and Adults Giftuse(1 Pack Blue)",
-          "reason": "Best axolotl squishy — axolotl squishy cute fidget",
+          "reason": "Best Squeeze budget axolotl squishy",
           "rating": 4.3,
           "reviews": 115,
           "price": 5.59
@@ -1263,7 +1878,7 @@
         {
           "asin": "B0FQCKQBCG",
           "title": "Cat Squishy Toys, Soft TPR Sensory Fidget Squeeze Toy",
-          "reason": "Best overall novelty squishy — squishy soft tpr sensory",
+          "reason": "Best animal-themed novelty squishy",
           "rating": 4.4,
           "reviews": 209,
           "price": 11.39
@@ -1271,7 +1886,7 @@
         {
           "asin": "B0BQZFVJTB",
           "title": "Schylling NeeDoh Nice Cube - Sensory Squeeze Toy with Super Solid Squish - 2.25\" Cube - Color May Vary (Pack of 1)",
-          "reason": "Best slow rising stress cube",
+          "reason": "Best budget slow-rising stress cube",
           "rating": 4.2,
           "reviews": 91,
           "price": 14.99
