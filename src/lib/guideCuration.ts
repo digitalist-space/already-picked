@@ -68,8 +68,24 @@ function compare(a: Product, b: Product): number {
 export function curateGuide(products: Product[]): Product[] {
   const ranked = products.filter(p => Number.isFinite(p.price) && p.price > 0 && Number.isFinite(p.reviewCount) && p.reviewCount >= 5 && Number.isFinite(p.rating) && p.rating >= 3.8).slice().sort(compare);
   const selected: Product[] = [];
-  const brands = new Map<string, Product[]>();
+  const clusters: Product[][] = [];
   for (const p of ranked) {
+    const matches = clusters.filter(group => group.some(q => sameCluster(p, q)));
+    if (!matches.length) clusters.push([p]);
+    else {
+      const merged = [p, ...matches.flat()].sort(compare);
+      for (const group of matches) clusters.splice(clusters.indexOf(group), 1);
+      clusters.push(merged);
+    }
+  }
+  const brands = new Map<string, Product[]>();
+  for (const group of clusters.sort((a,b) => compare(a[0],b[0]))) {
+    const p = group.find(candidate => {
+      const key = brandKey(candidate);
+      const previous = key ? brands.get(key) || [] : [];
+      return previous.length < 2 && !previous.some(q => !archetype(q) || !archetype(candidate) || archetype(q) === archetype(candidate));
+    });
+    if (!p) continue;
     if (selected.length >= MAX_GUIDE_PICKS) break;
     if (selected.some(q => sameCluster(p, q))) continue;
     const brand = brandKey(p);
