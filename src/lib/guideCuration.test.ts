@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import test from "node:test";
 import {
  BAYESIAN_PRICE_TIE_THRESHOLD,
@@ -175,5 +176,40 @@ test("every selected label is unique and card-line length", () => {
  ];
  const labels = curateGuide(products).map((item) => item.bestFor || "");
  assert.equal(new Set(labels).size, labels.length);
- assert.ok(labels.every((label) => label.length > 0 && label.length <= 44));
+ assert.ok(labels.every((label) => label.length > 0 && label.length <= 35));
+});
+
+test("category fallbacks produce editorial phrases instead of stitched tags", () => {
+ const products = [
+  {...p("wood", "Handmade Rosewood Incense Holder"), category: "Incense Holders",
+   subcategory: "Wooden & Bamboo Incense Holders"},
+  {...p("metal", "Stainless Steel Incense Holder"), category: "Incense Holders",
+   subcategory: "Metal & Specialty Incense Holders"},
+  {...p("case", "Magnetic Case with Stand"), category: "Best IPhone Duo Cases"},
+ ];
+ assert.deepEqual(products.map(editorialBestFor), [
+  "Best wooden incense holder",
+  "Best metal incense holder",
+  "Best iPhone Duo case",
+ ]);
+});
+
+test("the all-guide dry-run snapshot satisfies label quality guardrails", () => {
+ const snapshot = JSON.parse(readFileSync(
+  new URL("../../reports/curation-dry-run-2026-11-24.json", import.meta.url), "utf8"
+ )) as {reports: Array<{slug: string; defaultOrder: Array<{reason: string}>}>};
+ assert.ok(snapshot.reports.length >= 13);
+ for (const guide of snapshot.reports) {
+  const labels = guide.defaultOrder.map((item) => item.reason);
+  assert.equal(new Set(labels).size, labels.length, `${guide.slug}: duplicate labels`);
+  for (const label of labels) {
+   const tokens = label.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/);
+   assert.ok(label.length > 0 && label.length <= 35, `${guide.slug}: ${label}`);
+   assert.ok(!tokens.some((token, index) => index > 0 && token === tokens[index - 1]),
+    `${guide.slug}: repeated token in ${label}`);
+   assert.doesNotMatch(label,
+    /best.*best|customizable cutest|cotton & woven|wooden & bamboo|general school supplies|wallet style iphone/i,
+    `${guide.slug}: raw category fragment in ${label}`);
+  }
+ }
 });

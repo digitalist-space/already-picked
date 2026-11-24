@@ -9,11 +9,6 @@ import type { Product } from "../src/lib/types.ts";
 
 const workbookId = process.env.GOOGLE_SHEET_WORKBOOK_ID;
 const outputPath = process.argv.find((arg) => arg.startsWith("--output="))?.slice(9);
-const guideSlugs = [
-  "book-lover-gifts-and-reading-accessories-under-15",
-  "small-lego-and-creative-gifts-under-20",
-  "needoh-sensory-toys-under-25",
-];
 if (!workbookId) throw new Error("GOOGLE_SHEET_WORKBOOK_ID is required");
 
 async function tab(name: string): Promise<string> {
@@ -81,6 +76,11 @@ const productByAsin = new Map(products.flatMap((product) =>
   product.asin ? [[product.asin.toUpperCase(), product] as const] : []));
 const links = parseCSV(pageProductCsv);
 const pages = new Map(parseCSV(landingPageCsv).map((row) => [row.theme_slug, row]));
+const guideSlugs = [...pages.entries()]
+  .filter(([slug, page]) => page.status.toLowerCase() === "published" &&
+    links.some((row) => row.theme_slug === slug))
+  .map(([slug]) => slug)
+  .sort();
 const reports = guideSlugs.map((slug) => {
   const page = pages.get(slug);
   if (!page) throw new Error(`Guide not found: ${slug}`);
@@ -105,13 +105,16 @@ const reports = guideSlugs.map((slug) => {
       position: index + 1,
       asin: product.asin,
       title: product.title,
+      category: product.category,
+      subcategory: product.subcategory,
       reason: product.bestFor,
       editorialBadge: editorialPicks.find((pick) => pick.productId === product.id)?.badge,
       bayesianScore: Number(confidence(product).toFixed(4)),
       reviews: product.reviewCount,
     })),
     winners: report.selected.map((product) => ({
-      asin: product.asin, title: product.title, reason: product.bestFor,
+      asin: product.asin, title: product.title, category: product.category,
+      subcategory: product.subcategory, reason: product.bestFor,
       rating: product.rating, reviews: product.reviewCount, price: product.price,
     })),
     removed: report.removed.map((item) => ({

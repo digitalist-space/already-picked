@@ -134,12 +134,6 @@ export function archetype(product: Product): string {
   }
   return bucket(product);
 }
-function titleTokens(product: Product): Set<string> {
-  const brand = new Set(brandKey(product).split(" "));
-  return new Set(normalizedTitle(product).split(" ")
-    .filter((token) => token.length > 1 && !/^\d+(?:\.\d+)?$/.test(token) &&
-      !STOP_WORDS.has(token) && !brand.has(token)));
-}
 function semanticTokens(product: Product): Set<string> {
   const brand = new Set(brandKey(product).split(" "));
   return new Set(normalize([
@@ -312,38 +306,134 @@ function titleEditorialLabel(product: Product): string {
 }
 
 function fallbackEditorialLabel(product: Product): string {
-  const source = normalizeProductTypeLabel(product.subcategory || product.category || "editorial pick")
-    .replace(/\s+/g, " ")
-    .trim();
-  return `Best ${source.toLowerCase()}`;
+  const type = normalize(`${product.category} ${product.subcategory || ""}`);
+  if (/iphone duo/.test(type)) return "Best iPhone Duo case";
+  if (/wallet style iphone/.test(type)) return "Best iPhone wallet case";
+  if (/bag charm/.test(type)) return "Best personalized bag charm";
+  if (/compact card/.test(type)) return "Best compact card game";
+  if (/crochet flowers|crochet plants/.test(type)) return "Best crochet plant gift";
+  if (/crochet food|crochet novelty/.test(type)) return "Best crochet novelty gift";
+  if (/crochet holiday/.test(type)) return "Best crochet holiday gift";
+  if (/crochet animal/.test(type)) return "Best crochet animal gift";
+  if (/crochet|mini craft/.test(type)) return "Best mini craft kit";
+  if (/cotton|woven coaster/.test(type)) return "Best woven drink coaster";
+  if (/wooden natural coaster/.test(type)) return "Best wooden coaster";
+  if (/coaster/.test(type)) return "Best drink coaster";
+  if (/glass upright incense/.test(type)) return "Best glass incense holder";
+  if (/wooden bamboo incense/.test(type)) return "Best wooden incense holder";
+  if (/metal specialty incense/.test(type)) return "Best metal incense holder";
+  if (/incense holder/.test(type)) return "Best incense holder";
+  if (/needoh|sensory/.test(type)) return "Best sensory toy";
+  if (/plush|school classroom/.test(type)) return "Best plush bag charm";
+  if (/reading light/.test(type)) return "Best reading light";
+  if (/small lego/.test(type)) return "Best LEGO building set";
+  if (/small puzzle|brainteaser/.test(type)) return "Best pocket brainteaser";
+  return "Best editor's pick";
+}
+
+const QUALIFIERS: ReadonlyArray<[RegExp, string]> = [
+  [/personalized|custom name|initial/, "personalized"],
+  [/photo|picture/, "photo"],
+  [/engraved/, "engraved"],
+  [/magsafe|magnetic/, "magnetic"],
+  [/wallet|card holder|card slot/, "wallet"],
+  [/kickstand|\bstand\b/, "stand"],
+  [/clear|transparent/, "clear"],
+  [/rugged|shockproof|heavy duty|hinge protection/, "rugged"],
+  [/slim|thin/, "slim"],
+  [/wood|wooden|bamboo|rosewood/, "wooden"],
+  [/leather/, "leather"],
+  [/metal|stainless steel/, "metal"],
+  [/glass|ceramic/, "glass"],
+  [/cotton|woven|macrame/, "woven"],
+  [/floral|flower|botanical/, "floral"],
+  [/cat|dog|animal|frog|turtle|axolotl|chicken|bear|duck/, "animal-themed"],
+  [/holiday|christmas|ornament|snowman/, "holiday"],
+  [/travel|portable|pocket/, "travel"],
+  [/beginner|starter/, "beginner"],
+  [/funny|humor|joke/, "funny"],
+  [/inspirational|positive|affirmation/, "inspirational"],
+];
+
+function addQualifier(label: string, qualifier: string): string {
+  const noun = label.replace(/^(?:Best|Most popular)\s+/i, "");
+  const nounTokens = new Set(normalize(noun).split(" "));
+  const qualifierTokens = normalize(qualifier).split(" ");
+  if (qualifierTokens.some((token) => nounTokens.has(token))) return label;
+  const materials = new Set(["wooden", "leather", "metal", "glass", "woven"]);
+  if (qualifierTokens.some((token) => materials.has(token)) &&
+      [...nounTokens].some((token) => materials.has(token))) return label;
+  return `Best ${qualifier} ${noun}`;
 }
 
 function withQualifier(label: string, product: Product, group: Product[]): string {
   const text = normalize(product.title);
-  const noun = label.replace(/^Best\s+/i, "");
-  if (/personalized|custom|initial/.test(text)) return `Best personalized ${noun}`;
-  if (/engraved/.test(text)) return `Best engraved ${noun}`;
-  if (/magnetic/.test(text)) return `Best magnetic ${noun}`;
-  if (/wood|wooden|bamboo/.test(text)) return `Best wooden ${noun}`;
-  if (/leather/.test(text)) return `Best leather ${noun}`;
-  if (/metal|stainless steel/.test(text)) return `Best metal ${noun}`;
-  if (/floral|flower|botanical/.test(text)) return `Best floral ${noun}`;
-  if (/cat|dog|animal/.test(text)) return `Best animal-themed ${noun}`;
-  if (product.price === Math.min(...group.map((item) => item.price))) return `Best budget ${noun}`;
+  for (const [pattern, qualifier] of QUALIFIERS) {
+    if (pattern.test(text)) {
+      const qualified = addQualifier(label, qualifier);
+      if (qualified !== label) return qualified;
+    }
+  }
+  if (product.price === Math.min(...group.map((item) => item.price))) {
+    return addQualifier(label, "budget");
+  }
   if (product.reviewCount === Math.max(...group.map((item) => item.reviewCount))) {
-    return `Most popular ${noun}`;
+    return `Most popular ${label.replace(/^Best\s+/i, "")}`;
   }
   return label;
 }
 
 function compactLabel(label: string): string {
-  if (label.length <= 44) return label;
-  const shortened = label
+  const deduped = label
+    .replace(/\b(\w[\w-]*)\s+\1\b/gi, "$1")
+    .replace(/^Best\s+(?:best\s+)+/i, "Best ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (deduped.length <= 35) return deduped;
+  const shortened = deduped
     .replace("personalized", "custom")
     .replace("book-lover", "reader")
-    .replace("building-block", "brick");
-  if (shortened.length <= 44) return shortened;
-  return shortened.slice(0, 43).replace(/\s+\S*$/, "").trimEnd();
+    .replace("building-block", "brick")
+    .replace("animal-themed", "animal")
+    .replace("space-saving", "compact")
+    .replace("gift-ready", "gift")
+    .replace("inspirational", "uplifting")
+    .replace("lightweight", "light")
+    .replace("decorative", "decor")
+    .replace("portable reading light", "reading light")
+    .replace("personalized bag charm", "custom bag charm")
+    .replace("Most popular", "Popular");
+  if (shortened.length <= 35) return shortened;
+  return shortened.slice(0, 35).replace(/\s+\S*$/, "").trimEnd();
+}
+
+function productBrandLabel(product: Product): string {
+  const explicit = String(product.brand || "").trim();
+  if (explicit && explicit.length <= 14 && /^[\p{L}\p{N}][\p{L}\p{N} '&.-]*$/u.test(explicit)) {
+    return explicit;
+  }
+  return "";
+}
+
+const DISTINCT_ANGLES = [
+  "budget", "compact", "gift-ready", "everyday", "premium", "colorful", "minimalist",
+  "playful", "classic", "modern", "versatile", "travel", "starter", "collector",
+  "space-saving", "durable", "lightweight", "decorative", "hands-on", "creative",
+  "family", "desk-friendly", "easy-care", "cozy", "novelty", "traditional",
+  "statement", "simple", "deluxe", "casual",
+];
+
+function uniqueEditorialLabel(product: Product, group: Product[], used: Set<string>): string {
+  const base = editorialBestFor(product);
+  const candidates = [base, withQualifier(base, product, group)];
+  const brand = productBrandLabel(product);
+  if (brand) candidates.push(addQualifier(base, brand));
+  for (const angle of DISTINCT_ANGLES) candidates.push(addQualifier(base, angle));
+  for (const candidate of candidates) {
+    const compact = compactLabel(candidate);
+    if (!used.has(compact)) return compact;
+  }
+  throw new Error(`Could not create a distinct editorial label for product ${product.id}`);
 }
 
 export function editorialBestFor(product: Product): string {
@@ -431,26 +521,7 @@ export function curateGuideWithReport(products: Product[],
     }
     for (const winner of winners) {
       if (selected.length >= maxPicks) break;
-      let reason = editorialBestFor(winner);
-      if (usedReasons.has(reason)) {
-        reason = compactLabel(withQualifier(reason, winner, group));
-      }
-      if (usedReasons.has(reason)) {
-        const noun = reason.replace(/^Best\s+/i, "");
-        const brand = winner.brand || winner.title.trim().split(/\s+/)[0] || brandKey(winner);
-        reason = compactLabel(brand ? `Best ${brand} ${noun}` : `Best value ${noun}`);
-      }
-      if (usedReasons.has(reason)) {
-        const noun = editorialBestFor(winner).replace(/^Best\s+/i, "");
-        const nounTokens = new Set(normalize(noun).split(" "));
-        const descriptor = [...titleTokens(winner)]
-          .filter((token) => !nounTokens.has(token))
-          .slice(0, 2)
-          .join(" ");
-        reason = compactLabel(
-          descriptor ? `Best ${descriptor} ${noun}` : `Best versatile ${noun}`
-        );
-      }
+      const reason = uniqueEditorialLabel(winner, group, usedReasons);
       usedReasons.add(reason);
       selected.push({ ...winner, bestFor: reason });
     }
